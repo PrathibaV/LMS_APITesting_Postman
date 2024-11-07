@@ -17,6 +17,7 @@
 								{
 									"listen": "test",
 									"script": {
+										"id": "ae8d7c71-2e67-4086-a1c3-8d097bb3f7c6",
 										"exec": [
 											"// const commonUtils = pm.require('@postman-hackathon-4703/common-utils');\r",
 											"\r",
@@ -97,19 +98,18 @@
 											""
 										],
 										"type": "text/javascript",
-										"packages": {},
-										"id": "ae8d7c71-2e67-4086-a1c3-8d097bb3f7c6"
+										"packages": {}
 									}
 								},
 								{
 									"listen": "prerequest",
 									"script": {
+										"id": "e2cc25f0-8b69-4f7b-a56c-0ccb258faf19",
 										"exec": [
 											""
 										],
 										"type": "text/javascript",
-										"packages": {},
-										"id": "e2cc25f0-8b69-4f7b-a56c-0ccb258faf19"
+										"packages": {}
 									}
 								}
 							],
@@ -134,7 +134,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"password\": \"{{password}}\",\n  \"userLoginEmail\": \"{{userEmail}}\"\n}\n\n\n\n\n",
+									"raw": "{\n    \"password\": \"{{password}}\",\n    \"userLoginEmail\": \"{{userEmail}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -142,12 +142,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{BaseUrl}}/login",
+									"raw": "{{BaseUrl}}login",
 									"host": [
-										"{{BaseUrl}}"
-									],
-									"path": [
-										"login"
+										"{{BaseUrl}}login"
 									],
 									"query": [
 										{
