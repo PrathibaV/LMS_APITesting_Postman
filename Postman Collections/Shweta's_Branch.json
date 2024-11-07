@@ -333,7 +333,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"APITestingWithPostman\",\r\n    \"programName\": \"CommandosAPITeam\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": \"APITestingWithPostman\",\r\n    \"programName\": \"TeamTwoCommandos\",\r\n    \"programStatus\": \"Active\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
