@@ -694,7 +694,7 @@
 								},
 								"method": "GET",
 								"header": [],
-								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches/batchId/9055"
 							},
 							"response": []
 						}
