@@ -292,6 +292,21 @@
 					"item": [
 						{
 							"name": "User with valid Authorization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "72b68a08-9e1e-4d6c-88c8-8b95b1a978cd",
+										"exec": [
+											"\r",
+											"var data=pm.response.json;\r",
+											"var programId=data.programId;"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "4d3de0d3-6ccb-49ea-83a9-b21c76968286",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -307,7 +322,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"API Testing\",\r\n    \"programName\": \"API Commandos2024\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": \"API Testing\",\r\n    \"programName\": \"API-CommandosNov\",\r\n    \"programStatus\": \"Active\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
