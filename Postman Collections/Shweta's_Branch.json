@@ -24,7 +24,7 @@
 											"bodyData = pm.response.json();\r",
 											"TokenValue = bodyData.token;\r",
 											"console.log(\"Token: \" + TokenValue)\r",
-											"pm.environment.set(\"TokenValue\", TokenValue);\r",
+											"pm.globals.set(\"TokenValue\", TokenValue);\r",
 											"// pm.environment.set(\"TokenValue\", TokenValue);\r",
 											";\r",
 											"\r",
