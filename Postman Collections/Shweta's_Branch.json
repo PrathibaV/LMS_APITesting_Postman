@@ -376,6 +376,37 @@
 								"url": "{{baseUrl}}allProgramsWithUsers"
 							},
 							"response": []
+						},
+						{
+							"name": "Program By ProgramId",
+							"id": "dca9684e-4ed4-428c-80a9-3e6c90ebb055",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{TokenValue}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}programs/16788"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Program By Program Name",
+							"id": "ec8e42c5-ec38-40f9-8e96-ee8d29b1b470",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
 						}
 					],
 					"id": "114341cc-a29f-4c9a-b35a-fa7fbf35d4c2"
