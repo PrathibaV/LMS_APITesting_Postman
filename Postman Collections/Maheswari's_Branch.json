@@ -4638,7 +4638,7 @@
 							"response": [
 								{
 									"id": "50c40c28-cadc-422a-b795-417ccc4b39d7",
-									"name": "GetWithoutEndpoint",
+									"name": "GetWithoutBatchIdEndpoint",
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
