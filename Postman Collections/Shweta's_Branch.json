@@ -413,14 +413,27 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"programDescription\": \"String\",\r\n  \"programName\": \"CommandoAPITeam\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+									"raw": "{\r\n  \"programName\": \"CommandosAPITeam\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{baseUrl}}program/CommandosAPITeam"
+								"url": "{{baseUrl}}program/CommandoAPITeam"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Program by ProgramId",
+							"id": "4104d59d-0551-412f-ae42-6c514c96811b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": "{{baseUrl}}putprogram/16788"
 							},
 							"response": []
 						}
