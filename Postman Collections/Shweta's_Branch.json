@@ -340,7 +340,7 @@
 							"response": []
 						},
 						{
-							"name": "New Request",
+							"name": "All Program",
 							"id": "49558336-1809-4218-b3ae-2dd5a1dec453",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -355,6 +355,25 @@
 								"method": "GET",
 								"header": [],
 								"url": "{{baseUrl}}allPrograms"
+							},
+							"response": []
+						},
+						{
+							"name": "All program with user",
+							"id": "d3fb38be-1c3b-4d3d-b13a-61d7cb75891e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{TokenValue}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}allProgramsWithUsers"
 							},
 							"response": []
 						}
