@@ -441,7 +441,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\"programName\": \"String\",\r\n  \"programStatus\": \"String\"\r\n}\r\n",
+									"raw": "{\"programName\": \"CommomdosTeam2\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
