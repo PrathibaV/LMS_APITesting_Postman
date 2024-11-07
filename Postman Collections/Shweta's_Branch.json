@@ -568,7 +568,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9bd46434-cee0-4563-a0e4-4ce7c3f0153f",
+				"id": "47b70957-fd5b-46cb-8e39-e8e6fce95150",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -579,13 +579,30 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a94cbddd-8d31-414c-94b8-8a97c05f1b74",
+				"id": "d9909fa0-a805-47b4-8a34-4c3fe4e84dc8",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "username",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "",
+			"type": "string"
 		}
 	]
 }
