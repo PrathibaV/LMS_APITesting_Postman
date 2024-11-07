@@ -307,7 +307,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"API Hackathon\",\r\n    \"programName\": \"API Commandos\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": \"apiackathon\",\r\n    \"programName\": \"apiCommandos\",\r\n    \"programStatus\": \"active\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
