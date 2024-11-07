@@ -397,7 +397,7 @@
 								},
 								"method": "GET",
 								"header": [],
-								"url": "{{baseUrl}}programs/16788"
+								"url": "{{baseUrl}}programs/{{ProgramId}}"
 							},
 							"response": []
 						},
@@ -453,7 +453,7 @@
 										}
 									}
 								},
-								"url": "{{baseUrl}}putprogram/16788"
+								"url": "{{baseUrl}}putprogram/{{ProgramId}}"
 							},
 							"response": []
 						}
