@@ -338,6 +338,25 @@
 								"url": "{{baseUrl}}saveprogram"
 							},
 							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "49558336-1809-4218-b3ae-2dd5a1dec453",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{TokenValue}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}allPrograms"
+							},
+							"response": []
 						}
 					],
 					"id": "114341cc-a29f-4c9a-b35a-fa7fbf35d4c2"
