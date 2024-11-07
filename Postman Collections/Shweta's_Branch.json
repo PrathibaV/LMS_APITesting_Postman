@@ -136,7 +136,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userLoginEmailId\": \"{{}}\",\n    \"password\": \"{{}}\"\n}",
+									"raw": "{\n    \"userLoginEmailId\": \"{{username}}\",\n    \"password\": \"{{password}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -144,9 +144,9 @@
 									}
 								},
 								"url": {
-									"raw": "login",
+									"raw": "{{baseUrl}}login",
 									"host": [
-										"login"
+										"{{baseUrl}}login"
 									],
 									"query": [
 										{
