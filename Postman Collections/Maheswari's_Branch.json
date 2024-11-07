@@ -4162,6 +4162,31 @@
 									"body": null
 								}
 							]
+						},
+						{
+							"name": "WithoutAuthorization Copy",
+							"id": "e393ec70-b062-4b3f-827c-cd2a544b662f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos009\",\r\n  \"batchDescription\": \"zcxvb\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": []
 						}
 					],
 					"id": "16eea613-e6d5-4690-b410-d3e688f92d69"
