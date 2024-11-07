@@ -431,8 +431,23 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{TokenValue}}"
+									}
+								},
 								"method": "PUT",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"programName\": \"String\",\r\n  \"programStatus\": \"String\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": "{{baseUrl}}putprogram/16788"
 							},
 							"response": []
