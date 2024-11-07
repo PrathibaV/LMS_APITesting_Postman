@@ -537,14 +537,14 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": ""
+										"token": "{{TokenValue}}"
 									}
 								},
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"APITesting\",\r\n    \"programName\": \"TeamTwo-Commando\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": \"APITesting\",\r\n    \"programName\": \"TeamTwo-Commando\",\r\n    \"programStatus\": \"\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -552,6 +552,34 @@
 									}
 								},
 								"url": "{{baseUrl}}saveprogram"
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"id": "d9b41e39-aed5-4078-859f-041d0b5e5b02",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{TokenValue}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"programDescription\": \"APITestingHackathon\",\r\n    \"programName\": \"TeamTwo-Commandos\",\r\n    \"programStatus\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}allPrograms"
 							},
 							"response": []
 						}
