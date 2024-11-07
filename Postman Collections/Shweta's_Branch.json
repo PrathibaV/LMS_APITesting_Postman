@@ -526,7 +526,30 @@
 				},
 				{
 					"name": "Program",
-					"item": [],
+					"item": [
+						{
+							"name": "Without Authorization",
+							"id": "755bf0cc-c110-4ab6-ba00-e6c7c1d0ef75",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"programDescription\": \"APITesting\",\r\n    \"programName\": \"TeamTwo-Commando\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}saveprogram"
+							},
+							"response": []
+						}
+					],
 					"id": "1790cc56-a4e7-4940-8e5c-bab225a8c902"
 				},
 				{
