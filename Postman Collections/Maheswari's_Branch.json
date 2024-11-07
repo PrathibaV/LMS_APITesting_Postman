@@ -5414,7 +5414,45 @@
 								"header": [],
 								"url": "https://lms-hackthon-oct24-3efc7e0381.herokuapp.com/lms/batches/program/16710"
 							},
-							"response": []
+							"response": [
+								{
+									"id": "d932a2e7-3a68-4410-a8c7-4671db687292",
+									"name": "GetInvalidurlwithprogramIdEndpoint",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "https://lms-hackthon-oct24-3efc7e0381.herokuapp.com/lms/batches/program/16710"
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "Content-Length",
+											"value": "563"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "2024-11-07 16:41:10.82023941 +0000 UTC"
+										},
+										{
+											"key": "Server",
+											"value": "heroku-router"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "<!DOCTYPE html>\n<html>\n    <head>\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n        <meta charset=\"utf-8\">\n        <title>Heroku | Application Error</title>\n        <style media=\"screen\">\n      html,body,iframe {\n        margin: 0;\n        padding: 0;\n      }\n      html,body {\n        height: 100%;\n        overflow: hidden;\n      }\n      iframe {\n        width: 100%;\n        height: 100%;\n        border: 0;\n      }\n    </style>\n    </head>\n    <body>\n        <iframe src=\"//www.herokucdn.com/error-pages/no-such-app.html\"></iframe>\n    </body>\n</html>"
+								}
+							]
 						}
 					],
 					"id": "16eea613-e6d5-4690-b410-d3e688f92d69"
