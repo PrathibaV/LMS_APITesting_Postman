@@ -491,6 +491,18 @@
 								"url": "{{baseUrl}}deletebyprogid/16788"
 							},
 							"response": []
+						},
+						{
+							"name": "Program By ProgramName",
+							"id": "4aa5b682-5584-486e-916b-9c7bd0d5d133",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
 						}
 					],
 					"id": "c7c00dcb-4d40-495d-82fd-5afb449024aa"
