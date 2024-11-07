@@ -4164,7 +4164,7 @@
 							]
 						},
 						{
-							"name": "WithoutAuthorization Copy",
+							"name": "GetwithInvalidEndpoint",
 							"id": "e393ec70-b062-4b3f-827c-cd2a544b662f",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
