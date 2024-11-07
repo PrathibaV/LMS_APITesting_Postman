@@ -24,7 +24,7 @@
 											"bodyData = pm.response.json();\r",
 											"TokenValue = bodyData.token;\r",
 											"console.log(\"Token: \" + TokenValue)\r",
-											"pm.globals.set(\"TokenValue\", TokenValue);\r",
+											"pm.environment.set(\"TokenValue\", TokenValue);\r",
 											"// pm.environment.set(\"TokenValue\", TokenValue);\r",
 											";\r",
 											"\r",
@@ -134,7 +134,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userLoginEmailId\": \"{{password}}\",\n    \"password\": \"{{userEmail}}\"\n}",
+									"raw": "{\n    \"userLoginEmailId\": \"{{username}}\",\n    \"password\": \"{{password}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
