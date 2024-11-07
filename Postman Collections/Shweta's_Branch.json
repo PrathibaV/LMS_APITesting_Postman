@@ -528,12 +528,18 @@
 					"name": "Program",
 					"item": [
 						{
-							"name": "Without Authorization",
+							"name": "Invalid/No Authorization",
 							"id": "755bf0cc-c110-4ab6-ba00-e6c7c1d0ef75",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": ""
+									}
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
