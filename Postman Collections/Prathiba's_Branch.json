@@ -361,26 +361,21 @@
 		{
 			"listen": "prerequest",
 			"script": {
+				"id": "27816802-0048-489e-95de-8877005ffee6",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					""
-				],
-				"id": "07af7d06-063d-4d5d-b38d-5238f12cb6cb"
+				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
+				"id": "fdc0fc45-9c54-4445-ad38-e1ca4b0fdd7b",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
-					"// Use module.exports to export the functions that should be\r",
-					"// available to use from this package.\r",
-					"// module.exports = { <your_function> }\r",
-					"\r",
-					"// Once exported, use this statement in your scripts to use the package.\r",
-					"// const myPackage = pm.require('<package_name>')\r",
 					"var commonUtils=()=>{\r",
 					"function setTokenFromResponse() {\r",
 					"    let bodyData = pm.response.json();\r",
@@ -406,6 +401,16 @@
 					"function getResponseText(responseTxt){\r",
 					"    pm.test(responseTxt, function () {\r",
 					"        pm.expect(pm.response.text()).to.include(responseTxt);\r",
+					"    });\r",
+					"}\r",
+					"\r",
+					"function checkStatusLine(expectedStatusCode, expectedStatusMessage) {\r",
+					"    pm.test(`Status line is ${expectedStatusCode} ${expectedStatusMessage}`, function () {\r",
+					"        let actualStatusCode = pm.response.code;\r",
+					"        let actualStatusMessage = pm.response.status;\r",
+					"\r",
+					"        pm.expect(actualStatusCode).to.eql(expectedStatusCode);\r",
+					"        pm.expect(actualStatusMessage).to.eql(expectedStatusMessage);\r",
 					"    });\r",
 					"}\r",
 					"\r",
@@ -522,6 +527,7 @@
 					"    setTokenFromResponse,\r",
 					"    checkKeyIsNumber,\r",
 					"    getResponseText,\r",
+					"    checkStatusLine,\r",
 					"    getStatusCode,\r",
 					"    responseHeaderCheck,\r",
 					"    checkResponseHasBody,\r",
@@ -536,8 +542,7 @@
 					"}\r",
 					"}\r",
 					"pm.collectionVariables.get(\"variable_key\");"
-				],
-				"id": "45359c97-3aac-4b01-abf3-1ee4ab1160c7"
+				]
 			}
 		}
 	]
