@@ -300,7 +300,14 @@
 										"exec": [
 											"\r",
 											"var data=pm.response.json;\r",
-											"var programId=data.programId;"
+											"var programId=data.programId;\r",
+											"if(programId)\r",
+											"{\r",
+											"    console.log(\"pgrmId\" + programId);\r",
+											"    pm.environment.set(\"pgrmId\",programId);\r",
+											"}else{\r",
+											"  console.log(\"pgrmId not found in response\");\r",
+											"}"
 										],
 										"type": "text/javascript",
 										"packages": {}
