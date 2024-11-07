@@ -19,14 +19,15 @@
 									"script": {
 										"id": "ae8d7c71-2e67-4086-a1c3-8d097bb3f7c6",
 										"exec": [
-											"// const commonUtils = pm.require('@postman-hackathon-4703/common-utils');\r",
+											"const commonUtils = pm.require('@postman-hackathon-4703/common-utils');\r",
 											"\r",
 											"// bodyData = pm.response.json();\r",
 											"// TokenValue = bodyData.token;\r",
 											"// console.log(\"Token: \" + TokenValue)\r",
 											"// pm.globals.set(\"TokenValue\", TokenValue);\r",
 											"\r",
-											"common-utils\r",
+											"common-utils.setTokenFromResponse;\r",
+											"\r",
 											"\r",
 											"\r",
 											"pm.test('Verify user signed in', () => {\r",
@@ -135,7 +136,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userLoginEmailId\": \"{{username}}\",\n    \"password\": \"{{password}}\"\n}",
+									"raw": "{\n    \"userLoginEmailId\": \"{{}}\",\n    \"password\": \"{{}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -143,9 +144,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{BaseUrl}}login",
+									"raw": "login",
 									"host": [
-										"{{BaseUrl}}login"
+										"login"
 									],
 									"query": [
 										{
