@@ -298,17 +298,11 @@
 									"script": {
 										"id": "72b68a08-9e1e-4d6c-88c8-8b95b1a978cd",
 										"exec": [
-											"// var responsedata = pm.response.json();\r",
-											"// var rprogramId = responsedata.programId;\r",
-											"// if(rprogramId) {\r",
-											"//     console.log(\"pgrmId\" + rprogramId);\r",
-											"//     pm.environment.set(\"pgrmId\", rprogramId);\r",
-											"// } else {\r",
-											"//     console.log(\"pgrmId not found in response\");\r",
-											"// }\r",
 											"\r",
 											"const jsonData = pm.response.json();\r",
+											"const progname=jsonData.programName;\r",
 											"pm.environment.set(\"ProgramId\",jsonData.programId);\r",
+											"pm.environment.set(\"ProgramName\",programName )\r",
 											"const programId = jsonData.programId;\r",
 											"console.log(programId);\r",
 											""
