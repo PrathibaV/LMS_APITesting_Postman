@@ -290,14 +290,15 @@
 					"name": "Program",
 					"item": [
 						{
-							"name": "New Request",
+							"name": "User with valid Authorization",
 							"id": "4d3de0d3-6ccb-49ea-83a9-b21c76968286",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "POST",
+								"header": [],
+								"url": "{{baseUrl}}saveprogram"
 							},
 							"response": []
 						}
