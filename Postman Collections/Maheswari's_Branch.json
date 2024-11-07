@@ -1,0 +1,3937 @@
+{
+	"info": {
+		"_postman_id": "e5023473-4062-4e0e-93a9-aafdcfb85cc6",
+		"name": "Team2_API Commandos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Data Driven",
+			"item": [
+				{
+					"name": "UserLogin",
+					"item": [
+						{
+							"name": "Admin Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ae8d7c71-2e67-4086-a1c3-8d097bb3f7c6",
+										"exec": [
+											"// const commonUtils = pm.require('@postman-hackathon-4703/common-utils');\r",
+											"\r",
+											"bodyData = pm.response.json();\r",
+											"TokenValue = bodyData.token;\r",
+											"console.log(\"Token: \" + TokenValue)\r",
+											"pm.globals.set(\"TokenValue\", TokenValue);\r",
+											"// pm.environment.set(\"TokenValue\", TokenValue);\r",
+											";\r",
+											"\r",
+											"pm.test('Verify user signed in', () => {\r",
+											"    const response = pm.response.json();\r",
+											"    pm.expect(response.token).to.eql(pm.globals.get('TokenValue'));\r",
+											"});\r",
+											"\r",
+											"pm.test(`Verify userId is a number`, function () {\r",
+											"        let bodyData = pm.response.json();\r",
+											"        let key = 'userId';\r",
+											"        pm.expect(bodyData).to.have.property(key);\r",
+											"        pm.expect(bodyData[key]).to.be.a('number');\r",
+											"    });\r",
+											"\r",
+											"pm.test('Verify Role is - ROLE_ADMIN', function () {\r",
+											"        pm.expect(pm.response.text()).to.include('ROLE_ADMIN');\r",
+											"    });\r",
+											"\r",
+											"pm.test(`Status code is 200`, function () {\r",
+											"        pm.response.to.have.status(200);\r",
+											"    });\r",
+											"\r",
+											"pm.test(\"Response Header Content-Type is application/json\", function () {\r",
+											"        pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+											"    });\r",
+											"\r",
+											"pm.test(\"Verify Response has Body or not\", function(){\r",
+											"    pm.response.to.be.withBody;\r",
+											"     }); \r",
+											"\r",
+											"pm.test(\"Verify Response Body as JSON\", function(){\r",
+											"    pm.response.to.be.json;\r",
+											"    // pm.response.to.have.body({key:value});\r",
+											"    });   \r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"//Schema Validation\r",
+											"const schema={\r",
+											"  \"type\": \"object\",\r",
+											"  \"properties\": {\r",
+											"    \"token\": { \"type\": \"string\" },\r",
+											"    \"type\": { \"type\": \"string\" },\r",
+											"    \"userId\": { \"type\": \"number\" },\r",
+											"    \"loginUserEmail\": { \"type\": \"string\" },\r",
+											"    \"roles\": { \"type\": \"array\" }\r",
+											"  },\r",
+											"  \"required\": [\"token\", \"type\", \"userId\", \"loginUserEmail\", \"roles\"]\r",
+											"}\r",
+											"\r",
+											"pm.test(\"Schema - Validation Response contain valid response data - schema validation\", () => {\r",
+											"    pm.response.to.have.jsonSchema(schema);\r",
+											"});\r",
+											"\r",
+											"// function getAdminToken(){\r",
+											"//     bodyData = pm.response.json();\r",
+											"//     TokenValue = bodyData.token;\r",
+											"//     console.log(\"Token: \" + TokenValue);\r",
+											"//     return TokenValue;\r",
+											"// }\r",
+											"// pm.collectionVariables.set(\"adminToken\", getAdminToken());\r",
+											"//Validation\r",
+											"\r",
+											"\r",
+											"// PostmanLegacy.setNextRequest('Create New Dietician');\r",
+											"// pm.execution.setNextRequest('Create New Dietician Copy');\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "e2cc25f0-8b69-4f7b-a56c-0ccb258faf19",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "ba027e66-5569-409b-b4a1-04f387845467",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": ""
+									}
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userLoginEmailId\": \"sdet@gmail.com\",\n  \"password\": \"LmsHackathon@2024\"\n}\n\n\n\n\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/login",
+									"protocol": "https",
+									"host": [
+										"lms-hackthon-oct24-3efc7e0df381",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"lms",
+										"login"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "2ef70053-b6e7-4832-b1cd-ca9821377ada",
+									"name": "Admin Login",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "",
+												"value": "",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"userLoginEmailId\": \"sdet@gmail.com\",\n  \"password\": \"LmsHackathon@2024\"\n}\n\n\n\n\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/login",
+											"protocol": "https",
+											"host": [
+												"lms-hackthon-oct24-3efc7e0df381",
+												"herokuapp",
+												"com"
+											],
+											"path": [
+												"lms",
+												"login"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": "",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730924558&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=InHOKoGR6kCg864tLFwgTtJEuUzpLm3wp28TusQ5i7o%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730924558&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=InHOKoGR6kCg864tLFwgTtJEuUzpLm3wp28TusQ5i7o%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 20:22:38 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ\",\n    \"type\": \"Bearer\",\n    \"userId\": \"U73\",\n    \"email\": \"sdet@gmail.com\",\n    \"roles\": [\n        \"ROLE_ADMIN\"\n    ],\n    \"status\": \"Active\",\n    \"passwordExpired\": false\n}"
+								}
+							]
+						}
+					],
+					"id": "87be453e-76f3-46a7-a51c-3f0abe74583f"
+				},
+				{
+					"name": "Program",
+					"item": [
+						{
+							"name": "Create Program",
+							"id": "95be36e7-5039-4bcd-ac12-ee7ac9be2c6b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"programName\": \"APICommandos\",\r\n  \"programDescription\": \"abscd\",\r\n  \"programStatus\": \"Active\"\r\n \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/saveprogram"
+							},
+							"response": [
+								{
+									"id": "2c5429a5-d7f1-46c7-8de5-62f82200bed1",
+									"name": "Create Program",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"programName\": \"APICommandos\",\r\n  \"programDescription\": \"abscd\",\r\n  \"programStatus\": \"Active\"\r\n \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/saveprogram"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730925250&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=rci30r3dgDfwwm2909F5PV7SNgyuk0x77m1DwyKrEVM%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730925250&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=rci30r3dgDfwwm2909F5PV7SNgyuk0x77m1DwyKrEVM%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 20:34:10 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"programId\": 16710,\n    \"programName\": \"APICommandos\",\n    \"programDescription\": \"abscd\",\n    \"programStatus\": \"Active\",\n    \"creationTime\": \"2024-11-06T20:34:10.513+00:00\",\n    \"lastModTime\": \"2024-11-06T20:34:10.513+00:00\"\n}"
+								}
+							]
+						}
+					],
+					"id": "02e65212-88e0-4d02-bb9d-ced0d6a2760b"
+				},
+				{
+					"name": "ProgramBatch",
+					"item": [
+						{
+							"name": "Create Batch",
+							"id": "21bb136c-0ddf-4359-ba8d-8fafe11ddaa5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos001\",\r\n  \"batchDescription\": \"zcxvb\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "19312694-b7f8-4cd8-a5c5-7cd9eb135db3",
+									"name": "Create Batch",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos001\",\r\n  \"batchDescription\": \"zcxvb\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730925590&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=hkdypMk6lAiOTdE6xWnSfHK3zuda7AsQcDbkby4zsK4%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730925590&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=hkdypMk6lAiOTdE6xWnSfHK3zuda7AsQcDbkby4zsK4%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 20:39:50 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"batchId\": 9044,\n    \"batchName\": \"APICommandos001\",\n    \"batchDescription\": \"zcxvb\",\n    \"batchStatus\": \"Active\",\n    \"batchNoOfClasses\": 10,\n    \"programId\": 16710,\n    \"programName\": \"APICommandos\"\n}"
+								}
+							]
+						}
+					],
+					"id": "2ea6b934-e134-434a-b674-d5a1beb218d9"
+				},
+				{
+					"name": "Class",
+					"item": [],
+					"id": "66686a23-9db3-4bd5-99aa-e4197cee18c2"
+				},
+				{
+					"name": "ProgramBatchMapController",
+					"item": [],
+					"id": "926231f7-4705-4b8b-a205-08e6017b89a5"
+				},
+				{
+					"name": "Delete",
+					"item": [],
+					"id": "7e44422e-9923-43c2-8de3-6f3c472b8a88"
+				}
+			],
+			"id": "d489cbc2-fe87-4d2a-958e-f6c318fbed3c"
+		},
+		{
+			"name": "Negative Scenarios",
+			"item": [
+				{
+					"name": "UserLogin",
+					"item": [],
+					"id": "9f505804-10df-4f7f-8f45-8a3f1e99388e"
+				},
+				{
+					"name": "Program",
+					"item": [],
+					"id": "1404af76-ba22-474b-b2a2-ba8cebe9aa0c"
+				},
+				{
+					"name": "ProgramBatch",
+					"item": [
+						{
+							"name": "AllrequestbodyEmpty",
+							"id": "4d51ec4e-40a7-4513-a932-51a5eed146b8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"\",\r\n  \"batchDescription\": \"\",\r\n  \"batchStatus\": \"\",\r\n  \"batchNoOfClasses\": 0,\r\n  \"programId\": 0,\r\n  \"programName\": \"\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "9d07bdbb-682b-4532-8217-70c708c18e4d",
+									"name": "AllrequestbodyEmpty",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"\",\r\n  \"batchDescription\": \"\",\r\n  \"batchStatus\": \"\",\r\n  \"batchNoOfClasses\": 0,\r\n  \"programId\": 0,\r\n  \"programName\": \"\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730926013&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=1dSjP3uv5pEPuSarNGQq9KuJzyHSSGPYp5tCuZT2jXg%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730926013&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=1dSjP3uv5pEPuSarNGQq9KuJzyHSSGPYp5tCuZT2jXg%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 20:46:53 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \" No of Classes is needed; It should be a positive number \",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "EnterOnlyBatchDescription",
+							"id": "da49063d-fe47-420d-a82b-d38611392776",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"\",\r\n  \"batchDescription\": \"asdew\",\r\n  \"batchStatus\": \"\",\r\n  \"batchNoOfClasses\": 0,\r\n  \"programId\": 0,\r\n  \"programName\": \"\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "d4178607-daf9-43a4-b837-109af6f503f1",
+									"name": "EnterOnlyBatchDescription",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"\",\r\n  \"batchDescription\": \"asdew\",\r\n  \"batchStatus\": \"\",\r\n  \"batchNoOfClasses\": 0,\r\n  \"programId\": 0,\r\n  \"programName\": \"\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730926575&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=mgxoq2EPTwX9oCi7ZrMIbrj7Ih6Fms%2BTl8YHyqt%2F0Rk%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730926575&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=mgxoq2EPTwX9oCi7ZrMIbrj7Ih6Fms%2BTl8YHyqt%2F0Rk%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 20:56:14 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"programName must begin with alphabet and can contain only alphanumeric characters\",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "EnterOnlyBatchName",
+							"id": "9615aa37-5470-4779-a854-e408cf00ccf8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos002\",\r\n  \"batchDescription\": \"\",\r\n  \"batchStatus\": \"\",\r\n  \"batchNoOfClasses\": 0,\r\n  \"programId\": 0,\r\n  \"programName\": \"\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "7576fddd-91f3-40b1-b7bd-83c09a3ed962",
+									"name": "EnterOnlyBatchDescription Copy",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos002\",\r\n  \"batchDescription\": \"\",\r\n  \"batchStatus\": \"\",\r\n  \"batchNoOfClasses\": 0,\r\n  \"programId\": 0,\r\n  \"programName\": \"\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730926773&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=gqD4piVu3oasXKOX%2FN3WkVSappStjf%2B9azbSLzfHztg%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730926773&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=gqD4piVu3oasXKOX%2FN3WkVSappStjf%2B9azbSLzfHztg%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 20:59:33 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \" No of Classes is needed; It should be a positive number \",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "EnterOnlyBatchNoofClasses",
+							"id": "3838dce3-e5a3-4748-9b2c-f4cd516f9ad4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"\",\r\n  \"batchDescription\": \"\",\r\n  \"batchStatus\": \"\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 0,\r\n  \"programName\": \"\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "181a3e5e-4810-4ad6-abc1-abfac1992331",
+									"name": "EnterOnlyBatchNoofClasses",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"\",\r\n  \"batchDescription\": \"\",\r\n  \"batchStatus\": \"\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 0,\r\n  \"programName\": \"\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730926939&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=vRLICo%2F0tL%2F6r2YzRy7JCYM8kTN40mWoFNynTYIBZZU%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730926939&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=vRLICo%2F0tL%2F6r2YzRy7JCYM8kTN40mWoFNynTYIBZZU%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 21:02:19 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \" ProgramId should be a positive number \",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "EnterOnlyBatchStatus",
+							"id": "5f344732-886c-4ba0-a0a0-a5a8935097c6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"\",\r\n  \"batchDescription\": \"\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 0,\r\n  \"programId\": 0,\r\n  \"programName\": \"\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "fa3a95ec-90bd-4baa-a1f2-63a0507e219e",
+									"name": "EnterOnlyBatchStatus",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"\",\r\n  \"batchDescription\": \"\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 0,\r\n  \"programId\": 0,\r\n  \"programName\": \"\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730927123&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=ZLypXJV8jmjZ%2F1oDwf8lSKWBF5l2BnMMzobJEMMBIuA%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730927123&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=ZLypXJV8jmjZ%2F1oDwf8lSKWBF5l2BnMMzobJEMMBIuA%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 21:05:23 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \" ProgramId should be a positive number \",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "EnterOnlyBatchProgramId",
+							"id": "4ef31b0e-47ad-499b-b09f-e9c64e6a2d4c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"\",\r\n  \"batchDescription\": \"\",\r\n  \"batchStatus\": \"\",\r\n  \"batchNoOfClasses\": 0,\r\n  \"programId\": 16710,\r\n  \"programName\": \"\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "38646d4a-231e-4bfa-a7b2-9defff418270",
+									"name": "EnterOnlyBatchProgramId",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"\",\r\n  \"batchDescription\": \"\",\r\n  \"batchStatus\": \"\",\r\n  \"batchNoOfClasses\": 0,\r\n  \"programId\": 16710,\r\n  \"programName\": \"\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730929996&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=4T50roDL1I8LRAmQhlNLUf0k1269rUnuHEY%2BrXim%2FTA%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730929996&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=4T50roDL1I8LRAmQhlNLUf0k1269rUnuHEY%2BrXim%2FTA%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 21:53:16 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Batch status is needed\",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "EnterBatchDescriptionasInteger",
+							"id": "79afd9df-7624-4739-9b02-945e0a861eb9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos002\",\r\n  \"batchDescription\": \"1234\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "3ccfefdc-c6eb-47cc-ab0b-4472fb4e6114",
+									"name": "EnterBatchDescriptionasInteger",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos002\",\r\n  \"batchDescription\": \"1234\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730931254&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=0tevfZhn91qO6D2md5ufq4ihZnPQUvSAcFWcKwV5HVY%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730931254&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=0tevfZhn91qO6D2md5ufq4ihZnPQUvSAcFWcKwV5HVY%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:14:14 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"batchDescription must begin with letter and can only have letters, numbers, comma, hyphen, colon, period, underscore and space\",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "EnterBatchDescriptionasAlphanumeric",
+							"id": "c536af16-2ee2-46cd-87dc-10e2f5ef1fd2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos002\",\r\n  \"batchDescription\": \"ASDe1234\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "b8a6b9eb-69d2-44c1-b5d7-4f87d27beb1a",
+									"name": "EnterBatchDescriptionasAlphanumeric",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos002\",\r\n  \"batchDescription\": \"ASDe1234\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730931351&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=7Je0wp58ytWF6%2B1JPA45gFK5SDXgCYbm3lhG%2FHx8Ksg%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730931351&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=7Je0wp58ytWF6%2B1JPA45gFK5SDXgCYbm3lhG%2FHx8Ksg%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:15:51 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"batchId\": 9052,\n    \"batchName\": \"APICommandos002\",\n    \"batchDescription\": \"ASDe1234\",\n    \"batchStatus\": \"Active\",\n    \"batchNoOfClasses\": 10,\n    \"programId\": 16710,\n    \"programName\": \"APICommandos\"\n}"
+								}
+							]
+						},
+						{
+							"name": "EnterBatchDescriptionasSpecialChar",
+							"id": "2a42de0a-b55b-438e-8ba6-dfd69e7bcf02",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos003\",\r\n  \"batchDescription\": \"$%^&*\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\":16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "ebd204fa-31a4-40a7-9198-6ba02eb76dd4",
+									"name": "EnterBatchDescriptionasSpecialChar",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos003\",\r\n  \"batchDescription\": \"$%^&*\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\":16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730931481&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=c0K4J%2FjWuNFUZc37iq%2BZzHDn8dB5ZRZPZQJbpBIWN%2BY%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730931481&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=c0K4J%2FjWuNFUZc37iq%2BZzHDn8dB5ZRZPZQJbpBIWN%2BY%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:18:01 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"batchDescription must begin with letter and can only have letters, numbers, comma, hyphen, colon, period, underscore and space\",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "EnterBatchNameasInteger",
+							"id": "7d92f501-da48-4d8f-a7ab-0ae19d3f0402",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"12345\",\r\n  \"batchDescription\": \"ASDE\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "fee239aa-2dde-477a-8474-3fc7d332421e",
+									"name": "EnterBatchNameasInteger",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"12345\",\r\n  \"batchDescription\": \"ASDE\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730931568&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=ffPbrPjPZHvXevVBBDznVh92Sg1rlujnfR6hXHOwj3Y%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730931568&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=ffPbrPjPZHvXevVBBDznVh92Sg1rlujnfR6hXHOwj3Y%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:19:28 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"batchName Please provide a valid name and must begin with letter and can have letters,numbers and sometimes hyphens\",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "EnterBatchNameasAlphaNumeric",
+							"id": "34b620b0-4fd1-42b7-bd6a-0cbb0bbe8775",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APIComm123\",\r\n  \"batchDescription\": \"QWER\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "189fb185-d9a6-448b-9122-07f6c37cfedb",
+									"name": "EnterBatchNameasAlphaNumeric",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"APIComm123\",\r\n  \"batchDescription\": \"QWER\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730931639&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=hbtcB4DkUjLG1cBqJRhz%2FNfeCACgeyglcxPdeXdmB1c%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730931639&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=hbtcB4DkUjLG1cBqJRhz%2FNfeCACgeyglcxPdeXdmB1c%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:20:39 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"batchId\": 9053,\n    \"batchName\": \"APIComm123\",\n    \"batchDescription\": \"QWER\",\n    \"batchStatus\": \"Active\",\n    \"batchNoOfClasses\": 10,\n    \"programId\": 16710,\n    \"programName\": \"APICommandos\"\n}"
+								}
+							]
+						},
+						{
+							"name": "EnterBatchNameasSpecialChar",
+							"id": "8d9df708-9fc3-4b72-be44-893b328c898f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"^%$#@\",\r\n  \"batchDescription\": \"XSED\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "8de01657-60ef-471e-ab9b-9a521f090be6",
+									"name": "EnterBatchNameasSpecialChar",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"^%$#@\",\r\n  \"batchDescription\": \"XSED\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730931703&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=f2HVasyxML6c2N%2FTrGKrp7mtKnlO96ZZn14Ra0xuH9g%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730931703&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=f2HVasyxML6c2N%2FTrGKrp7mtKnlO96ZZn14Ra0xuH9g%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:21:43 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"batchName Please provide a valid name and must begin with letter and can have letters,numbers and sometimes hyphens\",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "EnterBatchStatusasInteger",
+							"id": "107c5d47-4227-4c42-b2df-89c6e38eef6b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos004\",\r\n  \"batchDescription\": \"LKJI\",\r\n  \"batchStatus\": \"1234\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "c01f8773-5d49-4830-9a0b-1319131505f1",
+									"name": "EnterBatchStatusasInteger",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos004\",\r\n  \"batchDescription\": \"LKJI\",\r\n  \"batchStatus\": \"1234\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730931794&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=k3Xi7WVFQ%2BuUgWutyZxCmkLHpni8%2FMgsd8Wt2R5OjoA%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730931794&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=k3Xi7WVFQ%2BuUgWutyZxCmkLHpni8%2FMgsd8Wt2R5OjoA%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:23:14 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Invalid Status: must be Active or Inactive\",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "EnterBatchStatusasAlphaNumeric",
+							"id": "ea397d4b-a304-4a3c-b481-98106003e16e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos005\",\r\n  \"batchDescription\": \"LKJIA\",\r\n  \"batchStatus\": \"ASDD776\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "0bd8eb54-0f7b-499d-ad74-577525b0434e",
+									"name": "EnterBatchStatusasAlphaNumeric",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos005\",\r\n  \"batchDescription\": \"LKJIA\",\r\n  \"batchStatus\": \"ASDD776\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730931903&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=DodUzrFENk1MKCPDBxDG20l2LVrnV5CAoJUCbM3DFvo%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730931903&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=DodUzrFENk1MKCPDBxDG20l2LVrnV5CAoJUCbM3DFvo%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:25:03 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Invalid Status: must be Active or Inactive\",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "EnterBatchStatusasSpecialChar",
+							"id": "7dcf6d54-27e1-4bd5-93c7-08244d4d8e01",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos006\",\r\n  \"batchDescription\": \"LKJIA\",\r\n  \"batchStatus\": \"*&^%$\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "fd33cc7c-106e-426e-9ac0-4b4aec328684",
+									"name": "EnterBatchStatusasSpecialChar",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos006\",\r\n  \"batchDescription\": \"LKJIA\",\r\n  \"batchStatus\": \"*&^%$\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730931988&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=Cg4vP7OkB7cQQIHDyisOzWkpH4%2BBunLSVfPEPq%2FOuYo%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730931988&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=Cg4vP7OkB7cQQIHDyisOzWkpH4%2BBunLSVfPEPq%2FOuYo%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:26:28 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Invalid Status: must be Active or Inactive\",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "EnteronlyMandatoryField",
+							"id": "919dc615-98ac-4e76-91f0-4946f15cc2f2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos007\",\r\n  \"batchDescription\": \" \",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "055d660d-c457-4850-99e8-8c56166d2750",
+									"name": "EnteronlyMandatoryField",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos007\",\r\n  \"batchDescription\": \" \",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730932738&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=SfldrKLb3p9JbqNkX3zX09FbNL2vq7aAMLXBBaxKS0k%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730932738&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=SfldrKLb3p9JbqNkX3zX09FbNL2vq7aAMLXBBaxKS0k%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:38:58 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"batchId\": 9055,\n    \"batchName\": \"APICommandos007\",\n    \"batchDescription\": \" \",\n    \"batchStatus\": \"Active\",\n    \"batchNoOfClasses\": 10,\n    \"programId\": 16710,\n    \"programName\": \"APICommandos\"\n}"
+								}
+							]
+						},
+						{
+							"name": "EnterurlwithoutEndpoint",
+							"id": "31ee8ec7-425a-4ba2-98f9-459756f8463f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos007\",\r\n  \"batchDescription\": \" \",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 0,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "ea9d348a-a559-453e-bf5d-a754f7aa4b33",
+									"name": "EnterurlwithoutEndpoint",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos007\",\r\n  \"batchDescription\": \"zcxvb\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/"
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730932529&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=qbDPcI9HqnYgGPnZHsG2x5JpToei7UI5fBkzllcb1oQ%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730932529&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=qbDPcI9HqnYgGPnZHsG2x5JpToei7UI5fBkzllcb1oQ%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/plain;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "16"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:35:29 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "Invalid endpoint"
+								}
+							]
+						},
+						{
+							"name": "MissingBatchname",
+							"id": "443da1f5-e1ee-4cd4-bae8-0848793d0b49",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"\",\r\n  \"batchDescription\": \"RESDT\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "6e457dca-c645-4fde-832f-c6123882d5c0",
+									"name": "MissingBatchname",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"\",\r\n  \"batchDescription\": \"RESDT\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730932699&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=vidu944yYMiZPLPZQZ2kJS9VviZK9KQo56SVduFiLa0%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730932699&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=vidu944yYMiZPLPZQZ2kJS9VviZK9KQo56SVduFiLa0%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:38:19 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"batchName Please provide a valid name and must begin with letter and can have letters,numbers and sometimes hyphens\",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "MissingBatchProgramId",
+							"id": "0dd79ef3-2101-481f-a49e-87e817393bfb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos008\",\r\n  \"batchDescription\": \"RESDT\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 0,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "0f21a70d-74eb-4c31-a9e5-bbd09167582a",
+									"name": "MissingBatchname",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"\",\r\n  \"batchDescription\": \"RESDT\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730932699&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=vidu944yYMiZPLPZQZ2kJS9VviZK9KQo56SVduFiLa0%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730932699&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=vidu944yYMiZPLPZQZ2kJS9VviZK9KQo56SVduFiLa0%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:38:19 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"batchName Please provide a valid name and must begin with letter and can have letters,numbers and sometimes hyphens\",\n    \"success\": false\n}"
+								},
+								{
+									"id": "151a50d7-61d9-4dca-bbda-e205bac01206",
+									"name": "MissingBatchProgramId",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos008\",\r\n  \"batchDescription\": \"RESDT\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 0,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730932838&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=aGalKhvC%2FyJuc6tpu%2BavVwCzcwQO%2FrEl65%2FSj%2BlZNiw%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730932838&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=aGalKhvC%2FyJuc6tpu%2BavVwCzcwQO%2FrEl65%2FSj%2BlZNiw%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:40:38 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \" ProgramId should be a positive number \",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "MissingBatchStatus",
+							"id": "dd3406c8-16e8-4210-a720-a73ca94c289f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos008\",\r\n  \"batchDescription\": \"RESDT\",\r\n  \"batchStatus\": \"\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 0,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "dc2a2e69-7af6-4ad1-a845-6ec3ee0a68cd",
+									"name": "MissingBatchStatus",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos008\",\r\n  \"batchDescription\": \"RESDT\",\r\n  \"batchStatus\": \"\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730933081&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=bzNQP65C7YESwehFZk32QN9EZ4z3HMbIFthSNpE%2BRWM%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730933081&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=bzNQP65C7YESwehFZk32QN9EZ4z3HMbIFthSNpE%2BRWM%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:44:41 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \"Invalid Status: must be Active or Inactive\",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "MissingBatchnoofClasses",
+							"id": "d3e9b556-7a52-4cf4-b9eb-3f4ff42c0650",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos008\",\r\n  \"batchDescription\": \"RESDT\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 0,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "6659e245-a4c6-42b2-b302-a1c08ed47a77",
+									"name": "MissingBatchnoofClasses",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos008\",\r\n  \"batchDescription\": \"RESDT\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 0,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730933184&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=9MJL2yLbPuZkDOUc233vTm1TK1UiM1iSWoGo83ZYTPU%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730933184&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=9MJL2yLbPuZkDOUc233vTm1TK1UiM1iSWoGo83ZYTPU%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:46:24 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"message\": \" No of Classes is needed; It should be a positive number \",\n    \"success\": false\n}"
+								}
+							]
+						},
+						{
+							"name": "WithoutRequestBody",
+							"id": "67dddc20-9897-4127-a166-dcd29e668733",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "b25abe6a-2868-4473-b400-6d9e5470b2d4",
+									"name": "WithoutRequestBody",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730933288&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=3p54f6x8qoaqNgVeEqtSdW8qQ5Fuba%2FCR8JvYvAF8eA%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730933288&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=3p54f6x8qoaqNgVeEqtSdW8qQ5Fuba%2FCR8JvYvAF8eA%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Accept",
+											"value": "application/json"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "0"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:48:08 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "WithoutAuthorization",
+							"id": "2d6421cc-9d79-408c-ae51-556e177410e7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos009\",\r\n  \"batchDescription\": \"zcxvb\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+							},
+							"response": [
+								{
+									"id": "a325e50b-e34b-4198-8047-b42d397f42bd",
+									"name": "WithoutAuthorization",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos009\",\r\n  \"batchDescription\": \"zcxvb\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Server",
+											"value": "Cowboy"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1730933524&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=sVcME01X5n%2FHJvCx1fBet%2F2mK6jWCBMkEF3%2FDhX%2BLFM%3D\"}]}"
+										},
+										{
+											"key": "Reporting-Endpoints",
+											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1730933524&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=sVcME01X5n%2FHJvCx1fBet%2F2mK6jWCBMkEF3%2FDhX%2BLFM%3D"
+										},
+										{
+											"key": "Nel",
+											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Xss-Protection",
+											"value": "0"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000 ; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "0"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 06 Nov 2024 22:52:04 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 vegur"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "16eea613-e6d5-4690-b410-d3e688f92d69"
+				},
+				{
+					"name": "Class",
+					"item": [],
+					"id": "09e47606-2445-4b34-9996-1286c302cc8c"
+				},
+				{
+					"name": "ProgramBatchMapController",
+					"item": [],
+					"id": "51d621dd-617d-416e-8ed3-e41a67570d7a"
+				},
+				{
+					"name": "Delete",
+					"item": [],
+					"id": "95b82b0a-5e90-4485-8d9f-2ed89091d55b"
+				},
+				{
+					"name": "New Request",
+					"id": "298063a6-50b1-4d5b-a6fa-f0eb40c7417e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "d609f1b7-b9f5-4442-bbca-1280b9629e11"
+		},
+		{
+			"name": "Logout",
+			"item": [],
+			"id": "2f6857b8-aa40-43ea-b400-c4a88bd4a802"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				],
+				"id": "07af7d06-063d-4d5d-b38d-5238f12cb6cb"
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"// Use module.exports to export the functions that should be\r",
+					"// available to use from this package.\r",
+					"// module.exports = { <your_function> }\r",
+					"\r",
+					"// Once exported, use this statement in your scripts to use the package.\r",
+					"// const myPackage = pm.require('<package_name>')\r",
+					"var commonUtils=()=>{\r",
+					"function setTokenFromResponse() {\r",
+					"    let bodyData = pm.response.json();\r",
+					"\r",
+					"    let token = bodyData.token;\r",
+					"    if (token) {\r",
+					"        console.log(\"Token -\" + token);\r",
+					"        pm.globals.set(\"token\", token);\r",
+					"    } else {\r",
+					"        console.log(\"Token not found in response\");\r",
+					"    }\r",
+					"}\r",
+					"\r",
+					"function checkKeyIsNumber(key){debugger;\r",
+					"pm.test(`Verify ${key} is a number`, function () {\r",
+					"        let bodyData = pm.response.json();\r",
+					"        \r",
+					"        pm.expect(bodyData).to.have.property(key);\r",
+					"        pm.expect(bodyData[key]).to.be.a('number');\r",
+					"    });\r",
+					"}\r",
+					"\r",
+					"function getResponseText(responseTxt){\r",
+					"    pm.test(responseTxt, function () {\r",
+					"        pm.expect(pm.response.text()).to.include(responseTxt);\r",
+					"    });\r",
+					"}\r",
+					"\r",
+					"function getStatusCode(statusCode){\r",
+					"    pm.test(`Status code is ${statusCode}`, function () {\r",
+					"        pm.response.to.have.status(statusCode);\r",
+					"    });\r",
+					"}\r",
+					"\r",
+					"var jsonData = pm.response.json();\r",
+					"function getErrorMessage(errorCode, errorMessage){\r",
+					"   pm.test(`Check error code is: ${jsonData.errorCode} &  error message is: ${jsonData.errorMessage}`, function () {    \r",
+					"    // console.log(\"Error Code:\", jsonData.errorCode);\r",
+					"    pm.expect(jsonData.errorCode).to.eql(errorCode);\r",
+					"    pm.expect(jsonData.errorMessage).to.eql(errorMessage);\r",
+					"});\r",
+					"}\r",
+					"\r",
+					"\r",
+					"function responseHeaderCheck(){\r",
+					"    pm.test(\"Response Header Content-Type is application/json\", function () {\r",
+					"        pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+					"    });\r",
+					"}\r",
+					"\r",
+					"function checkResponseHasBody(){\r",
+					"     pm.test(\"Verify Response has Body or not\", function(){\r",
+					"    pm.response.to.be.withBody;\r",
+					"     });\r",
+					"}\r",
+					"\r",
+					"function checkResponseBodyAsJson(){\r",
+					"    pm.test(\"Verify Response Body as JSON\", function(){\r",
+					"    pm.response.to.be.json;\r",
+					"    // pm.response.to.have.body({key:value});\r",
+					"    });\r",
+					"}\r",
+					"\r",
+					"function responseTimeTook(){\r",
+					"pm.test(\"Response time is less than 500ms\", function () {\r",
+					"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+					"});\r",
+					"}\r",
+					"\r",
+					"function verifyStatusCode(){\r",
+					"    let expecStatusCode = pm.iterationData.get(\"statusCode\");\r",
+					"let actualStatusCode = pm.response.code;\r",
+					"console.log(\"Expected Status Code: \", expecStatusCode); \r",
+					"console.log(\"Actual Status Code: \", actualStatusCode);\r",
+					"\r",
+					"pm.test(\"Status code is as expected\", function () {\r",
+					"    pm.expect(actualStatusCode).to.eql(parseInt(expecStatusCode, 10));\r",
+					"});\r",
+					"}\r",
+					"\r",
+					"function verifyErrorMessage(){\r",
+					"    let expecErrorMessage = pm.iterationData.get(\"ErrorMessage\");\r",
+					"let actualErrorMessage = pm.response.text();\r",
+					"console.log(\"Expected Error Message: \", expecErrorMessage);\r",
+					"console.log(\"Actual Error Code: \", actualErrorMessage);\r",
+					"pm.test(\"Check Error Message\", function () {\r",
+					"    pm.expect(actualErrorMessage).to.include(expecErrorMessage);\r",
+					"});\r",
+					"}\r",
+					"\r",
+					"\r",
+					"function createDieticianSchemaValidation(){\r",
+					"    //Schema Validation\r",
+					"const schema={\r",
+					"  \"type\": \"object\",\r",
+					"  \"properties\": {\r",
+					"    \"id\": { \"type\": \"number\" },\r",
+					"    \"loginPassword\": { \"type\": \"string\" },\r",
+					"    \"Firstname\": { \"type\": \"string\" },\r",
+					"    \"Lastname\": { \"type\": \"string\" },\r",
+					"    \"ContactNumber\": {\"type\": \"string\"},\r",
+					"    \"DateOfBirth\": { \"type\": \"string\"},\r",
+					"    \"Email\": { \"type\": \"string\" },\r",
+					"    \"HospitalName\":{\"type\": \"string\"},\r",
+					"    \"HospitalStreet\": {\"type\": \"string\"},\r",
+					"    \"HospitalCity\": {\"type\": \"string\"},\r",
+					"    \"HospitalPincode\":{ \"type\": \"string\"},\r",
+					"    \"Education\":{ \"type\": \"string\"}\r",
+					"  },\r",
+					"  \"required\": [\"id\", \"loginPassword\", \"Firstname\", \"Lastname\", \"ContactNumber\", \"DateOfBirth\", \"Email\",\"HospitalName\", \"HospitalStreet\", \"HospitalCity\", \"HospitalPincode\", \"Education\" ]\r",
+					"}\r",
+					"\r",
+					"pm.test(\"Dietician Schema Validation - Response contain valid response data\", () => {\r",
+					"    pm.response.to.have.jsonSchema(schema);\r",
+					"});\r",
+					"}\r",
+					"\r",
+					"function userLoginSchemaValidation(){\r",
+					"    const schema={\r",
+					"  \"type\": \"object\",\r",
+					"  \"properties\": {\r",
+					"    \"token\": { \"type\": \"string\" },\r",
+					"    \"type\": { \"type\": \"string\" },\r",
+					"    \"userId\": { \"type\": \"number\" },\r",
+					"    \"loginUserEmail\": { \"type\": \"string\" },\r",
+					"    \"roles\": { \"type\": \"array\" }\r",
+					"  },\r",
+					"  \"required\": [\"token\", \"type\", \"userId\", \"loginUserEmail\", \"roles\"]\r",
+					"}\r",
+					"\r",
+					"pm.test(\"Schema - Validation Response contain valid response data - schema validation\", () => {\r",
+					"    pm.response.to.have.jsonSchema(schema);\r",
+					"});\r",
+					"\r",
+					"}\r",
+					"\r",
+					"module.exports = { \r",
+					"    \r",
+					"    setTokenFromResponse,\r",
+					"    checkKeyIsNumber,\r",
+					"    getResponseText,\r",
+					"    getStatusCode,\r",
+					"    responseHeaderCheck,\r",
+					"    checkResponseHasBody,\r",
+					"    checkResponseBodyAsJson,\r",
+					"    responseTimeTook,\r",
+					"    getErrorMessage,\r",
+					"    verifyStatusCode,\r",
+					"    verifyErrorMessage,\r",
+					"    userLoginSchemaValidation,\r",
+					"    createDieticianSchemaValidation,\r",
+					"\r",
+					"}\r",
+					"}\r",
+					"pm.collectionVariables.get(\"variable_key\");"
+				],
+				"id": "45359c97-3aac-4b01-abf3-1ee4ab1160c7"
+			}
+		}
+	]
+}
