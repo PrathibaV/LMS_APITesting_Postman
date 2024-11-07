@@ -21,11 +21,11 @@
 										"exec": [
 											"// const commonUtils = pm.require('@postman-hackathon-4703/common-utils');\r",
 											"\r",
-											"bodyData = pm.response.json();\r",
-											"TokenValue = bodyData.token;\r",
-											"console.log(\"Token: \" + TokenValue)\r",
-											"pm.globals.set(\"TokenValue\", TokenValue);\r",
-											"// pm.environment.set(\"TokenValue\", TokenValue);\r",
+											"// bodyData = pm.response.json();\r",
+											"// TokenValue = bodyData.token;\r",
+											"// console.log(\"Token: \" + TokenValue)\r",
+											"// pm.globals.set(\"TokenValue\", TokenValue);\r",
+											"\r",
 											";\r",
 											"\r",
 											"pm.test('Verify user signed in', () => {\r",
@@ -358,26 +358,22 @@
 		{
 			"listen": "prerequest",
 			"script": {
+				"id": "d927927f-d9b5-4d56-9bd0-179061bfe1ef",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					""
-				],
-				"id": "07af7d06-063d-4d5d-b38d-5238f12cb6cb"
+				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
+				"id": "3bb41878-da4a-449f-a578-bec050272396",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
-					"// Use module.exports to export the functions that should be\r",
-					"// available to use from this package.\r",
-					"// module.exports = { <your_function> }\r",
 					"\r",
-					"// Once exported, use this statement in your scripts to use the package.\r",
-					"// const myPackage = pm.require('<package_name>')\r",
 					"var commonUtils=()=>{\r",
 					"function setTokenFromResponse() {\r",
 					"    let bodyData = pm.response.json();\r",
@@ -533,8 +529,7 @@
 					"}\r",
 					"}\r",
 					"pm.collectionVariables.get(\"variable_key\");"
-				],
-				"id": "45359c97-3aac-4b01-abf3-1ee4ab1160c7"
+				]
 			}
 		}
 	]
