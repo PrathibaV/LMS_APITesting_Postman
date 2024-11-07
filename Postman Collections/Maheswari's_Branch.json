@@ -565,6 +565,18 @@
 									"body": "{\n    \"batchId\": 9044,\n    \"batchName\": \"APICommandos001\",\n    \"batchDescription\": \"zcxvb\",\n    \"batchStatus\": \"Active\",\n    \"batchNoOfClasses\": 10,\n    \"programId\": 16710,\n    \"programName\": \"APICommandos\"\n}"
 								}
 							]
+						},
+						{
+							"name": "GetAllBatches",
+							"id": "00dd3ab7-d9d5-488a-8b34-7c3a45fa2ca9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
 						}
 					],
 					"id": "2ea6b934-e134-434a-b674-d5a1beb218d9"
