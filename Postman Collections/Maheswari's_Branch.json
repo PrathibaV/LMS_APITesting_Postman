@@ -5472,8 +5472,15 @@
 								"disableBodyPruning": true
 							},
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDk5MDIzMSwiZXhwIjoxNzMxMDE5MDMxfQ.fiE9_l6Xsr-sde9p3xAJE-oAhuGVxWBmljENDLPtooLJZMCFWLWhFmNvnvL3UFj8k36dkLjJPPQqZ5pjn2avuQ"
+									}
+								},
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/userRoleProgramBatchMap"
 							},
 							"response": []
 						}
