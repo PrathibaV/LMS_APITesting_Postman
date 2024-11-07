@@ -298,16 +298,15 @@
 									"script": {
 										"id": "72b68a08-9e1e-4d6c-88c8-8b95b1a978cd",
 										"exec": [
-											"\r",
-											"var data=pm.response.json;\r",
-											"var programId=data.programId;\r",
-											"if(programId)\r",
-											"{\r",
-											"    console.log(\"pgrmId\" + programId);\r",
-											"    pm.environment.set(\"pgrmId\",programId);\r",
-											"}else{\r",
-											"  console.log(\"pgrmId not found in response\");\r",
-											"}"
+											"var responsedata = pm.response.json();\r",
+											"var rprogramId = responsedata.programId;\r",
+											"if(rprogramId) {\r",
+											"    console.log(\"pgrmId\" + rprogramId);\r",
+											"    pm.environment.set(\"pgrmId\", rprogramId);\r",
+											"} else {\r",
+											"    console.log(\"pgrmId not found in response\");\r",
+											"}\r",
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -329,7 +328,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"API Testing\",\r\n    \"programName\": \"APICommandosNov\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": \"API Testing\",\r\n    \"programName\": \"APICommandosNovTeam\",\r\n    \"programStatus\": \"Active\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
