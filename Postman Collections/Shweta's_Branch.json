@@ -499,8 +499,15 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{TokenValue}}"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": "{{baseUrl}}deletebyprogname/CommomdosTeamTwo"
 							},
 							"response": []
 						}
