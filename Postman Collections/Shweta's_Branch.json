@@ -472,7 +472,27 @@
 				},
 				{
 					"name": "Delete",
-					"item": [],
+					"item": [
+						{
+							"name": "Program By ProgramID",
+							"id": "2ab6af3a-1cd4-4a65-b0d7-2198bb8d9622",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{TokenValue}}"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": "{{baseUrl}}deletebyprogid/16788"
+							},
+							"response": []
+						}
+					],
 					"id": "c7c00dcb-4d40-495d-82fd-5afb449024aa"
 				}
 			],
