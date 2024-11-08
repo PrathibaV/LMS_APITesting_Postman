@@ -787,6 +787,34 @@
 										}
 									}
 								},
+								"url": "{{inValidBaseUrl}}saveprogram"
+							},
+							"response": []
+						},
+						{
+							"name": "With Invalid EndPoint",
+							"id": "3813258d-50b0-4336-81bb-45fd78121f84",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{TokenValue}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"programDescription\": \"APITestingHackathon\",\r\n    \"programName\": \"TeamTwo-Commandos\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": "{{baseUrl}}saveprogra"
 							},
 							"response": []
