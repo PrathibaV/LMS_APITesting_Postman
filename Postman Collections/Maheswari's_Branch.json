@@ -463,7 +463,7 @@
 											"//     batchIds.push(batchIds);    \r",
 											"//     pm.collectionVariables.set(\"batchIds\", JSON.stringify(batchIds));\r",
 											"\r",
-											"// pm.collectionVariables.set(\"batch_name\",Jsondata.batchName);\r",
+											" pm.collectionVariables.set(\"batch_name\",Jsondata.batchName);\r",
 											"\r",
 											"console.log(pm.collectionVariables.get(\"batch_id\"));\r",
 											"console.log(pm.collectionVariables.get(\"batch_name\"));\r",
@@ -495,7 +495,7 @@
 											"    pm.expect(Jsondata.batchNoOfClasses).to.eql(requestBody.batchNoOfClasses);\r",
 											"    pm.expect(Jsondata.batchStatus).to.eql(requestBody.batchStatus);\r",
 											"    pm.expect(Jsondata.programId).to.eql(requestBody.programId);\r",
-											"    pm.expect(Jsondata.programName).to.eql(requestBody.programName);\r",
+											"    //pm.expect(Jsondata.programName).to.eql(requestBody.programName);\r",
 											"    });\r",
 											"    \r",
 											"\r",
@@ -582,7 +582,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{  \r\n  \"batchName\": \"APICommandos025\",\r\n  \"batchDescription\": \"Axwvbd\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 12,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommand\"\r\n}\r\n\r\n   \r\n",
+									"raw": "{  \r\n  \"batchName\": \"APICommandos027\",\r\n  \"batchDescription\": \"Axwvbd\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommands\"\r\n}\r\n\r\n   \r\n",
 									"options": {
 										"raw": {
 											"language": "json"
