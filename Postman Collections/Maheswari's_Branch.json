@@ -443,6 +443,8 @@
 									"script": {
 										"id": "82442eeb-30e1-4341-8019-6c63700fe24b",
 										"exec": [
+											"var Jsondata =pm.response.json();\r",
+											"\r",
 											"pm.test(\"Status code is 201\", function () {\r",
 											"    pm.response.to.have.status(201);\r",
 											"});\r",
@@ -466,7 +468,7 @@
 											"});\r",
 											"\r",
 											"//Data type validation\r",
-											"var Jsondata =pm.response.json();\r",
+											"\r",
 											"pm.test(\"Datatype validation\", () => {   \r",
 											"    pm.expect(Jsondata.batchId).to.be.a(\"number\");\r",
 											"    pm.expect(Jsondata.batchName).to.be.a(\"string\");\r",
@@ -543,7 +545,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos015\",\r\n  \"batchDescription\": \"zcxwwvb\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 5,\r\n  \"programId\": 16710,\r\n  \"programName\": \"ApiCommandos\"\r\n}",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos016\",\r\n  \"batchDescription\": \"zcxwwvb\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 15,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5786,6 +5788,16 @@
 				],
 				"id": "45359c97-3aac-4b01-abf3-1ee4ab1160c7"
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "batch_id",
+			"value": ""
+		},
+		{
+			"key": "batch_name",
+			"value": ""
 		}
 	]
 }
