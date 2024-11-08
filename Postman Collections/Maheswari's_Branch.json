@@ -853,7 +853,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDk5MDIzMSwiZXhwIjoxNzMxMDE5MDMxfQ.fiE9_l6Xsr-sde9p3xAJE-oAhuGVxWBmljENDLPtooLJZMCFWLWhFmNvnvL3UFj8k36dkLjJPPQqZ5pjn2avuQ"
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTA3NzI0NCwiZXhwIjoxNzMxMTA2MDQ0fQ.IGqfMUnW2lCRKV_cpVKhW4C5lUrexgsKemNMooWkPJgm3wZo7N2-O2y6Cezlio6KbjtHG0jMS1y0fAoasrUOQg"
 									}
 								},
 								"method": "GET",
@@ -958,6 +958,28 @@
 						},
 						{
 							"name": "GetBatchbybatchName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "16913cbf-20c1-4740-8819-9360929d479b",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "07743a7d-c0f6-4362-915a-20896a9e79ea",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -966,7 +988,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDk5MDIzMSwiZXhwIjoxNzMxMDE5MDMxfQ.fiE9_l6Xsr-sde9p3xAJE-oAhuGVxWBmljENDLPtooLJZMCFWLWhFmNvnvL3UFj8k36dkLjJPPQqZ5pjn2avuQ"
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTA3NzI0NCwiZXhwIjoxNzMxMTA2MDQ0fQ.IGqfMUnW2lCRKV_cpVKhW4C5lUrexgsKemNMooWkPJgm3wZo7N2-O2y6Cezlio6KbjtHG0jMS1y0fAoasrUOQg"
 									}
 								},
 								"method": "GET",
@@ -1071,6 +1093,28 @@
 						},
 						{
 							"name": "GetBatchbyProgramId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "440cb836-534d-4844-8673-dfa2fd4fc496",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "30f35a54-743f-4a3d-9179-8368b64f5999",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -1079,7 +1123,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDk5MDIzMSwiZXhwIjoxNzMxMDE5MDMxfQ.fiE9_l6Xsr-sde9p3xAJE-oAhuGVxWBmljENDLPtooLJZMCFWLWhFmNvnvL3UFj8k36dkLjJPPQqZ5pjn2avuQ"
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTA3NzI0NCwiZXhwIjoxNzMxMTA2MDQ0fQ.IGqfMUnW2lCRKV_cpVKhW4C5lUrexgsKemNMooWkPJgm3wZo7N2-O2y6Cezlio6KbjtHG0jMS1y0fAoasrUOQg"
 									}
 								},
 								"method": "GET",
@@ -1181,6 +1225,18 @@
 									"body": "[\n    {\n        \"batchId\": 9044,\n        \"batchName\": \"APICommandos001\",\n        \"batchDescription\": \"zcxvb\",\n        \"batchStatus\": \"Active\",\n        \"batchNoOfClasses\": 10,\n        \"programId\": 16710,\n        \"programName\": \"APICommandos\"\n    },\n    {\n        \"batchId\": 9052,\n        \"batchName\": \"APICommandos002\",\n        \"batchDescription\": \"ASDe1234\",\n        \"batchStatus\": \"Active\",\n        \"batchNoOfClasses\": 10,\n        \"programId\": 16710,\n        \"programName\": \"APICommandos\"\n    },\n    {\n        \"batchId\": 9053,\n        \"batchName\": \"APIComm123\",\n        \"batchDescription\": \"QWER\",\n        \"batchStatus\": \"Active\",\n        \"batchNoOfClasses\": 10,\n        \"programId\": 16710,\n        \"programName\": \"APICommandos\"\n    },\n    {\n        \"batchId\": 9055,\n        \"batchName\": \"APICommandos007\",\n        \"batchDescription\": \" \",\n        \"batchStatus\": \"Active\",\n        \"batchNoOfClasses\": 10,\n        \"programId\": 16710,\n        \"programName\": \"APICommandos\"\n    }\n]"
 								}
 							]
+						},
+						{
+							"name": "UpdatebyBatchId",
+							"id": "80624e3d-f246-4ca5-834a-34ebbdb0f33a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
 						}
 					],
 					"id": "2ea6b934-e134-434a-b674-d5a1beb218d9"
