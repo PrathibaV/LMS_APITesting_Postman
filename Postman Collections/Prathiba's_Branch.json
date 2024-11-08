@@ -427,6 +427,21 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Delete Class",
+							"id": "9612174e-8525-42e5-8d6b-f6d07e17dc67",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": []
+							},
+							"response": []
 						}
 					],
 					"id": "7c613a5e-f428-4864-a6ca-ac7d98d8dffa"
