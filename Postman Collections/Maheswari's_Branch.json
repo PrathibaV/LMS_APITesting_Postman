@@ -452,11 +452,21 @@
 											"    pm.response.to.have.status(\"Created\");\r",
 											"});\r",
 											"\r",
-											"pm.collectionVariables.set(\"batch_id\",Jsondata.batchId);\r",
+											"//pm.collectionVariables.set(\"batch_id\",Jsondata.batchId);\r",
+											"var batchIds = pm.collectionVariables.get(\"batch_ids\");\r",
+											"    if (!batchIds) {\r",
+											"        batchIds = [];\r",
+											"    } else {\r",
+											"        batchIds = JSON.parse(batchIds);\r",
+											"    }\r",
+											"    \r",
+											"    batchIds.push(batchIds);    \r",
+											"    pm.collectionVariables.set(\"batchIds\", JSON.stringify(batchIds));\r",
+											"\r",
 											"pm.collectionVariables.set(\"batch_name\",Jsondata.batchName);\r",
 											"\r",
-											"console.log(pm.collectionVariables.get(\"batch_id\"));\r",
-											"console.log(pm.collectionVariables.get(\"batch_name\"));\r",
+											"console.log(pm.collectionVariables.get(\"batch_ids\"));\r",
+											"//console.log(pm.collectionVariables.get(\"batch_name\"));\r",
 											"\r",
 											"pm.test(\"Content-Type is present\", function () {\r",
 											"    pm.response.to.have.header(\"Content-Type\");\r",
@@ -572,7 +582,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos022\",\r\n  \"batchDescription\": \"Axwvbd\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 12,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}",
+									"raw": "[{  \r\n  \"batchName\": \"APICommandos022\",\r\n  \"batchDescription\": \"Axwvbd\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 12,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"},\r\n\r\n   {\"batchName\": \"APICommandos023\",\r\n  \"batchDescription\": \"GVvbd\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 7,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n\r\n}]",
 									"options": {
 										"raw": {
 											"language": "json"
