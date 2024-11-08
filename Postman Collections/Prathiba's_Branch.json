@@ -19,7 +19,6 @@
 									"script": {
 										"id": "ae8d7c71-2e67-4086-a1c3-8d097bb3f7c6",
 										"exec": [
-											"// const commonUtils = pm.require('@postman-hackathon-4703/common-utils');\r",
 											"\r",
 											"let bodyData = pm.response.json();\r",
 											"\r",
