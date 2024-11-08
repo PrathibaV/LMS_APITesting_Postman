@@ -452,8 +452,8 @@
 											"    pm.response.to.have.status(\"Created\");\r",
 											"});\r",
 											"\r",
-											"//pm.collectionVariables.set(\"batch_id\",Jsondata.batchId);\r",
-											"var batchIds = pm.collectionVariables.get(\"batch_ids\");\r",
+											"pm.collectionVariables.set(\"batch_id\",Jsondata.batchId);\r",
+											"var batchIds = pm.collectionVariables.get(\"batch_id\");\r",
 											"    if (!batchIds) {\r",
 											"        batchIds = [];\r",
 											"    } else {\r",
@@ -582,7 +582,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{  \r\n  \"batchName\": \"APICommandos022\",\r\n  \"batchDescription\": \"Axwvbd\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 12,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n  }\r\n\r\n   \r\n",
+									"raw": "{  \r\n  \"batchName\": \"APICommandos024\",\r\n  \"batchDescription\": \"Axwvbd\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 12,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommando\"\r\n}\r\n\r\n   \r\n",
 									"options": {
 										"raw": {
 											"language": "json"
