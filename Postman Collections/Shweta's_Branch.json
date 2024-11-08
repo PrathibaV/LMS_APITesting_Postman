@@ -626,7 +626,20 @@
 			"item": [
 				{
 					"name": "UserLogin",
-					"item": [],
+					"item": [
+						{
+							"name": "New Request",
+							"id": "cbcd36e8-e58f-4efc-b1e3-34a03fde977c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
 					"id": "64805ef9-625b-496b-954d-157af5a20a8e"
 				},
 				{
