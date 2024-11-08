@@ -537,7 +537,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{TokenValue}}"
+										"token": "{{token}}"
 									}
 								},
 								"method": "GET",
@@ -570,7 +570,7 @@
 										}
 									}
 								},
-								"url": "{{baseUrl}}program/{{ProgramName}}"
+								"url": "{{baseURL}}program/{{ProgramName}}"
 							},
 							"response": []
 						},
