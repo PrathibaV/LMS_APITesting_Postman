@@ -361,7 +361,7 @@
 											"\r",
 											"let fullURL;\r",
 											"\r",
-											"if ((pm.info.requestName=== \"Update Class\") || (pm.info.requestName=== \"Delete Class\")) {\r",
+											"if ((pm.info.requestName=== \"Create Program\") || (pm.info.requestName=== \"Delete Class\")) {\r",
 											"    const classId = pm.environment.get(\"classID\");\r",
 											"    fullURL = baseUrl + endpoint.replace(\"{classId}\", classId);  \r",
 											"} else {\r",
@@ -385,7 +385,7 @@
 											"        pm.execution.setNextRequest(pm.info.requestName);\r",
 											"    }\r",
 											"}\t\t\r",
-											""
+											"s"
 										],
 										"type": "text/javascript",
 										"packages": {}
