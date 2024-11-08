@@ -479,8 +479,9 @@
 											"    pm.expect(Jsondata.programName).to.be.a(\"string\");  \r",
 											"})\r",
 											"\r",
-											"\r",
-											"var schema={\r",
+											"var Ajv = require('ajv'),\r",
+											" ajv = new Ajv({logger: console, allErrors: true}),\r",
+											" schema={\r",
 											"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
 											"  \"type\": \"object\",\r",
 											"  \"properties\": {\r",
@@ -517,7 +518,7 @@
 											"  ]\r",
 											"}\r",
 											"pm.test('Schema is valid', function () {\r",
-											"    pm.expect(tv4.validate(Jsondata, schema)).to.be.true;\r",
+											"    pm.expect(ajv.validate(Jsondata, schema)).to.be.true;\r",
 											" });\r",
 											"\r",
 											"\r",
@@ -545,7 +546,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos016\",\r\n  \"batchDescription\": \"zcxwwvb\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 15,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos019\",\r\n  \"batchDescription\": \"Axwwvb\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 5,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
