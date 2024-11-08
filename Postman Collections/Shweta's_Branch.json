@@ -291,7 +291,7 @@
 					"name": "Program",
 					"item": [
 						{
-							"name": "User with valid Authorization",
+							"name": "Create Program with valid Authorization",
 							"event": [
 								{
 									"listen": "test",
