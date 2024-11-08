@@ -448,8 +448,7 @@
 											"pm.test(\"Status code is 201\", function () {\r",
 											"    pm.response.to.have.status(201);\r",
 											"});\r",
-											"\r",
-											"pm.test(\"Status code is 201\", function () {\r",
+											"pm.test(\"Status code name has string\", function () {\r",
 											"    pm.response.to.have.status(\"Created\");\r",
 											"});\r",
 											"\r",
@@ -477,6 +476,18 @@
 											"    pm.expect(Jsondata.programId).to.be.a(\"number\");\r",
 											"    pm.expect(Jsondata.programName).to.be.a(\"string\");  \r",
 											"})\r",
+											"\r",
+											"var requestBody = JSON.parse(pm.request.body.raw);\r",
+											"pm.test(\"value of fields in response\", () => {\r",
+											"    //pm.expect(Jsondata .batchId).to.eql(requestBody.batchId);\r",
+											"    pm.expect(Jsondata .batchName).to.eql(requestBody.batchName);\r",
+											"    pm.expect(Jsondata.batchDescription).to.eql(requestBody.batchDescription);\r",
+											"    pm.expect(Jsondata.batchNoOfClasses).to.eql(requestBody.batchNoOfClasses);\r",
+											"    pm.expect(Jsondata.batchStatus).to.eql(requestBody.batchStatus);\r",
+											"    pm.expect(Jsondata.programId).to.eql(requestBody.programId);\r",
+											"    pm.expect(Jsondata.programName).to.eql(requestBody.programName);\r",
+											"    });\r",
+											"    \r",
 											"\r",
 											"var Ajv = require('ajv'),\r",
 											" ajv = new Ajv({logger: console, allErrors: true}),\r",
@@ -554,14 +565,14 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTAzNjA2MiwiZXhwIjoxNzMxMDY0ODYyfQ.0tClqSUYRWF1tIySRJgqqSQEokIZCfLUVexvAzwAr1J8bXRPEKfFKjysDGPHhvbpY-3aiX1t40vnPcAl8pcGgg"
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTA3NzI0NCwiZXhwIjoxNzMxMTA2MDQ0fQ.IGqfMUnW2lCRKV_cpVKhW4C5lUrexgsKemNMooWkPJgm3wZo7N2-O2y6Cezlio6KbjtHG0jMS1y0fAoasrUOQg"
 									}
 								},
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos020\",\r\n  \"batchDescription\": \"Axwwvbd\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 5,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos022\",\r\n  \"batchDescription\": \"Axwvbd\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 12,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
