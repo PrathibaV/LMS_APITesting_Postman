@@ -677,6 +677,35 @@
 						},
 						{
 							"name": "GetAllBatches",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ee617d48-8f2e-42bd-856f-244c064ffd2a",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"var requestBody = JSON.parse(pm.request.body.raw);\r",
+											"\r",
+											"pm.test(\"value of fields in response\", () => {\r",
+											"    pm.expect(Jsondata .batchId).to.eql(requestBody.batchId);\r",
+											"    pm.expect(Jsondata .batchName).to.eql(requestBody.batchName);\r",
+											"    pm.expect(Jsondata.batchDescription).to.eql(requestBody.batchDescription);\r",
+											"    pm.expect(Jsondata.batchNoOfClasses).to.eql(requestBody.batchNoOfClasses);\r",
+											"    pm.expect(Jsondata.batchStatus).to.eql(requestBody.batchStatus);\r",
+											"    pm.expect(Jsondata.programId).to.eql(requestBody.programId);\r",
+											"    pm.expect(Jsondata.programName).to.eql(requestBody.programName);\r",
+											"    });\r",
+											"    \r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "00dd3ab7-d9d5-488a-8b34-7c3a45fa2ca9",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -685,7 +714,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDk5MDIzMSwiZXhwIjoxNzMxMDE5MDMxfQ.fiE9_l6Xsr-sde9p3xAJE-oAhuGVxWBmljENDLPtooLJZMCFWLWhFmNvnvL3UFj8k36dkLjJPPQqZ5pjn2avuQ"
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTA3NzI0NCwiZXhwIjoxNzMxMTA2MDQ0fQ.IGqfMUnW2lCRKV_cpVKhW4C5lUrexgsKemNMooWkPJgm3wZo7N2-O2y6Cezlio6KbjtHG0jMS1y0fAoasrUOQg"
 									}
 								},
 								"method": "GET",
