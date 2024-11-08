@@ -764,7 +764,7 @@
 							]
 						},
 						{
-							"name": "New Request",
+							"name": "With Invalid Base Url",
 							"id": "d9b41e39-aed5-4078-859f-041d0b5e5b02",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
