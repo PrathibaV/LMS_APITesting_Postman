@@ -339,6 +339,54 @@
 							"response": []
 						},
 						{
+							"name": "User with valid Authorization Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "72b68a08-9e1e-4d6c-88c8-8b95b1a978cd",
+										"exec": [
+											"\r",
+											"const jsonData = pm.response.json();\r",
+											"const progname=jsonData.programName;\r",
+											"pm.environment.set(\"ProgramId\",jsonData.programId);\r",
+											"pm.environment.set(\"ProgramName\",progname )\r",
+											"const programId = jsonData.programId;\r",
+											"console.log(programId);\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "2b9aaf3a-4935-444c-8c46-ec21d6d1e017",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{TokenValue}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"programDescription\": \"APITestingHackathon\",\r\n    \"programName\": \"TeamTwo-CommandosNov\",\r\n    \"programStatus\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}saveprogram"
+							},
+							"response": []
+						},
+						{
 							"name": "All Program",
 							"id": "49558336-1809-4218-b3ae-2dd5a1dec453",
 							"protocolProfileBehavior": {
