@@ -451,6 +451,12 @@
 											"    pm.response.to.have.status(\"Created\");\r",
 											"});\r",
 											"\r",
+											"pm.collectionVariables.set(\"batch_id\",Jsondata.batchId);\r",
+											"pm.collectionVariables.set(\"batch_name\",Jsondata.batchName);\r",
+											"\r",
+											"console.log(pm.collectionVariables.get(\"batch_id\"));\r",
+											"console.log(pm.collectionVariables.get(\"batch_name\"));\r",
+											"\r",
 											"pm.test(\"Content-Type is present\", function () {\r",
 											"    pm.response.to.have.header(\"Content-Type\");\r",
 											"});\r",
@@ -513,6 +519,8 @@
 											" });\r",
 											"\r",
 											"\r",
+											"\r",
+											"\r",
 											""
 										],
 										"type": "text/javascript",
@@ -535,7 +543,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos014\",\r\n  \"batchDescription\": \"zcxwwvb\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"ApiCommandos\"\r\n}",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos015\",\r\n  \"batchDescription\": \"zcxwwvb\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 5,\r\n  \"programId\": 16710,\r\n  \"programName\": \"ApiCommandos\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
