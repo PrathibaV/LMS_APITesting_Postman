@@ -362,17 +362,18 @@
 		{
 			"listen": "prerequest",
 			"script": {
+				"id": "5ee42605-0232-46fc-90bd-af32bf94518c",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					""
-				],
-				"id": "07af7d06-063d-4d5d-b38d-5238f12cb6cb"
+				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
+				"id": "082b6cc4-4125-4f77-9673-202b2401ea13",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -410,9 +411,9 @@
 					"    });\r",
 					"}\r",
 					"\r",
-					"function getStatusCode(statusCode){\r",
-					"    pm.test(`Status code is ${statusCode}`, function () {\r",
-					"        pm.response.to.have.status(statusCode);\r",
+					"function getStatusCode(StatusCode){\r",
+					"    pm.test(`Status code is ${StatusCode}`, function () {\r",
+					"        pm.response.to.have.status(StatusCode);\r",
 					"    });\r",
 					"}\r",
 					"\r",
@@ -537,8 +538,7 @@
 					"}\r",
 					"}\r",
 					"pm.collectionVariables.get(\"variable_key\");"
-				],
-				"id": "45359c97-3aac-4b01-abf3-1ee4ab1160c7"
+				]
 			}
 		}
 	]
