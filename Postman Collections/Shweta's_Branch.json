@@ -375,7 +375,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"\",\r\n    \"programName\": \"newProgram\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": \"\",\r\n    \"programName\": \"\",\r\n    \"programStatus\": \"\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
