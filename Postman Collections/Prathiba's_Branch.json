@@ -318,13 +318,41 @@
 					"item": [
 						{
 							"name": "Create Batch",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9bcb3106-ba79-4784-9848-52fcdca2bb7f",
+										"exec": [
+											"let bodyData = pm.response.json();\r",
+											"\r",
+											"let batchId = bodyData.batchId;\r",
+											"pm.environment.set(\"batchID\", batchId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "ba8893c7-391f-4327-bd4e-d00ea2ef0604",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programID}},\r\n\"programName\": \"{{programName}}\"\r\n\r\n }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								}
 							},
 							"response": []
 						}
@@ -333,7 +361,74 @@
 				},
 				{
 					"name": "Class",
-					"item": [],
+					"item": [
+						{
+							"name": "Create Class",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "dd6bbdad-382f-4e14-b69e-588b4d34a121",
+										"exec": [
+											"console.log(\"Scenario: \"+ pm.variables.get(\"scenario\"));\r",
+											"if (pm.variables.get(\"scenario\") === \"create class with all fields\") {\r",
+											"    let bodyData = pm.response.json();\r",
+											"let classId = bodyData.csId;\r",
+											"pm.environment.set(\"classID\", classId);\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "ad679ab6-f5ec-43ba-923c-7fd60b6d4fc9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"batchId\": {{batchID}},  \r\n  \"classComments\": \"{{classComments}}\",\r\n  \"classDate\": \"{{classDate}}\",\r\n  \"classDescription\": \"{{classDescription}}\",\r\n  \"classNo\": {{classNo}},\r\n  \"classNotes\": \"{{classNotes}}\",\r\n  \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n  \"classStaffId\": \"{{classStaffId}}\",\r\n  \"classStatus\": \"{{classStatus}}\",\r\n  \"classTopic\": \"{{classTopic}}\",\r\n   \"classScheduledDates\": [\r\n    \"{{classScheduledDates_1}}\",\r\n    \"{{classScheduledDates_2}}\"\r\n  ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Class",
+							"id": "d2bcf3c5-d7a1-47be-a1b9-6e402c1f4fcf",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"batchId\": {{batchID}},\r\n    \"classNo\": {{classNo}},\r\n    \"classDate\": \"{{classDate}}\",\r\n    \"classTopic\": \"{{classTopic}}\",\r\n    \"classStatus\": \"{{classStatus}}\",\r\n    \"classStaffId\": \"{{classStaffId}}\",\r\n    \"classDescription\": \"{{classDescription}}\",\r\n    \"classComments\": \"{{classComments}}\",\r\n    \"classNotes\": \"{{classNotes}}\",\r\n    \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n    \"classScheduledDates\": [\r\n    \"{{classScheduledDates_1}}\",\r\n    \"{{classScheduledDates_2}}\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								}
+							},
+							"response": []
+						}
+					],
 					"id": "7c613a5e-f428-4864-a6ca-ac7d98d8dffa"
 				},
 				{
@@ -391,17 +486,11 @@
 			"id": "108a4b5a-7b59-4f4a-a67d-4d61e421d84a"
 		}
 	],
-	"auth": {
-		"type": "bearer",
-		"bearer": {
-			"token": "{{token}}"
-		}
-	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "d79ad2f9-658d-4a5d-98c3-be2fe89eef90",
+				"id": "a9ba1af7-58bc-4751-969c-83e0213c1a10",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -475,7 +564,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "8e145411-b979-492b-bd3a-552b1f195f28",
+				"id": "a2a3822e-2d78-4618-b795-2b4c83cf2dc6",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
