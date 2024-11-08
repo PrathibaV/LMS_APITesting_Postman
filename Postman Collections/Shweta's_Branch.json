@@ -655,14 +655,14 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{TokenValue}}"
+										"token": ""
 									}
 								},
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"APITesting\",\r\n    \"programName\": \"TeamTwo-Commando\",\r\n    \"programStatus\": \"\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": \"APITesting\",\r\n    \"programName\": \"TeamTwo-Commando\",\r\n    \"programStatus\": \"Active\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -868,7 +868,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "e68b9838-7cd4-4b6d-8550-b67d2b42c2ea",
+				"id": "44fb125e-e1cd-42c7-8e9a-8102e799cf00",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -879,11 +879,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e56a901e-420f-40fa-ab75-4961b1d219c9",
+				"id": "a5d94084-85b5-4f5d-b61c-1cf8c0995dd6",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
-					""
+					"commonTests ="
 				]
 			}
 		}
