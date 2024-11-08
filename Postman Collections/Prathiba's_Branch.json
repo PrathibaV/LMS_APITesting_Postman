@@ -21,16 +21,14 @@
 										"exec": [
 											"// const commonUtils = pm.require('@postman-hackathon-4703/common-utils');\r",
 											"\r",
-											"bodyData = pm.response.json();\r",
-											"TokenValue = bodyData.token;\r",
-											"console.log(\"Token: \" + TokenValue)\r",
-											"pm.globals.set(\"TokenValue\", TokenValue);\r",
-											"// pm.environment.set(\"TokenValue\", TokenValue);\r",
-											";\r",
+											"let bodyData = pm.response.json();\r",
+											"\r",
+											"let token = bodyData.token;\r",
+											"pm.globals.set(\"token\", token);\r",
 											"\r",
 											"pm.test('Verify user signed in', () => {\r",
 											"    const response = pm.response.json();\r",
-											"    pm.expect(response.token).to.eql(pm.globals.get('TokenValue'));\r",
+											"    pm.expect(response.token).to.eql(pm.globals.get('token'));\r",
 											"});\r",
 											"\r",
 											"pm.test(`Verify userId is a number`, function () {\r",
@@ -131,14 +129,14 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"password\": \"{{password}}\",\n  \"userLoginEmail\": \"{{userEmail}}\"\n}\n\n\n\n\n",
+									"raw": "{\n\"userLoginEmailId\": \"{{userLoginEmailId}}\",\n\"password\":\"{{password}}\"\n}\n\n\n\n",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{BaseUrl}}login"
+								"url": ""
 							},
 							"response": [
 								{
@@ -271,12 +269,66 @@
 				},
 				{
 					"name": "Program",
-					"item": [],
+					"item": [
+						{
+							"name": "Create Program",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "19b3e34a-e6c3-4eed-a7d9-37f037e93c69",
+										"exec": [
+											"let bodyData = pm.response.json();\r",
+											"\r",
+											"let programId = bodyData.programId;\r",
+											"pm.environment.set(\"programID\", programId);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "3b75abb5-2231-47f4-a690-da33c5fc4b52",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								}
+							},
+							"response": []
+						}
+					],
 					"id": "033594b6-6cf7-4bde-8f6f-669a29e1c9e9"
 				},
 				{
 					"name": "ProgramBatch",
-					"item": [],
+					"item": [
+						{
+							"name": "Create Batch",
+							"id": "ba8893c7-391f-4327-bd4e-d00ea2ef0604",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					],
 					"id": "24f616a3-db8f-4eea-a325-d4dbc667de4d"
 				},
 				{
