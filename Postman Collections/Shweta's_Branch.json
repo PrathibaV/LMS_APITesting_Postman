@@ -309,8 +309,8 @@
 											"console.log(\"Scenario: \"+ pm.variables.get(\"scenario\"));\r",
 											"if (pm.variables.get(\"scenario\") === \"create program with valid data\") {\r",
 											"    let bodyData = pm.response.json();\r",
-											"let classId = bodyData.programId;\r",
-											"pm.environment.set(\"classID\", classId);\r",
+											"let PgrmId = bodyData.programId;\r",
+											"pm.environment.set(\"ProgramId\", PgrmId);\r",
 											"}"
 										],
 										"type": "text/javascript",
@@ -333,7 +333,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"APITesting\",\r\n    \"programName\": \"TeamTwo-Commando\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": {{programDescription}},\r\n    \"programName\": \"TeamTwo-Commando\",\r\n    \"programStatus\": \"Active\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
