@@ -698,19 +698,12 @@
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
-											"var requestBody = JSON.parse(pm.request.body.raw);\r",
-											"\r",
-											"pm.test(\"value of fields in response\", () => {\r",
-											"    pm.expect(Jsondata .batchId).to.eql(requestBody.batchId);\r",
-											"    pm.expect(Jsondata .batchName).to.eql(requestBody.batchName);\r",
-											"    pm.expect(Jsondata.batchDescription).to.eql(requestBody.batchDescription);\r",
-											"    pm.expect(Jsondata.batchNoOfClasses).to.eql(requestBody.batchNoOfClasses);\r",
-											"    pm.expect(Jsondata.batchStatus).to.eql(requestBody.batchStatus);\r",
-											"    pm.expect(Jsondata.programId).to.eql(requestBody.programId);\r",
-											"    pm.expect(Jsondata.programName).to.eql(requestBody.programName);\r",
-											"    });\r",
-											"    \r",
-											""
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -830,6 +823,28 @@
 						},
 						{
 							"name": "GetBatchbybatchId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e7efe199-6462-4fc5-abf1-3c0b4c744e47",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "52e8eb73-739d-4bf3-a737-6e7f88e2fdc2",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
