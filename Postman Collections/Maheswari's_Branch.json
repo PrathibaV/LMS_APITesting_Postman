@@ -1228,6 +1228,28 @@
 						},
 						{
 							"name": "UpdatebyBatchId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "dc4e46a9-e17e-42d4-b100-829aadea32f8",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "80624e3d-f246-4ca5-834a-34ebbdb0f33a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -1243,13 +1265,54 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"batchDescription\": \"FREDTKIUJHY\",  \r\n  \"batchName\": \"APICommandos023\",\r\n  \"batchNoOfClasses\": 6,\r\n  \"batchStatus\": \"Active\",\r\n  \"programId\": 16710  \r\n}\r\n",
+									"raw": "{\r\n  \"batchDescription\": \"FREDTKIUJHY\",  \r\n  \"batchName\": \"APICommandos023\",\r\n  \"batchNoOfClasses\": 16,\r\n  \"batchStatus\": \"Active\",\r\n  \"programId\": 16710  \r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
+								"url": "{{baseurl}}/batches/9175"
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1985d359-3791-4b50-99fb-9908cb8ef96f",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "e43bca07-b8be-4e46-a4d1-3d121428b916",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTA3NzI0NCwiZXhwIjoxNzMxMTA2MDQ0fQ.IGqfMUnW2lCRKV_cpVKhW4C5lUrexgsKemNMooWkPJgm3wZo7N2-O2y6Cezlio6KbjtHG0jMS1y0fAoasrUOQg"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
 								"url": "{{baseurl}}/batches/9175"
 							},
 							"response": []
