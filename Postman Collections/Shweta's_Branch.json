@@ -310,7 +310,9 @@
 											"if (pm.variables.get(\"scenario\") === \"create program with valid data\") {\r",
 											"    let bodyData = pm.response.json();\r",
 											"let PgrmId = bodyData.programId;\r",
+											"let PgrmName=bodyData.programName;\r",
 											"pm.environment.set(\"ProgramId\", PgrmId);\r",
+											"pm.environment.set(\"ProgramName\",PgrmName);\r",
 											"}"
 										],
 										"type": "text/javascript",
@@ -502,7 +504,7 @@
 								},
 								"method": "GET",
 								"header": [],
-								"url": "{{baseUrl}}allProgramsWithUsers"
+								"url": "{{baseURL}}allProgramsWithUsers"
 							},
 							"response": []
 						},
