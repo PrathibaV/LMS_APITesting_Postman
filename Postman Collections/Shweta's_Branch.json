@@ -356,6 +356,71 @@
 							"response": []
 						},
 						{
+							"name": "Create Program with Invalid Authorization",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "72b68a08-9e1e-4d6c-88c8-8b95b1a978cd",
+										"exec": [
+											"\r",
+											"// const jsonData = pm.response.json();\r",
+											"// const progname=jsonData.programName;\r",
+											"// pm.environment.set(\"ProgramId\",jsonData.programId);\r",
+											"// pm.environment.set(\"ProgramName\",progname )\r",
+											"// const programId = jsonData.programId;\r",
+											"// console.log(programId);\r",
+											"\r",
+											"console.log(\"Scenario: \"+ pm.variables.get(\"scenario\"));\r",
+											"if (pm.variables.get(\"scenario\") === \"create program with valid data\") {\r",
+											"    let bodyData = pm.response.json();\r",
+											"let PgrmId = bodyData.programId;\r",
+											"pm.environment.set(\"ProgramId\", PgrmId);\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "1a18c166-b99a-45cb-9c01-4c3c113f8dad",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "78cc21c4-7d3f-4816-9b51-b94709047031",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": ""
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"programDescription\": \"{{programDescription}}\",\r\n    \"programName\": \"{{programName}}\",\r\n    \"programStatus\": \"{{programStatus}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": ""
+							},
+							"response": []
+						},
+						{
 							"name": "User with valid Authorization Copy",
 							"event": [
 								{
