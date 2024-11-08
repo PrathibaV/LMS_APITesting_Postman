@@ -582,7 +582,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "[{  \r\n  \"batchName\": \"APICommandos022\",\r\n  \"batchDescription\": \"Axwvbd\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 12,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"},\r\n\r\n   {\"batchName\": \"APICommandos023\",\r\n  \"batchDescription\": \"GVvbd\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 7,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n\r\n}]",
+									"raw": "{  \r\n  \"batchName\": \"APICommandos022\",\r\n  \"batchDescription\": \"Axwvbd\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 12,\r\n  \"programId\": 16710,\r\n  \"programName\": \"APICommandos\"\r\n  }\r\n\r\n   \r\n",
 									"options": {
 										"raw": {
 											"language": "json"
