@@ -598,7 +598,7 @@
 										}
 									}
 								},
-								"url": "{{baseUrl}}putprogram/{{ProgramId}}"
+								"url": "{{baseURL}}putprogram/{{ProgramId}}"
 							},
 							"response": []
 						}
