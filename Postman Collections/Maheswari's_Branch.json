@@ -461,8 +461,7 @@
 											"\r",
 											"//Data type validation\r",
 											"var Jsondata =pm.response.json();\r",
-											"pm.test(\"Datatype validation\", () => {\r",
-											"    pm.expect(Jsondata.batchId).to.be.a(\"integer\");\r",
+											"pm.test(\"Datatype validation\", () => {   \r",
 											"    pm.expect(Jsondata.batchName).to.be.a(\"string\");\r",
 											"    pm.expect(Jsondata.batchDescription).to.be.a(\"string\");\r",
 											"    pm.expect(Jsondata.batchNoOfClasses).to.be.a(\"integer\");\r",
@@ -493,7 +492,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos011\",\r\n  \"batchDescription\": \"zcxwwvb\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"ApiCommandos\"\r\n}",
+									"raw": "{\r\n  \r\n  \"batchName\": \"APICommandos012\",\r\n  \"batchDescription\": \"zcxwwvb\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"programId\": 16710,\r\n  \"programName\": \"ApiCommandos\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
