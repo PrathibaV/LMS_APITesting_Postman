@@ -437,6 +437,47 @@
 					"item": [
 						{
 							"name": "Create Batch",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "82442eeb-30e1-4341-8019-6c63700fe24b",
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(\"Created\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Content-Type is present\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"content Type header is application/Json\", () => {\r",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json\");\r",
+											"});\r",
+											"\r",
+											"//Data type validation\r",
+											"var Jsondata =pm.response.json();\r",
+											"pm.test(\"Datatype validation\", () => {\r",
+											"    pm.expect(Jsondata.batchId).to.be.a(\"integer\");\r",
+											"    pm.expect(Jsondata.batchName).to.be.a(\"string\");\r",
+											"    pm.expect(Jsondata.batchDescription).to.be.a(\"string\");\r",
+											"    pm.expect(Jsondata.batchNoOfClasses).to.be.a(\"integer\");\r",
+											"    pm.expect(Jsondata.batchStatus).to.be.a(\"string\");\r",
+											"    pm.expect(Jsondata.programId).to.be.a(\"integer\");\r",
+											"    pm.expect(Jsondata.programName).to.be.a(\"string\");  \r",
+											"})\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "21bb136c-0ddf-4359-ba8d-8fafe11ddaa5",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -445,7 +486,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTAzNjA2MiwiZXhwIjoxNzMxMDY0ODYyfQ.0tClqSUYRWF1tIySRJgqqSQEokIZCfLUVexvAzwAr1J8bXRPEKfFKjysDGPHhvbpY-3aiX1t40vnPcAl8pcGgg"
 									}
 								},
 								"method": "POST",
