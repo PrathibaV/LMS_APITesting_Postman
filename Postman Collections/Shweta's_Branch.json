@@ -375,7 +375,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"APITestingHackathon\",\r\n    \"programName\": \"TeamTwo-CommandosNov\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": \"APITesting\",\r\n    \"programName\": \"\",\r\n    \"programStatus\": \"Active\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -593,6 +593,25 @@
 								"method": "DELETE",
 								"header": [],
 								"url": "{{baseUrl}}deletebyprogname/{{ProgramName}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Program By ProgramName Copy",
+							"id": "28651e70-e2db-48d1-ad9c-f1726c3e6d0e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{TokenValue}}"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": "{{baseUrl}}deletebyprogname/TeamTwo-CommandosNov"
 							},
 							"response": []
 						}
