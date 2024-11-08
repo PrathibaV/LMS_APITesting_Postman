@@ -1048,7 +1048,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "828e082d-a62f-441c-88a0-b26b57c44748",
+				"id": "8c9443fa-82fb-4c31-99f6-c8bf64ab11e7",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1098,7 +1098,17 @@
 					"    fullURL = baseUrl + endpoint; \r",
 					"}\r",
 					"\r",
-					"//pm.variables.set('url', fullURL); \r",
+					"let PgrmUpdateDelURL;\r",
+					"\r",
+					"if ((pm.info.requestName=== \"Update Class\") || (pm.info.requestName=== \"Delete Class\")) {\r",
+					"    const classId = pm.environment.get(\"classID\");\r",
+					"    fullURL = baseUrl + endpoint.replace(\"{classId}\", classId);  \r",
+					"} else {\r",
+					"    fullURL = baseUrl + endpoint; \r",
+					"}\r",
+					"\r",
+					"\r",
+					"\r",
 					"\r",
 					"pm.request.url = fullURL;\r",
 					"\r",
@@ -1122,7 +1132,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e1136eb8-d1e6-420e-9975-cf6f72711278",
+				"id": "26cbc3e0-f7fd-43c1-bdc6-4b0f1502d435",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
