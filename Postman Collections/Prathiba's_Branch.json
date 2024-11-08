@@ -428,21 +428,6 @@
 							"response": []
 						},
 						{
-							"name": "Delete Class",
-							"id": "9612174e-8525-42e5-8d6b-f6d07e17dc67",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "DELETE",
-								"header": []
-							},
-							"response": []
-						},
-						{
 							"name": "Update Class Recording Path",
 							"id": "d0fd92d3-2594-4c83-a3e3-3ffcdf7bd2bb",
 							"protocolProfileBehavior": {
@@ -463,6 +448,36 @@
 										}
 									}
 								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Class",
+							"id": "9612174e-8525-42e5-8d6b-f6d07e17dc67",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Class Negative",
+							"id": "2221e166-2371-4cb2-918c-22212aa8ebc4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": []
 							},
 							"response": []
 						}
