@@ -307,9 +307,9 @@
 											"// console.log(programId);\r",
 											"\r",
 											"console.log(\"Scenario: \"+ pm.variables.get(\"scenario\"));\r",
-											"if (pm.variables.get(\"scenario\") === \"create class with all fields\") {\r",
+											"if (pm.variables.get(\"scenario\") === \"create program with valid data\") {\r",
 											"    let bodyData = pm.response.json();\r",
-											"let classId = bodyData.csId;\r",
+											"let classId = bodyData.programId;\r",
 											"pm.environment.set(\"classID\", classId);\r",
 											"}"
 										],
@@ -326,7 +326,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{TokenValue}}"
+										"token": ""
 									}
 								},
 								"method": "POST",
@@ -340,7 +340,7 @@
 										}
 									}
 								},
-								"url": "{{baseUrl}}saveprogram"
+								"url": ""
 							},
 							"response": []
 						},
