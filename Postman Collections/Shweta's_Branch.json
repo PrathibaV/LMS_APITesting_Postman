@@ -299,13 +299,19 @@
 										"id": "72b68a08-9e1e-4d6c-88c8-8b95b1a978cd",
 										"exec": [
 											"\r",
-											"const jsonData = pm.response.json();\r",
-											"const progname=jsonData.programName;\r",
-											"pm.environment.set(\"ProgramId\",jsonData.programId);\r",
-											"pm.environment.set(\"ProgramName\",progname )\r",
-											"const programId = jsonData.programId;\r",
-											"console.log(programId);\r",
-											""
+											"// const jsonData = pm.response.json();\r",
+											"// const progname=jsonData.programName;\r",
+											"// pm.environment.set(\"ProgramId\",jsonData.programId);\r",
+											"// pm.environment.set(\"ProgramName\",progname )\r",
+											"// const programId = jsonData.programId;\r",
+											"// console.log(programId);\r",
+											"\r",
+											"console.log(\"Scenario: \"+ pm.variables.get(\"scenario\"));\r",
+											"if (pm.variables.get(\"scenario\") === \"create class with all fields\") {\r",
+											"    let bodyData = pm.response.json();\r",
+											"let classId = bodyData.csId;\r",
+											"pm.environment.set(\"classID\", classId);\r",
+											"}"
 										],
 										"type": "text/javascript",
 										"packages": {}
