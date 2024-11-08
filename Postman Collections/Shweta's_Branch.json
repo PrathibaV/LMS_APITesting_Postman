@@ -1037,7 +1037,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "91622e37-2106-4868-9f50-c0b99d6f2eb8",
+				"id": "828e082d-a62f-441c-88a0-b26b57c44748",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1111,7 +1111,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "1451df5e-c7c3-4ba2-bedd-dde9b9a771eb",
+				"id": "e1136eb8-d1e6-420e-9975-cf6f72711278",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1137,6 +1137,7 @@
 			"type": "string"
 		},
 		{
+			"key": "invalidBaseURL",
 			"value": "",
 			"type": "string"
 		}
