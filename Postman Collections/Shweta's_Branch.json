@@ -780,14 +780,14 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"APITestingHackathon\",\r\n    \"programName\": \"TeamTwo-Commandos\",\r\n    \"programStatus\": \"\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": \"APITestingHackathon\",\r\n    \"programName\": \"TeamTwo-Commandos\",\r\n    \"programStatus\": \"Active\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{baseUrl}}allPrograms"
+								"url": "{{inValidBaseUrl}}saveprogram"
 							},
 							"response": []
 						}
@@ -827,7 +827,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "47b70957-fd5b-46cb-8e39-e8e6fce95150",
+				"id": "e68b9838-7cd4-4b6d-8550-b67d2b42c2ea",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -838,7 +838,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d9909fa0-a805-47b4-8a34-4c3fe4e84dc8",
+				"id": "e56a901e-420f-40fa-ab75-4961b1d219c9",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -849,17 +849,22 @@
 	],
 	"variable": [
 		{
-			"key": "baseUrl",
-			"value": "",
-			"type": "string"
-		},
-		{
 			"key": "username",
 			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "password",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "inValidBaseUrl",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "baseUrl",
 			"value": "",
 			"type": "string"
 		}
