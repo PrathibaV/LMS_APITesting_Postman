@@ -972,7 +972,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "24543e38-1dc9-45ce-8282-eeea639029e5",
+				"id": "4de4ac6e-3c9e-4ba0-9963-a3167219601e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1046,7 +1046,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "311bb510-f107-4830-b6ee-ef42031b2772",
+				"id": "4cc4cbf6-95ec-416b-aa62-d43324372fcb",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1063,16 +1063,6 @@
 		},
 		{
 			"key": "password",
-			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "inValidBaseUrl",
-			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "baseURL",
 			"value": "",
 			"type": "string"
 		}
