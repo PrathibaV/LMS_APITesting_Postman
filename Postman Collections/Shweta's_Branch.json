@@ -584,7 +584,7 @@
 							"response": []
 						},
 						{
-							"name": "Update Program by ProgramId",
+							"name": "Update Program by Program Id",
 							"id": "4104d59d-0551-412f-ae42-6c514c96811b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -1048,7 +1048,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8c9443fa-82fb-4c31-99f6-c8bf64ab11e7",
+				"id": "0d50546a-337c-494d-8089-8ed51441d4db",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1100,7 +1100,7 @@
 					"\r",
 					"let PgrmUpdateDelURL;\r",
 					"\r",
-					"if ((pm.info.requestName=== \"Update Class\") || (pm.info.requestName=== \"Delete Class\")) {\r",
+					"if ((pm.info.requestName=== \"Update Program by Program Id\") || (pm.info.requestName=== \"Delete Program By Program ID\")) {\r",
 					"    const classId = pm.environment.get(\"classID\");\r",
 					"    fullURL = baseUrl + endpoint.replace(\"{classId}\", classId);  \r",
 					"} else {\r",
@@ -1132,7 +1132,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "26cbc3e0-f7fd-43c1-bdc6-4b0f1502d435",
+				"id": "e3f6bbdf-838b-4485-a948-834db896fb9d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
