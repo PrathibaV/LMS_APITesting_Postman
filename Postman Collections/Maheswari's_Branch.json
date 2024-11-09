@@ -5825,17 +5825,80 @@
 		{
 			"listen": "prerequest",
 			"script": {
+				"id": "c34f530f-80de-470e-a2c5-402426a19b83",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
-					""
-				],
-				"id": "07af7d06-063d-4d5d-b38d-5238f12cb6cb"
+					"if(typeof pm.variables.get('requestData') !== 'object')\r",
+					"{\r",
+					"    pm.variables.set('requestData', pm.iterationData.toObject());\r",
+					"}\r",
+					"\r",
+					"const requestData = pm.variables.get('requestData');\r",
+					"\r",
+					"if(typeof requestData != 'object' || Object.keys(requestData).length === 0)\r",
+					"{\r",
+					"    console.log('No external data provided/data set is empty');\r",
+					"    return;\r",
+					"}\r",
+					"\r",
+					"const currentRequest = requestData.requests.filter(({name}) => name === pm.info.requestName)[0];\r",
+					"\r",
+					"if(!currentRequest){\r",
+					"    console.log('Request ${pm.info.requestName} has no data.');\r",
+					"}\r",
+					"\r",
+					"if(currentRequest){\r",
+					"\r",
+					"    const variables = currentRequest.data.shift();\r",
+					"\r",
+					"    Object.entries(variables).forEach(([key, value]) => {\r",
+					"        pm.variables.set(key, value);\r",
+					"    });\r",
+					"\r",
+					"let baseUrl;\r",
+					"\r",
+					"if (variables.scenario.toLowerCase().includes(\"invalid baseurl\")) {\r",
+					"    baseUrl = pm.environment.get(\"invalidBaseURL\");\r",
+					"} else {  \r",
+					"    baseUrl = pm.environment.get(\"baseURL\");\r",
+					"}\r",
+					"\r",
+					"const endpoint = variables.endpoint; \r",
+					"\r",
+					"let fullURL;\r",
+					"\r",
+					"if ((pm.info.requestName=== \"Update Class\") || (pm.info.requestName=== \"Delete Class\")) {\r",
+					"    const classId = pm.environment.get(\"classID\");\r",
+					"    fullURL = baseUrl + endpoint.replace(\"{classId}\", classId);  \r",
+					"} else {\r",
+					"    fullURL = baseUrl + endpoint; \r",
+					"}\r",
+					"\r",
+					"//pm.variables.set('url', fullURL); \r",
+					"\r",
+					"pm.request.url = fullURL;\r",
+					"\r",
+					"    if (variables.includeAuth.toLowerCase() === 'true') {\r",
+					"        const token = pm.globals.get('token');  \r",
+					"        pm.request.headers.add({ key: 'Authorization', value: `Bearer ${token}` });\r",
+					"    } else {\r",
+					"       console.log(\"No Authorization header needed\"); \r",
+					"    }\r",
+					"\r",
+					"    pm.variables.set('requestData', requestData);\r",
+					"\r",
+					"    if(currentRequest.data.length > 0){\r",
+					"        pm.execution.setNextRequest(pm.info.requestName);\r",
+					"    }\r",
+					"}\t\t"
+				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
+				"id": "311a6e43-ca91-483b-acae-a5b28c003433",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6000,8 +6063,7 @@
 					"}\r",
 					"}\r",
 					"pm.collectionVariables.get(\"variable_key\");"
-				],
-				"id": "45359c97-3aac-4b01-abf3-1ee4ab1160c7"
+				]
 			}
 		}
 	],
@@ -6016,7 +6078,8 @@
 		},
 		{
 			"key": "baseurl",
-			"value": ""
+			"value": "",
+			"disabled": true
 		}
 	]
 }
