@@ -786,12 +786,12 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{TokenValue}}"
+										"token": "{{token}}"
 									}
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": "{{baseUrl}}deletebyprogname/TeamTwo-CommandosNov"
+								"url": "{{baseURL}}}deletebyprogname/APINovThree"
 							},
 							"response": []
 						}
