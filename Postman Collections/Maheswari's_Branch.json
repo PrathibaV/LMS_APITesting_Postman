@@ -587,7 +587,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "[{  \r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{programName}}\"\r\n},\r\n{  \r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{programName}}\"\r\n}]\r\n\r\n   \r\n",
+									"raw": "{  \r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{programName}}\" \r\n}\r\n\r\n   \r\n",
 									"options": {
 										"raw": {
 											"language": "json"
