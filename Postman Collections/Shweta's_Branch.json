@@ -1048,7 +1048,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "55cf4ba6-f6fb-488a-b15c-1eddc112ccde",
+				"id": "7c466d47-e3fc-44cc-a1cb-86715d0f4e4f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1121,7 +1121,7 @@
 					"\r",
 					"\r",
 					"\r",
-					"pm.request.url = fullURL;\r",
+					"pm.request.url = PgrmUpdateDelURLName;\r",
 					"\r",
 					"    if (variables.includeAuth.toLowerCase() === 'true') {\r",
 					"        const token = pm.globals.get('token');  \r",
@@ -1143,7 +1143,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "4c97ae5a-3dfa-4bc7-bc46-740cd5b0f045",
+				"id": "94c86ec1-cc21-4387-895a-e4d013d39f0e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
