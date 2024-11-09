@@ -1048,7 +1048,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "db8da70b-012d-44b1-b749-76b9267a4c81",
+				"id": "bfeda8da-b823-4d29-8d31-eb126af05334",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1112,7 +1112,7 @@
 					"\r",
 					"if ((pm.info.requestName===\"Update Program By Program Name\") || (pm.info.requestName=== \"Delete Program By Program Name \")) {\r",
 					"    const pgrmName = pm.environment.get(\"ProgramName\");\r",
-					"    PgrmUpdateDelURLName = baseUrl + endpoint.replace(\"{ProgramName}\", pgrmName);  \r",
+					"    PgrmUpdateDelURLName = baseUrl + endpoint.replace(\"{Programname}\", pgrmName);  \r",
 					"} else {\r",
 					"    PgrmUpdateDelURLName = baseUrl + endpoint; \r",
 					"}\r",
@@ -1142,7 +1142,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "1058cd5e-249c-4e23-b195-37f18ba16c0a",
+				"id": "20dd7afe-b5ae-48fa-98c0-d7f4a48270ea",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
