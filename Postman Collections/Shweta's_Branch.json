@@ -307,7 +307,7 @@
 											"// console.log(programId);\r",
 											"\r",
 											"console.log(\"Scenario: \"+ pm.variables.get(\"scenario\"));\r",
-											"if (pm.variables.get(\"scenario\") === \"Create Program with valid Authorization\") {\r",
+											"if (pm.variables.get(\"scenario\") === \"create program with valid data\") {\r",
 											"    let bodyData = pm.response.json();\r",
 											"let PgrmId = bodyData.programId;\r",
 											"let PgrmName=bodyData.programName;\r",
