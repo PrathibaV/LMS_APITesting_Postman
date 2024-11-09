@@ -452,8 +452,8 @@
 							"response": []
 						},
 						{
-							"name": "Delete Class",
-							"id": "9612174e-8525-42e5-8d6b-f6d07e17dc67",
+							"name": "Delete Class Negative",
+							"id": "2221e166-2371-4cb2-918c-22212aa8ebc4",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -467,8 +467,8 @@
 							"response": []
 						},
 						{
-							"name": "Delete Class Negative",
-							"id": "2221e166-2371-4cb2-918c-22212aa8ebc4",
+							"name": "Delete Class",
+							"id": "9612174e-8525-42e5-8d6b-f6d07e17dc67",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -543,7 +543,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a9ba1af7-58bc-4751-969c-83e0213c1a10",
+				"id": "f60d76c6-8798-4761-9547-05a164d83216",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -574,28 +574,19 @@
 					"        pm.variables.set(key, value);\r",
 					"    });\r",
 					"\r",
-					"let baseUrl;\r",
+					"    let baseUrl;\r",
 					"\r",
-					"if (variables.scenario.toLowerCase().includes(\"invalid baseurl\")) {\r",
-					"    baseUrl = pm.environment.get(\"invalidBaseURL\");\r",
-					"} else {  \r",
-					"    baseUrl = pm.environment.get(\"baseURL\");\r",
-					"}\r",
+					"    if (variables.scenario.toLowerCase().includes(\"invalid baseurl\")) {\r",
+					"        baseUrl = pm.environment.get(\"invalidBaseURL\");\r",
+					"    } else {  \r",
+					"        baseUrl = pm.environment.get(\"baseURL\");\r",
+					"    }\r",
 					"\r",
-					"const endpoint = variables.endpoint; \r",
+					"    const endpoint = variables.endpoint; \r",
 					"\r",
-					"let fullURL;\r",
+					"    let fullURL = baseUrl + endpoint; \r",
 					"\r",
-					"if ((pm.info.requestName=== \"Update Class\") || (pm.info.requestName=== \"Delete Class\")) {\r",
-					"    const classId = pm.environment.get(\"classID\");\r",
-					"    fullURL = baseUrl + endpoint.replace(\"{classId}\", classId);  \r",
-					"} else {\r",
-					"    fullURL = baseUrl + endpoint; \r",
-					"}\r",
-					"\r",
-					"//pm.variables.set('url', fullURL); \r",
-					"\r",
-					"pm.request.url = fullURL;\r",
+					"    pm.request.url = fullURL;\r",
 					"\r",
 					"    if (variables.includeAuth.toLowerCase() === 'true') {\r",
 					"        const token = pm.globals.get('token');  \r",
@@ -607,17 +598,16 @@
 					"    pm.variables.set('requestData', requestData);\r",
 					"\r",
 					"    if(currentRequest.data.length > 0){\r",
-					"        pm.execution.setNextRequest(pm.info.requestName);\r",
+					"       pm.execution.setNextRequest(pm.info.requestName);\r",
 					"    }\r",
-					"}\t\t\r",
-					""
+					"}\t\t"
 				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
-				"id": "a2a3822e-2d78-4618-b795-2b4c83cf2dc6",
+				"id": "5d889892-b7e5-4afc-bc6c-4ff56e7c61a2",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
