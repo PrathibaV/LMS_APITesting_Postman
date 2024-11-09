@@ -1048,7 +1048,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0d50546a-337c-494d-8089-8ed51441d4db",
+				"id": "6b01b10d-917e-4d98-b1b5-e3c84cdf9d5a",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1101,8 +1101,8 @@
 					"let PgrmUpdateDelURL;\r",
 					"\r",
 					"if ((pm.info.requestName=== \"Update Program by Program Id\") || (pm.info.requestName=== \"Delete Program By Program ID\")) {\r",
-					"    const classId = pm.environment.get(\"classID\");\r",
-					"    fullURL = baseUrl + endpoint.replace(\"{classId}\", classId);  \r",
+					"    const PgrmUpdateDelURL = pm.environment.get(\"ProgramId\");\r",
+					"    fullURL = baseUrl + endpoint.replace(\"{ProgramName}\", PgrmUpdateDelURL);  \r",
 					"} else {\r",
 					"    fullURL = baseUrl + endpoint; \r",
 					"}\r",
@@ -1132,7 +1132,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e3f6bbdf-838b-4485-a948-834db896fb9d",
+				"id": "a4cda262-04ef-4ac8-8f6e-dc849fcb6b7d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
