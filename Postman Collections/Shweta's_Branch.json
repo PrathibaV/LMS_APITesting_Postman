@@ -307,7 +307,7 @@
 											"// console.log(programId);\r",
 											"\r",
 											"console.log(\"Scenario: \"+ pm.variables.get(\"scenario\"));\r",
-											"if (pm.variables.get(\"scenario\") === \"create program with valid data\") {\r",
+											"if (pm.variables.get(\"scenario\") === \"Create Program with valid Authorization\") {\r",
 											"    let bodyData = pm.response.json();\r",
 											"let PgrmId = bodyData.programId;\r",
 											"let PgrmName=bodyData.programName;\r",
@@ -565,7 +565,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{TokenValue}}"
+										"token": ""
 									}
 								},
 								"method": "PUT",
@@ -593,21 +593,21 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{TokenValue}}"
+										"token": ""
 									}
 								},
 								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"String\",\r\n    \"programName\": \"CommomdosTeamTwo\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": \"{{programDescription}}\",\r\n    \"programName\": \"{{programName}}\",\r\n    \"programStatus\": \"{{programStatus}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{baseURL}}putprogram/{{ProgramId}}"
+								"url": ""
 							},
 							"response": []
 						}
@@ -734,7 +734,7 @@
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": "{{baseUrl}}deletebyprogid/{{ProgramId}}"
+								"url": ""
 							},
 							"response": []
 						},
@@ -767,12 +767,12 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{TokenValue}}"
+										"token": ""
 									}
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": "{{baseUrl}}deletebyprogname/{{ProgramName}}"
+								"url": ""
 							},
 							"response": []
 						},
