@@ -480,12 +480,12 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{TokenValue}}"
+										"token": "{{token}}"
 									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": "{{baseUrl}}allPrograms"
+								"url": "{{baseURL}}allPrograms"
 							},
 							"response": []
 						},
@@ -753,7 +753,7 @@
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": "{{baseURL}}deletebyprogid/16844"
+								"url": "{{baseURL}}deletebyprogid/16956"
 							},
 							"response": []
 						},
@@ -791,7 +791,7 @@
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": "{{baseURL}}}deletebyprogname/APINovThree"
+								"url": "{{baseURL}}deletebyprogname/APINovThree"
 							},
 							"response": []
 						}
