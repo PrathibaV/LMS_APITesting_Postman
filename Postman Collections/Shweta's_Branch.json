@@ -708,7 +708,27 @@
 				},
 				{
 					"name": "Class",
-					"item": [],
+					"item": [
+						{
+							"name": "New Request",
+							"id": "631b7211-d45d-434d-94e1-69f9b4e4c506",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{token}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"url": "{{baseURL}}CreateClassSchedule"
+							},
+							"response": []
+						}
+					],
 					"id": "88bad502-b9f6-4436-8b20-776da1e0b360"
 				},
 				{
