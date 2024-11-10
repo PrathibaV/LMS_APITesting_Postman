@@ -727,7 +727,7 @@
 								},
 								"method": "GET",
 								"header": [],
-								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+								"url": ""
 							},
 							"response": [
 								{
@@ -862,7 +862,7 @@
 								},
 								"method": "GET",
 								"header": [],
-								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches/batchId/9055"
+								"url": ""
 							},
 							"response": [
 								{
@@ -997,7 +997,7 @@
 								},
 								"method": "GET",
 								"header": [],
-								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches/batchName/APICommandos007"
+								"url": ""
 							},
 							"response": [
 								{
@@ -1132,7 +1132,7 @@
 								},
 								"method": "GET",
 								"header": [],
-								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches/program/16710"
+								"url": ""
 							},
 							"response": [
 								{
