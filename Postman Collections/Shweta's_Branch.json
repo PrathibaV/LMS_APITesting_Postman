@@ -518,12 +518,12 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{TokenValue}}"
+										"token": ""
 									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": "{{baseUrl}}programs/{{ProgramId}}"
+								"url": ""
 							},
 							"response": []
 						},
