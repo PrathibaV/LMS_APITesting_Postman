@@ -437,16 +437,15 @@
 											"});\r",
 											"\r",
 											"//store batch IDs\r",
-											"let existingArray = pm.collectionVariables.get(\"batchIdArray\",Jsondata.batchId);\r",
+											"let existingArray = pm.collectionVariables.get(Jsondata.batchId);\r",
 											"if(!existingArray){\r",
 											"    existingArray=[];\r",
 											"}else{\r",
 											"    existingArray=JSON.parse(existingArray);\r",
 											"}\r",
-											"existingArray.push(\"batchId1\");\r",
-											"existingArray.push(\"batchId2\");\r",
-											"pm.collectionVariables.set(\"batchIdArray\",JSON.stringify(existingArray));\r",
-											"let values = JSON.parse(pm.collectionVariables.get(\"batchIdArray\"));\r",
+											"existingArray.push(Jsondata.batchId);\r",
+											"pm.collectionVariables.set(\"batchIds\",JSON.stringify(existingArray));\r",
+											"let values = JSON.parse(pm.collectionVariables.get(batchIds));\r",
 											"console.log(values);\r",
 											"\r",
 											"\r",
@@ -541,7 +540,7 @@
 									"script": {
 										"id": "9ab00a45-8209-4bc5-a1ee-55588d119b5e",
 										"exec": [
-											"pm.collectionVariables.set(\"baseurl\",\"https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms\");"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -6069,6 +6068,10 @@
 		},
 		{
 			"key": "batchIdArray",
+			"value": ""
+		},
+		{
+			"key": "batchIds",
 			"value": ""
 		}
 	]
