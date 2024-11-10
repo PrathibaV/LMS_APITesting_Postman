@@ -724,6 +724,15 @@
 								},
 								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"batchId\": 9073,\r\n  \"classComments\": \"basic\",\r\n  \"classDate\": \"2025-09-09\",\r\n  \"classDescription\": \"sdsd\",\r\n  \"classNo\": 1,\r\n  \"classNotes\": \"excel\",\r\n  \"classRecordingPath\": \"c:recording\",\r\n  \"classStaffId\": \"U49\",\r\n  \"classTopic\": \"acd\",\r\n  \"classScheduledDates\":\"2025-10-09\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": "{{baseURL}}CreateClassSchedule"
 							},
 							"response": []
