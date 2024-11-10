@@ -1093,7 +1093,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "e891a8d0-f57a-49ff-87c3-f9b8e49172bd",
+				"id": "d266fdd5-d53a-437d-87f5-d25dde5f9793",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1143,6 +1143,8 @@
 					"    fullURL = baseUrl + endpoint; \r",
 					"}\r",
 					"\r",
+					"\r",
+					"const endpoint = variables.endpoint; \r",
 					"let PgrmUpdateDelURLId;\r",
 					"\r",
 					"if ((pm.info.requestName===\"Update Program by Program Id\") || (pm.info.requestName=== \"Delete Program By Program ID\")) {\r",
@@ -1230,7 +1232,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b6959070-796e-421c-9146-3fe5abeafc12",
+				"id": "02470f76-ec15-4baa-9351-dd014f526a68",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
