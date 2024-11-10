@@ -304,21 +304,21 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDU1OCwiZXhwIjoxNzMwOTUzMzU4fQ.N6PkmwG_RON4Sw_hNUTk7b3VYE_-lmy7hrvqWFZFxPUSIUOOS7QjIznUjF8sXfjqs_b1PQtDhXQSBv3Vn5CRsQ"
+										"token": ""
 									}
 								},
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \r\n  \"programName\": \"APICommandos\",\r\n  \"programDescription\": \"abscd\",\r\n  \"programStatus\": \"Active\"\r\n \r\n}",
+									"raw": "{\r\n  \r\n  \"programName\": \"{{programName}}\",\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n \r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/saveprogram"
+								"url": ""
 							},
 							"response": [
 								{
@@ -449,14 +449,14 @@
 											"});\r",
 											"\r",
 											"pm.collectionVariables.set(\"batch_id\",Jsondata.batchId);\r",
-											"var batchIds = pm.collectionVariables.get(\"batch_id\");\r",
-											"    if (!batchIds) {\r",
-											"        batchIds = [];\r",
-											"    } else {\r",
-											"        batchIds = JSON.parse(batchIds);\r",
-											"    }    \r",
-											"    batchIds.push(batchIds);    \r",
-											"    pm.collectionVariables.set(\"batchIds\", JSON.stringify(batchIds));\r",
+											"// var batchIds = pm.collectionVariables.get(\"batch_id\");\r",
+											"//     if (!batchIds) {\r",
+											"//         batchIds = [];\r",
+											"//     } else {\r",
+											"//         batchIds = JSON.parse(batchIds);\r",
+											"//     }    \r",
+											"//     batchIds.push(batchIds);    \r",
+											"//     pm.collectionVariables.set(\"batchIds\", JSON.stringify(batchIds));\r",
 											"\r",
 											" pm.collectionVariables.set(\"batch_name\",Jsondata.batchName);\r",
 											"\r",
@@ -483,8 +483,7 @@
 											"})\r",
 											"\r",
 											"var requestBody = JSON.parse(pm.request.body.raw);\r",
-											"pm.test(\"value of fields in response\", () => {\r",
-											"    //pm.expect(Jsondata .batchId).to.eql(requestBody.batchId);\r",
+											"pm.test(\"value of fields in response\", () => {    \r",
 											"    pm.expect(Jsondata .batchName).to.eql(requestBody.batchName);\r",
 											"    pm.expect(Jsondata.batchDescription).to.eql(requestBody.batchDescription);\r",
 											"    pm.expect(Jsondata.batchNoOfClasses).to.eql(requestBody.batchNoOfClasses);\r",
@@ -555,7 +554,7 @@
 									"script": {
 										"id": "9ab00a45-8209-4bc5-a1ee-55588d119b5e",
 										"exec": [
-											"// pm.collectionVariables.set(\"baseurl\",\"https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms\");"
+											"pm.collectionVariables.set(\"baseurl\",\"https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms\");"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -570,14 +569,14 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": ""
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTA3NzI0NCwiZXhwIjoxNzMxMTA2MDQ0fQ.IGqfMUnW2lCRKV_cpVKhW4C5lUrexgsKemNMooWkPJgm3wZo7N2-O2y6Cezlio6KbjtHG0jMS1y0fAoasrUOQg"
 									}
 								},
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{  \r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"batchNoOfClasses\":{{batchNoOfClasses}},\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{programName}}\" \r\n}\r\n\r\n   \r\n",
+									"raw": "{  \r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"programId\": {{programId}},\r\n  \"programName\": \"{{programName}}\"\r\n}\r\n\r\n\r\n   \r\n",
 									"options": {
 										"raw": {
 											"language": "json"
