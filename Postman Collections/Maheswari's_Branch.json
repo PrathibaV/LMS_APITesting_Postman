@@ -12,7 +12,7 @@
 					"name": "UserLogin",
 					"item": [
 						{
-							"name": "Admin Login",
+							"name": "User Login",
 							"event": [
 								{
 									"listen": "test",
@@ -112,7 +112,7 @@
 									"script": {
 										"id": "e2cc25f0-8b69-4f7b-a56c-0ccb258faf19",
 										"exec": [
-											"pm.environment.set(\"baseURL\",\"https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/\");"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -144,7 +144,7 @@
 										}
 									}
 								},
-								"url": ""
+								"url": "{{baseURL}}"
 							},
 							"response": [
 								{
