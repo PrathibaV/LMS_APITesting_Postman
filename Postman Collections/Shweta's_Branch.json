@@ -1093,7 +1093,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "14473841-2cd9-4086-b307-72d9c29a6bee",
+				"id": "7c0a6c2d-14fb-4c13-ae06-3f38eda2d111",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1166,15 +1166,23 @@
 					"\r",
 					"let PgrmUpdateURLName;\r",
 					"\r",
-					"if ((pm.info.requestName===\"Update Program By Program Name\") || (pm.info.requestName=== \"Delete Program By Program Name\")) {\r",
-					"    const PgrmName = pm.environment.get(\"ProgramName\");\r",
+					"if (pm.info.requestName===\"Delete Program By Program Name\") {\r",
+					"    const DPgrmName = pm.environment.get(\"pgrmName1\");\r",
 					"    console.log(\"Program Vale is:\" + PgrmName);\r",
-					"    PgrmUpdateDelURLName = baseUrl + endpoint.replace(\"{ProgramName}\", PgrmName);  \r",
+					"    PgrmUpdateURLName = baseUrl + endpoint.replace(\"{ProgramName}\", PgrmName);  \r",
 					"} else {\r",
-					"    PgrmUpdateDelURLName = baseUrl + endpoint; \r",
+					"    PgrmUpdateURLName = baseUrl + endpoint; \r",
 					"}\r",
 					"\r",
 					"\r",
+					"pm.request.url = PgrmUpdateURLName;\r",
+					"\r",
+					"    if (variables.includeAuth.toLowerCase() === 'true') {\r",
+					"        const token = pm.globals.get('token');  \r",
+					"        pm.request.headers.add({ key: 'Authorization', value: `Bearer ${token}` });\r",
+					"    } else {\r",
+					"       console.log(\"No Authorization header needed\"); \r",
+					"    }\r",
 					"\r",
 					"\r",
 					"\r",
@@ -1202,7 +1210,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "ce9d8fa3-627c-43c7-b966-1292cb2e029b",
+				"id": "4515a0c1-5092-4fd0-a5b0-70bba14772bc",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
