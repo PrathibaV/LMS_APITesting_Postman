@@ -557,6 +557,22 @@
 						},
 						{
 							"name": "Update Program By Program Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "595b59ad-97da-4a76-bb6f-7cddcbfc081c",
+										"exec": [
+											"bodyData = pm.response.json();\r",
+											"dPgrmName = bodyData.programName,\r",
+											"console.log(\"pgrmName1: \" + DPgrmName)\r",
+											"pm.environment.set(\"pgrmName1\", DPgrmName);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "ec8e42c5-ec38-40f9-8e96-ee8d29b1b470",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
