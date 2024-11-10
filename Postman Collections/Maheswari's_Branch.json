@@ -144,16 +144,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "",
-									"query": [
-										{
-											"key": "",
-											"value": "",
-											"disabled": true
-										}
-									]
-								}
+								"url": ""
 							},
 							"response": [
 								{
