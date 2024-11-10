@@ -125,10 +125,7 @@
 							},
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": ""
-									}
+									"type": "noauth"
 								},
 								"method": "POST",
 								"header": [
@@ -140,7 +137,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"userLoginEmailId\":\"{{userLoginEmailId}}\",\n  \"password\":\"{{password}}\"\n}\n\n\n\n\n",
+									"raw": "{\n  \"userLoginEmailId\":\"{{userLoginEmailId}}\",\n  \"password\":\"{{password}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
