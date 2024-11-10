@@ -140,7 +140,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"userLoginEmailId\": \"sdet@gmail.com\",\n  \"password\": \"LmsHackathon@2024\"\n}\n\n\n\n\n",
+									"raw": "{\n  \"userLoginEmailId\": \"{{username}}\",\n  \"password\": \"{{password}}\"\n}\n\n\n\n\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -148,17 +148,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/login",
-									"protocol": "https",
-									"host": [
-										"lms-hackthon-oct24-3efc7e0df381",
-										"herokuapp",
-										"com"
-									],
-									"path": [
-										"lms",
-										"login"
-									],
+									"raw": "",
 									"query": [
 										{
 											"key": "",
