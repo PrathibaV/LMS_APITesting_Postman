@@ -1093,7 +1093,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "734356c1-33f3-4a92-8ef9-3d3f82b84fd5",
+				"id": "e891a8d0-f57a-49ff-87c3-f9b8e49172bd",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1174,6 +1174,15 @@
 					"    PgrmUpdateURLName = baseUrl + endpoint; \r",
 					"}\r",
 					"\r",
+					"pm.request.url = PgrmUpdateURLName;\r",
+					"\r",
+					"    if (variables.includeAuth.toLowerCase() === 'true') {\r",
+					"        const token = pm.globals.get('token');  \r",
+					"        pm.request.headers.add({ key: 'Authorization', value: `Bearer ${token}` });\r",
+					"    } else {\r",
+					"       console.log(\"No Authorization header needed\"); \r",
+					"    }\r",
+					"\r",
 					"\r",
 					"let PgrmDelURLName;\r",
 					"\r",
@@ -1221,7 +1230,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "fe73ff5e-fcd3-43f0-8930-5b1123cb91bd",
+				"id": "b6959070-796e-421c-9146-3fe5abeafc12",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
