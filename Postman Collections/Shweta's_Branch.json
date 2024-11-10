@@ -726,7 +726,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"classComments\": \"Java 1223Opps\",\r\n    \"classDate\": \"2024-12-09\",\r\n    \"classDescription\": \"description\",\r\n    \"classNo\": 2,\r\n    \"classNotes\": \"notes123\",\r\n    \"classRecordingPath\": \"C:/Recordings\",\r\n    \"classStaffId\": \"U49\",\r\n    \"classStatus\": \"Active\",\r\n    \"classTopic\": \"super keywords AC13\",\r\n    \"classScheduledDates_1\": \"2024-11-21T15:11:08.750+00:00\",\r\n    \"classScheduledDates_2\": \"2024-11-21T15:11:08.750+00:00\",",
+									"raw": "{\r\n    \"classComments\": \"Java 1223Opps\",\r\n    \"classDate\": \"2024-12-09\",\r\n    \"classDescription\": \"description\",\r\n    \"classNo\": 2,\r\n    \"classNotes\": \"notes123\",\r\n    \"classRecordingPath\": \"C:/Recordings\",\r\n    \"classStaffId\": \"U49\",\r\n    \"classStatus\": \"Active\",\r\n    \"classTopic\": \"super keywords AC13\",\r\n    \"classScheduledDates_1\": \"2024-11-21\",\r\n    \"classScheduledDates_2\": \"2024-11-21\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
