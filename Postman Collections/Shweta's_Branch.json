@@ -1093,7 +1093,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "d266fdd5-d53a-437d-87f5-d25dde5f9793",
+				"id": "7aae3083-2a7e-4baf-bd81-43e7042259e9",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1165,7 +1165,7 @@
 					"//     PgrmUpdateDelURLName = baseUrl + endpoint; \r",
 					"// }\r",
 					"\r",
-					"\r",
+					"const endpoint = variables.endpoint; \r",
 					"let PgrmUpdateURLName;\r",
 					"\r",
 					"if (pm.info.requestName===\"Update Program By Program Name\") {\r",
@@ -1185,7 +1185,7 @@
 					"       console.log(\"No Authorization header needed\"); \r",
 					"    }\r",
 					"\r",
-					"\r",
+					"const endpoint = variables.endpoint; \r",
 					"let PgrmDelURLName;\r",
 					"\r",
 					"if (pm.info.requestName===\"Delete Program By Program Name\") {\r",
@@ -1232,7 +1232,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "02470f76-ec15-4baa-9351-dd014f526a68",
+				"id": "707c935a-0afc-421f-b11a-10fb2fe6b6af",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
