@@ -140,7 +140,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"userLoginEmailId\": \"{{userLoginEmailId}}\",\n  \"password\": \"{{password}}\"\n}\n\n\n\n\n",
+									"raw": "{\n  \"userLoginEmailId\":\"{{userLoginEmailId}}\",\n  \"password\":\"{{password}}\"\n}\n\n\n\n\n",
 									"options": {
 										"raw": {
 											"language": "json"
