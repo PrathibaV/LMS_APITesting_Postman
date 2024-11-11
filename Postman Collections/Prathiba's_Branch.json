@@ -463,7 +463,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"batchId\": {{batchID}},  \r\n  \"classComments\": \"{{classComments}}\",\r\n  \"classDate\": \"{{classDate}}\",\r\n  \"classDescription\": \"{{classDescription}}\",\r\n  \"classNo\": {{classNo}},\r\n  \"classNotes\": \"{{classNotes}}\",\r\n  \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n  \"classStaffId\": \"{{classStaffId}}\",\r\n  \"classStatus\": \"{{classStatus}}\",\r\n  \"classTopic\": \"{{classTopic}}\",\r\n   \"classScheduledDates\": [\r\n    \"{{classScheduledDates_1}}\",\r\n    \"{{classScheduledDates_2}}\"\r\n  ]\r\n}\r\n",
+							"raw": "{\r\n  \"batchId\": {{batchId}},  \r\n  \"classComments\": \"{{classComments}}\",\r\n  \"classDate\": \"{{classDate}}\",\r\n  \"classDescription\": \"{{classDescription}}\",\r\n  \"classNo\": {{classNo}},\r\n  \"classNotes\": \"{{classNotes}}\",\r\n  \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n  \"classStaffId\": \"{{classStaffId}}\",\r\n  \"classStatus\": \"{{classStatus}}\",\r\n  \"classTopic\": \"{{classTopic}}\",\r\n   \"classScheduledDates\": [\r\n    \"{{classScheduledDates_1}}\",\r\n    \"{{classScheduledDates_2}}\"\r\n  ]\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
