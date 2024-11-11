@@ -270,12 +270,31 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{token}}"
+										"token": ""
 									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": "{{baseURL}}allPrograms"
+								"url": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Program Copy",
+							"id": "4a00c47a-2e1b-4111-9419-fc2072977b57",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": ""
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": ""
 							},
 							"response": []
 						},
