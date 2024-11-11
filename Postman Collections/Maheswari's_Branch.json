@@ -5810,7 +5810,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "c4398092-560d-453e-bf66-5ab80d6e75d0",
+				"id": "7fe13e6d-d477-49c7-ae81-95d655409bd4",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5874,14 +5874,14 @@
 					"}\t\t\r",
 					"\r",
 					"//**********************************Get Batch*************************************************/\r",
-					"const endpoint = variables.endpoint; \r",
-					"let fullURL;\r",
+					"//const endpoint = variables.endpoint; \r",
+					"//let fullURL;\r",
 					"if (pm.info.requestName=== \"GetAllBatches\") {\r",
 					" fullURL = baseUrl + endpoint;\r",
 					"}\r",
 					"\r",
-					"const endpoint = variables.endpoint; \r",
-					"let fullURL;\r",
+					"//const endpoint = variables.endpoint; \r",
+					"//let fullURL;\r",
 					"if ((pm.info.requestName=== \"GetBatchbybatchId\") || (pm.info.requestName=== \"GetBatchbybatchName\")) {\r",
 					"    const batchId = pm.environment.get(\"batchID\");\r",
 					"    const batchName =pm.environment.get(\"batchName\");\r",
@@ -5890,8 +5890,8 @@
 					"} else {\r",
 					"    fullURL = baseUrl + endpoint; \r",
 					"}\r",
-					"const endpoint = variables.endpoint; \r",
-					"let fullURL;\r",
+					"//const endpoint = variables.endpoint; \r",
+					"//let fullURL;\r",
 					"if (pm.info.requestName=== \"GetBatchbyprogramId\") {\r",
 					"    const programId = pm.environment.get(\"programID\");\r",
 					" fullURL = baseUrl + endpoint.replace(\"{programId}\", programId);  \r",
@@ -5904,7 +5904,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "50843ee1-5e37-4268-b252-16af4dbabaa0",
+				"id": "fee516a6-efb9-40eb-8abf-7e5f3146a5df",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
