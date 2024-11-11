@@ -144,7 +144,7 @@
 										}
 									}
 								},
-								"url": "{{baseURL}}"
+								"url": ""
 							},
 							"response": [
 								{
@@ -5810,7 +5810,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8f78e01a-bf36-4a4e-89f6-11bdfe1b3a25",
+				"id": "c4398092-560d-453e-bf66-5ab80d6e75d0",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5851,9 +5851,9 @@
 					"\r",
 					"const endpoint = variables.endpoint; \r",
 					"let fullURL;\r",
-					"if ((pm.info.requestName=== \"Update Class\") || (pm.info.requestName=== \"Delete Class\")) {\r",
-					"    const classId = pm.environment.get(\"classID\");\r",
-					"    fullURL = baseUrl + endpoint.replace(\"{classId}\", classId);  \r",
+					"if ((pm.info.requestName=== \"UpdateBatchbybatchId\") || (pm.info.requestName=== \"DeleteBatchbybatchId\")) {\r",
+					"    const classId = pm.environment.get(\"batchId\");\r",
+					"    fullURL = baseUrl + endpoint.replace(\"{batchId}\", batchId);  \r",
 					"} else {\r",
 					"    fullURL = baseUrl + endpoint; \r",
 					"}\r",
@@ -5904,7 +5904,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "c9483453-362a-4fa7-bc77-2c270790404c",
+				"id": "50843ee1-5e37-4268-b252-16af4dbabaa0",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6089,14 +6089,6 @@
 		},
 		{
 			"key": "baseurl",
-			"value": ""
-		},
-		{
-			"key": "batchIdArray",
-			"value": ""
-		},
-		{
-			"key": "batchIds",
 			"value": ""
 		}
 	]
