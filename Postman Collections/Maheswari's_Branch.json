@@ -144,7 +144,7 @@
 										}
 									}
 								},
-								"url": ""
+								"url": "{{baseURL}}"
 							},
 							"response": [
 								{
@@ -5810,7 +5810,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "4d681d32-c89b-4ec7-8f6b-6e6d18c7046d",
+				"id": "8f78e01a-bf36-4a4e-89f6-11bdfe1b3a25",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5904,7 +5904,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d6338d18-6a22-4a9a-8e0d-529d1dac447f",
+				"id": "c9483453-362a-4fa7-bc77-2c270790404c",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
