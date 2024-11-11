@@ -144,7 +144,7 @@
 										}
 									}
 								},
-								"url": "{{baseURL}}"
+								"url": ""
 							},
 							"response": [
 								{
