@@ -485,7 +485,7 @@
 								},
 								"method": "GET",
 								"header": [],
-								"url": "{{baseURL}}allProgram"
+								"url": "{{baseURL}}allPrograms"
 							},
 							"response": []
 						},
@@ -596,6 +596,50 @@
 									}
 								},
 								"url": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Update Program By Program Name Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "595b59ad-97da-4a76-bb6f-7cddcbfc081c",
+										"exec": [
+											"bodyData = pm.response.json();\r",
+											"dPgrmName = bodyData.programName,\r",
+											"console.log(\"pgrmName1: \" + dPgrmName)\r",
+											"pm.environment.set(\"pgrmName1\", dPgrmName);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "419a7246-a9d4-4cc9-b20f-b7cc8fad30ce",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": ""
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}program/"
 							},
 							"response": []
 						},
