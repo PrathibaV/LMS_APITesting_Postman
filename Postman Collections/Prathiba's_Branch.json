@@ -6,118 +6,139 @@
 	},
 	"item": [
 		{
-			"name": "Data Driven",
+			"name": "UserLogin",
 			"item": [
 				{
-					"name": "UserLogin",
-					"item": [
+					"name": "Admin Login",
+					"event": [
 						{
-							"name": "Admin Login",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "ae8d7c71-2e67-4086-a1c3-8d097bb3f7c6",
-										"exec": [
-											"\r",
-											"let bodyData = pm.response.json();\r",
-											"\r",
-											"let token = bodyData.token;\r",
-											"pm.globals.set(\"token\", token);\r",
-											"\r",
-											"pm.test('Verify user signed in', () => {\r",
-											"    const response = pm.response.json();\r",
-											"    pm.expect(response.token).to.eql(pm.globals.get('token'));\r",
-											"});\r",
-											"\r",
-											"pm.test(`Verify userId is a number`, function () {\r",
-											"        let bodyData = pm.response.json();\r",
-											"        let key = 'userId';\r",
-											"        pm.expect(bodyData).to.have.property(key);\r",
-											"        pm.expect(bodyData[key]).to.be.a('number');\r",
-											"    });\r",
-											"\r",
-											"pm.test('Verify Role is - ROLE_ADMIN', function () {\r",
-											"        pm.expect(pm.response.text()).to.include('ROLE_ADMIN');\r",
-											"    });\r",
-											"\r",
-											"pm.test(`Status code is 200`, function () {\r",
-											"        pm.response.to.have.status(200);\r",
-											"    });\r",
-											"\r",
-											"pm.test(\"Response Header Content-Type is application/json\", function () {\r",
-											"        pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
-											"    });\r",
-											"\r",
-											"pm.test(\"Verify Response has Body or not\", function(){\r",
-											"    pm.response.to.be.withBody;\r",
-											"     }); \r",
-											"\r",
-											"pm.test(\"Verify Response Body as JSON\", function(){\r",
-											"    pm.response.to.be.json;\r",
-											"    // pm.response.to.have.body({key:value});\r",
-											"    });   \r",
-											"\r",
-											"pm.test(\"Response time is less than 500ms\", function () {\r",
-											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
-											"});\r",
-											"\r",
-											"\r",
-											"//Schema Validation\r",
-											"const schema={\r",
-											"  \"type\": \"object\",\r",
-											"  \"properties\": {\r",
-											"    \"token\": { \"type\": \"string\" },\r",
-											"    \"type\": { \"type\": \"string\" },\r",
-											"    \"userId\": { \"type\": \"number\" },\r",
-											"    \"loginUserEmail\": { \"type\": \"string\" },\r",
-											"    \"roles\": { \"type\": \"array\" }\r",
-											"  },\r",
-											"  \"required\": [\"token\", \"type\", \"userId\", \"loginUserEmail\", \"roles\"]\r",
-											"}\r",
-											"\r",
-											"pm.test(\"Schema - Validation Response contain valid response data - schema validation\", () => {\r",
-											"    pm.response.to.have.jsonSchema(schema);\r",
-											"});\r",
-											"\r",
-											"// function getAdminToken(){\r",
-											"//     bodyData = pm.response.json();\r",
-											"//     TokenValue = bodyData.token;\r",
-											"//     console.log(\"Token: \" + TokenValue);\r",
-											"//     return TokenValue;\r",
-											"// }\r",
-											"// pm.collectionVariables.set(\"adminToken\", getAdminToken());\r",
-											"//Validation\r",
-											"\r",
-											"\r",
-											"// PostmanLegacy.setNextRequest('Create New Dietician');\r",
-											"// pm.execution.setNextRequest('Create New Dietician Copy');\r",
-											""
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "e2cc25f0-8b69-4f7b-a56c-0ccb258faf19",
-										"exec": [
-											""
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
+							"listen": "test",
+							"script": {
+								"id": "ae8d7c71-2e67-4086-a1c3-8d097bb3f7c6",
+								"exec": [
+									"\r",
+									"let bodyData = pm.response.json();\r",
+									"\r",
+									"let token = bodyData.token;\r",
+									"pm.globals.set(\"token\", token);\r",
+									"\r",
+									"pm.test('Verify user signed in', () => {\r",
+									"    const response = pm.response.json();\r",
+									"    pm.expect(response.token).to.eql(pm.globals.get('token'));\r",
+									"});\r",
+									"\r",
+									"pm.test(`Verify userId is a number`, function () {\r",
+									"        let bodyData = pm.response.json();\r",
+									"        let key = 'userId';\r",
+									"        pm.expect(bodyData).to.have.property(key);\r",
+									"        pm.expect(bodyData[key]).to.be.a('number');\r",
+									"    });\r",
+									"\r",
+									"pm.test('Verify Role is - ROLE_ADMIN', function () {\r",
+									"        pm.expect(pm.response.text()).to.include('ROLE_ADMIN');\r",
+									"    });\r",
+									"\r",
+									"pm.test(`Status code is 200`, function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    });\r",
+									"\r",
+									"pm.test(\"Response Header Content-Type is application/json\", function () {\r",
+									"        pm.response.to.have.header(\"Content-Type\", \"application/json\");\r",
+									"    });\r",
+									"\r",
+									"pm.test(\"Verify Response has Body or not\", function(){\r",
+									"    pm.response.to.be.withBody;\r",
+									"     }); \r",
+									"\r",
+									"pm.test(\"Verify Response Body as JSON\", function(){\r",
+									"    pm.response.to.be.json;\r",
+									"    // pm.response.to.have.body({key:value});\r",
+									"    });   \r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//Schema Validation\r",
+									"const schema={\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"token\": { \"type\": \"string\" },\r",
+									"    \"type\": { \"type\": \"string\" },\r",
+									"    \"userId\": { \"type\": \"number\" },\r",
+									"    \"loginUserEmail\": { \"type\": \"string\" },\r",
+									"    \"roles\": { \"type\": \"array\" }\r",
+									"  },\r",
+									"  \"required\": [\"token\", \"type\", \"userId\", \"loginUserEmail\", \"roles\"]\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Schema - Validation Response contain valid response data - schema validation\", () => {\r",
+									"    pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
+									"\r",
+									"// function getAdminToken(){\r",
+									"//     bodyData = pm.response.json();\r",
+									"//     TokenValue = bodyData.token;\r",
+									"//     console.log(\"Token: \" + TokenValue);\r",
+									"//     return TokenValue;\r",
+									"// }\r",
+									"// pm.collectionVariables.set(\"adminToken\", getAdminToken());\r",
+									"//Validation\r",
+									"\r",
+									"\r",
+									"// PostmanLegacy.setNextRequest('Create New Dietician');\r",
+									"// pm.execution.setNextRequest('Create New Dietician Copy');\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e2cc25f0-8b69-4f7b-a56c-0ccb258faf19",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "2af1a399-1a77-4aa1-9c53-e250bee31000",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"userLoginEmailId\": \"{{userLoginEmailId}}\",\n\"password\":\"{{password}}\"\n}\n\n\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							],
-							"id": "2af1a399-1a77-4aa1-9c53-e250bee31000",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
+							}
+						},
+						"url": ""
+					},
+					"response": [
+						{
+							"id": "41671c13-bd89-407c-9144-712272690f22",
+							"name": "admin Login",
+							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
@@ -128,410 +149,347 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\"userLoginEmailId\": \"{{userLoginEmailId}}\",\n\"password\":\"{{password}}\"\n}\n\n\n\n",
+									"raw": "{\n  \"password\": \"test\",\n  \"userLoginEmail\": \"Team6@gmail.com\"\n}\n\n\n\n\n",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": ""
-							},
-							"response": [
-								{
-									"id": "41671c13-bd89-407c-9144-712272690f22",
-									"name": "admin Login",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "",
-												"value": "",
-												"disabled": true
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n  \"password\": \"test\",\n  \"userLoginEmail\": \"Team6@gmail.com\"\n}\n\n\n\n\n",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{BaseUrl}}/login",
-											"host": [
-												"{{BaseUrl}}"
-											],
-											"path": [
-												"login"
-											],
-											"query": [
-												{
-													"key": "",
-													"value": "",
-													"disabled": true
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "Cowboy"
-										},
-										{
-											"key": "Report-To",
-											"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1723106690&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=FCpchhkOvdlJSaQgPHC9O0KzTAvdwpW9fRgna1VvGQg%3D\"}]}"
-										},
-										{
-											"key": "Reporting-Endpoints",
-											"value": "heroku-nel=https://nel.heroku.com/reports?ts=1723106690&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=FCpchhkOvdlJSaQgPHC9O0KzTAvdwpW9fRgna1VvGQg%3D"
-										},
-										{
-											"key": "Nel",
-											"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										},
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Vary",
-											"value": "Access-Control-Request-Method"
-										},
-										{
-											"key": "Vary",
-											"value": "Access-Control-Request-Headers"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "X-Xss-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, no-store, max-age=0, must-revalidate"
-										},
-										{
-											"key": "Pragma",
-											"value": "no-cache"
-										},
-										{
-											"key": "Expires",
-											"value": "0"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=31536000 ; includeSubDomains"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "DENY"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 08 Aug 2024 08:44:50 GMT"
-										},
-										{
-											"key": "Via",
-											"value": "1.1 vegur"
-										}
+								"url": {
+									"raw": "{{BaseUrl}}/login",
+									"host": [
+										"{{BaseUrl}}"
 									],
-									"cookie": [],
-									"responseTime": null,
-									"body": "{\n    \"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3MjMxMDY2OTAsImV4cCI6MTcyMzEzNTQ5MH0.WV-CLS9y0d88RBPwpK4NFIecR9Fckx5gvua3kJFa8baE3D8I4E2dCG6dgGm4Ss0shiPZfPA9sA9r-fvyhYVT2w\",\n    \"type\": \"Bearer \",\n    \"userId\": 7048,\n    \"loginUserEmail\": \"Team6@gmail.com\",\n    \"roles\": [\n        \"ROLE_ADMIN\"\n    ]\n}"
+									"path": [
+										"login"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
 								}
-							]
-						}
-					],
-					"id": "0d86c0ff-8632-4dc5-b3f2-939fc95c45d2"
-				},
-				{
-					"name": "Program",
-					"item": [
-						{
-							"name": "Create Program",
-							"event": [
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
 								{
-									"listen": "test",
-									"script": {
-										"id": "19b3e34a-e6c3-4eed-a7d9-37f037e93c69",
-										"exec": [
-											"let bodyData = pm.response.json();\r",
-											"\r",
-											"let programId = bodyData.programId;\r",
-											"pm.environment.set(\"programID\", programId);"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"group\":\"heroku-nel\",\"max_age\":3600,\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?ts=1723106690&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=FCpchhkOvdlJSaQgPHC9O0KzTAvdwpW9fRgna1VvGQg%3D\"}]}"
+								},
+								{
+									"key": "Reporting-Endpoints",
+									"value": "heroku-nel=https://nel.heroku.com/reports?ts=1723106690&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&s=FCpchhkOvdlJSaQgPHC9O0KzTAvdwpW9fRgna1VvGQg%3D"
+								},
+								{
+									"key": "Nel",
+									"value": "{\"report_to\":\"heroku-nel\",\"max_age\":3600,\"success_fraction\":0.005,\"failure_fraction\":0.05,\"response_headers\":[\"Via\"]}"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000 ; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 08 Aug 2024 08:44:50 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
 								}
 							],
-							"id": "3b75abb5-2231-47f4-a690-da33c5fc4b52",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								}
-							},
-							"response": []
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3MjMxMDY2OTAsImV4cCI6MTcyMzEzNTQ5MH0.WV-CLS9y0d88RBPwpK4NFIecR9Fckx5gvua3kJFa8baE3D8I4E2dCG6dgGm4Ss0shiPZfPA9sA9r-fvyhYVT2w\",\n    \"type\": \"Bearer \",\n    \"userId\": 7048,\n    \"loginUserEmail\": \"Team6@gmail.com\",\n    \"roles\": [\n        \"ROLE_ADMIN\"\n    ]\n}"
 						}
-					],
-					"id": "033594b6-6cf7-4bde-8f6f-669a29e1c9e9"
-				},
-				{
-					"name": "ProgramBatch",
-					"item": [
-						{
-							"name": "Create Batch",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "9bcb3106-ba79-4784-9848-52fcdca2bb7f",
-										"exec": [
-											"let bodyData = pm.response.json();\r",
-											"\r",
-											"let batchId = bodyData.batchId;\r",
-											"pm.environment.set(\"batchID\", batchId);"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "ba8893c7-391f-4327-bd4e-d00ea2ef0604",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programID}},\r\n\"programName\": \"{{programName}}\"\r\n\r\n }\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								}
-							},
-							"response": []
-						}
-					],
-					"id": "24f616a3-db8f-4eea-a325-d4dbc667de4d"
-				},
-				{
-					"name": "Class",
-					"item": [
-						{
-							"name": "Create Class",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "dd6bbdad-382f-4e14-b69e-588b4d34a121",
-										"exec": [
-											"console.log(\"Scenario: \"+ pm.variables.get(\"scenario\"));\r",
-											"if (pm.variables.get(\"scenario\") === \"create class with all fields\") {\r",
-											"    let bodyData = pm.response.json();\r",
-											"let classId = bodyData.csId;\r",
-											"pm.environment.set(\"classID\", classId);\r",
-											"}"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "ad679ab6-f5ec-43ba-923c-7fd60b6d4fc9",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"batchId\": {{batchID}},  \r\n  \"classComments\": \"{{classComments}}\",\r\n  \"classDate\": \"{{classDate}}\",\r\n  \"classDescription\": \"{{classDescription}}\",\r\n  \"classNo\": {{classNo}},\r\n  \"classNotes\": \"{{classNotes}}\",\r\n  \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n  \"classStaffId\": \"{{classStaffId}}\",\r\n  \"classStatus\": \"{{classStatus}}\",\r\n  \"classTopic\": \"{{classTopic}}\",\r\n   \"classScheduledDates\": [\r\n    \"{{classScheduledDates_1}}\",\r\n    \"{{classScheduledDates_2}}\"\r\n  ]\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Update Class",
-							"id": "d2bcf3c5-d7a1-47be-a1b9-6e402c1f4fcf",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"batchId\": {{batchID}},\r\n    \"classNo\": {{classNo}},\r\n    \"classDate\": \"{{classDate}}\",\r\n    \"classTopic\": \"{{classTopic}}\",\r\n    \"classStatus\": \"{{classStatus}}\",\r\n    \"classStaffId\": \"{{classStaffId}}\",\r\n    \"classDescription\": \"{{classDescription}}\",\r\n    \"classComments\": \"{{classComments}}\",\r\n    \"classNotes\": \"{{classNotes}}\",\r\n    \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n    \"classScheduledDates\": [\r\n    \"{{classScheduledDates_1}}\",\r\n    \"{{classScheduledDates_2}}\"\r\n  ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Update Class Recording Path",
-							"id": "d0fd92d3-2594-4c83-a3e3-3ffcdf7bd2bb",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n  \"csId\": {{csId}}\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Delete Class Negative",
-							"id": "2221e166-2371-4cb2-918c-22212aa8ebc4",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "DELETE",
-								"header": []
-							},
-							"response": []
-						},
-						{
-							"name": "Delete Class",
-							"id": "9612174e-8525-42e5-8d6b-f6d07e17dc67",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "DELETE",
-								"header": []
-							},
-							"response": []
-						}
-					],
-					"id": "7c613a5e-f428-4864-a6ca-ac7d98d8dffa"
-				},
-				{
-					"name": "ProgramBatchMapController",
-					"item": [],
-					"id": "2584b132-f1ec-43c3-b1cc-0531b72c8712"
-				},
-				{
-					"name": "Delete",
-					"item": [],
-					"id": "c4d229ab-c475-42a5-bf83-8c8147d759b1"
+					]
 				}
 			],
-			"id": "2d681516-d8a4-4a47-862f-baad286b9152"
+			"id": "0d86c0ff-8632-4dc5-b3f2-939fc95c45d2"
 		},
 		{
-			"name": "Negative Scenarios",
+			"name": "Program",
 			"item": [
 				{
-					"name": "UserLogin",
-					"item": [],
-					"id": "afd0007e-2952-45aa-9186-17f0d5d53bfa"
-				},
-				{
-					"name": "Program",
-					"item": [],
-					"id": "3547d223-6d4a-4df8-8382-a0fe48eb32b6"
-				},
-				{
-					"name": "ProgramBatch",
-					"item": [],
-					"id": "701d3cbc-0cfb-4338-a12b-010cc965b42b"
-				},
-				{
-					"name": "Class",
-					"item": [],
-					"id": "f6ac246f-1012-4eed-9342-63907e8eee92"
-				},
-				{
-					"name": "ProgramBatchMapController",
-					"item": [],
-					"id": "45eb0dd9-6ba3-469d-98e1-7ff8c6b9586c"
-				},
-				{
-					"name": "Delete",
-					"item": [],
-					"id": "06483a70-f0a4-4557-904b-5c79b2a66196"
+					"name": "Create Program",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "19b3e34a-e6c3-4eed-a7d9-37f037e93c69",
+								"exec": [
+									"let bodyData = pm.response.json();\r",
+									"\r",
+									"let programId = bodyData.programId;\r",
+									"pm.environment.set(\"programID\", programId);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "3b75abb5-2231-47f4-a690-da33c5fc4b52",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
 				}
 			],
-			"id": "b7beb303-6401-4554-bee9-8c26bb657ec1"
+			"id": "033594b6-6cf7-4bde-8f6f-669a29e1c9e9"
+		},
+		{
+			"name": "ProgramBatch",
+			"item": [
+				{
+					"name": "Create Batch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9bcb3106-ba79-4784-9848-52fcdca2bb7f",
+								"exec": [
+									"let bodyData = pm.response.json();\r",
+									"\r",
+									"let batchId = bodyData.batchId;\r",
+									"pm.environment.set(\"batchID\", batchId);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "ba8893c7-391f-4327-bd4e-d00ea2ef0604",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchName\": \"{{batchName}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": {{programID}},\r\n\"programName\": \"{{programName}}\"\r\n\r\n }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "24f616a3-db8f-4eea-a325-d4dbc667de4d"
+		},
+		{
+			"name": "Class",
+			"item": [
+				{
+					"name": "Create Class",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dd6bbdad-382f-4e14-b69e-588b4d34a121",
+								"exec": [
+									"console.log(\"Scenario: \"+ pm.variables.get(\"scenario\"));\r",
+									"if (pm.variables.get(\"scenario\") === \"create class with all fields\") {\r",
+									"    let bodyData = pm.response.json();\r",
+									"let classId = bodyData.csId;\r",
+									"pm.environment.set(\"classID\", classId);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "ad679ab6-f5ec-43ba-923c-7fd60b6d4fc9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchId\": {{batchID}},  \r\n  \"classComments\": \"{{classComments}}\",\r\n  \"classDate\": \"{{classDate}}\",\r\n  \"classDescription\": \"{{classDescription}}\",\r\n  \"classNo\": {{classNo}},\r\n  \"classNotes\": \"{{classNotes}}\",\r\n  \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n  \"classStaffId\": \"{{classStaffId}}\",\r\n  \"classStatus\": \"{{classStatus}}\",\r\n  \"classTopic\": \"{{classTopic}}\",\r\n   \"classScheduledDates\": [\r\n    \"{{classScheduledDates_1}}\",\r\n    \"{{classScheduledDates_2}}\"\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Class",
+					"id": "d2bcf3c5-d7a1-47be-a1b9-6e402c1f4fcf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"batchId\": {{batchID}},\r\n    \"classNo\": {{classNo}},\r\n    \"classDate\": \"{{classDate}}\",\r\n    \"classTopic\": \"{{classTopic}}\",\r\n    \"classStatus\": \"{{classStatus}}\",\r\n    \"classStaffId\": \"{{classStaffId}}\",\r\n    \"classDescription\": \"{{classDescription}}\",\r\n    \"classComments\": \"{{classComments}}\",\r\n    \"classNotes\": \"{{classNotes}}\",\r\n    \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n    \"classScheduledDates\": [\r\n    \"{{classScheduledDates_1}}\",\r\n    \"{{classScheduledDates_2}}\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Class Recording Path",
+					"id": "d0fd92d3-2594-4c83-a3e3-3ffcdf7bd2bb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n  \"csId\": {{csId}}\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Class Negative",
+					"id": "2221e166-2371-4cb2-918c-22212aa8ebc4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Class",
+					"id": "9612174e-8525-42e5-8d6b-f6d07e17dc67",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "7c613a5e-f428-4864-a6ca-ac7d98d8dffa"
+		},
+		{
+			"name": "ProgramBatchMapController",
+			"item": [],
+			"id": "2584b132-f1ec-43c3-b1cc-0531b72c8712"
+		},
+		{
+			"name": "Delete",
+			"item": [],
+			"id": "c4d229ab-c475-42a5-bf83-8c8147d759b1"
 		},
 		{
 			"name": "Logout",
