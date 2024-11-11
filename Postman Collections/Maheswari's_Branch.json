@@ -29,7 +29,7 @@
 											"\r",
 											"bodyData = pm.response.json();\r",
 											"TokenValue = bodyData.token;\r",
-											"console.log(\"Token: \" + TokenValue)\r",
+											"console.log(\"Token: \" + TokenValue);\r",
 											"pm.globals.set(\"token\", TokenValue);\r",
 											"\r",
 											"\r",
