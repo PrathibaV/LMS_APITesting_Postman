@@ -94,7 +94,7 @@
 											"let pgrmName = bodyData.programName;\r",
 											"\r",
 											"//To add the batch ids to an array\r",
-											"var batchIDs = pm.collectionVariables.get(\"batchIDs\");\r",
+											"var programIDs = pm.collectionVariables.get(\"programIds\");\r",
 											"    if (!batchIDs) {\r",
 											"        batchIDs = [];\r",
 											"    } else {\r",
