@@ -494,7 +494,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programName\": \"TechNovApiHackathon\",\r\n    \"programDescription\": \"API_Nov2024\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": \"API_Nov2024\",\r\n    \"programName\": \"TecApiHackathon\",\r\n    \"programStatus\": \"Active\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
