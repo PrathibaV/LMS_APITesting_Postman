@@ -629,7 +629,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"APITestingWithPostman\",\r\n    \"programName\": \"TeamTwoCommandos2024\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": \"APITestingWithPostman\",\r\n    \"programName\": \"\",\r\n    \"programStatus\": \"Active\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
