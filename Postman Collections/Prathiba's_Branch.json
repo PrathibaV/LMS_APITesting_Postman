@@ -718,6 +718,57 @@
 						"header": []
 					},
 					"response": []
+				},
+				{
+					"name": "Get all Class List",
+					"id": "07c9308f-fb50-4bea-a184-0e3e96076ed1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Class Recordings by BatchId",
+					"id": "ef1bf340-2951-4082-b14e-b3b378715efb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Class details by Id",
+					"id": "8cb9404e-f31e-4428-b0e4-1fb3dfcfe091",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "4792cd77-b3a8-44de-840a-8ccf9e64752f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "7c613a5e-f428-4864-a6ca-ac7d98d8dffa"
