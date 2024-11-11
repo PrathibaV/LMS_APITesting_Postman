@@ -5810,7 +5810,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "2e4976f3-be75-45a9-9b28-271b258867c3",
+				"id": "da9dd8c7-8269-4460-9918-e46e67e2c0cb",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5909,7 +5909,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e335c215-faa1-4de1-bb4c-cceac52ca765",
+				"id": "36d952c2-f82a-42f9-bb12-428ee8e58c3f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6054,25 +6054,7 @@
 					"\r",
 					"\r",
 					"\r",
-					"// module.exports = { \r",
-					"    \r",
-					"//     setTokenFromResponse,\r",
-					"//     checkKeyIsNumber,\r",
-					"//     getResponseText,\r",
-					"//     getStatusCode,\r",
-					"//     responseHeaderCheck,\r",
-					"//     checkResponseHasBody,\r",
-					"//     checkResponseBodyAsJson,\r",
-					"//     responseTimeTook,\r",
-					"//     getErrorMessage,\r",
-					"//     verifyStatusCode,\r",
-					"//     verifyErrorMessage,\r",
-					"//     userLoginSchemaValidation,\r",
-					"//     createDieticianSchemaValidation,\r",
-					"\r",
-					"// }\r",
-					"// }\r",
-					"// pm.collectionVariables.get(\"variable_key\");"
+					""
 				]
 			}
 		}
