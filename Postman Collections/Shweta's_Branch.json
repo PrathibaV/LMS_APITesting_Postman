@@ -485,7 +485,7 @@
 								},
 								"method": "GET",
 								"header": [],
-								"url": "{{baseURL}}allPrograms"
+								"url": "{{baseURL}}allProgram"
 							},
 							"response": []
 						},
