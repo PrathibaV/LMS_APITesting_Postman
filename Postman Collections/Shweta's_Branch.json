@@ -19,7 +19,7 @@
 									"script": {
 										"id": "ae8d7c71-2e67-4086-a1c3-8d097bb3f7c6",
 										"exec": [
-											"const commonutils = pm.require('@gold-escape-779876/commonutils');\r",
+											"const scenario = pm.variables.get(\"scenario\");\r",
 											"\r",
 											"bodyData = pm.response.json();\r",
 											"TokenValue = bodyData.token;\r",
@@ -97,11 +97,7 @@
 											""
 										],
 										"type": "text/javascript",
-										"packages": {
-											"@gold-escape-779876/commonutils": {
-												"id": "01930788-f01c-780c-9458-02c92a9caafe"
-											}
-										}
+										"packages": {}
 									}
 								},
 								{
