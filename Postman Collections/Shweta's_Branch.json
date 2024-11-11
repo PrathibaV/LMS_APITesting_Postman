@@ -565,8 +565,8 @@
 										"exec": [
 											"bodyData = pm.response.json();\r",
 											"dPgrmName = bodyData.programName,\r",
-											"console.log(\"pgrmName1: \" + DPgrmName)\r",
-											"pm.environment.set(\"pgrmName1\", DPgrmName);"
+											"console.log(\"pgrmName1: \" + dPgrmName)\r",
+											"pm.environment.set(\"pgrmName1\", dPgrmName);"
 										],
 										"type": "text/javascript",
 										"packages": {}
