@@ -9,7 +9,7 @@
 			"name": "UserLogin",
 			"item": [
 				{
-					"name": "Admin Login",
+					"name": "User Login",
 					"event": [
 						{
 							"listen": "test",
