@@ -504,7 +504,7 @@
 								},
 								"method": "GET",
 								"header": [],
-								"url": "{{baseURL}}allProgramsWithUsers"
+								"url": "{{baseURL}}allProgramsWithUserss"
 							},
 							"response": []
 						},
