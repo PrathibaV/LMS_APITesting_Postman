@@ -23,7 +23,7 @@
 											"\r",
 											"bodyData = pm.response.json();\r",
 											"TokenValue = bodyData.token;\r",
-											"console.log(\"Token: \" + TokenValue)\r",
+											"console.log(\"Token: \" + TokenValue);\r",
 											"pm.globals.set(\"token\", TokenValue);\r",
 											"\r",
 											"\r",
@@ -122,10 +122,7 @@
 							},
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": ""
-									}
+									"type": "noauth"
 								},
 								"method": "POST",
 								"header": [
@@ -137,23 +134,14 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"userLoginEmailId\": \"{{username}}\",\n    \"password\": \"{{password}}\"\n}",
+									"raw": "{\n    \"userLoginEmailId\": \"{{userLoginEmailId}}\",\n    \"password\": \"{{password}}\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": {
-									"raw": "",
-									"query": [
-										{
-											"key": "",
-											"value": "",
-											"disabled": true
-										}
-									]
-								}
+								"url": ""
 							},
 							"response": [
 								{
@@ -1131,7 +1119,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "437e13f5-6872-4051-b5d5-b99de5b256ab",
+				"id": "8ab4d6ad-e4b5-4349-b672-dee66ff286d2",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1188,15 +1176,15 @@
 					"\r",
 					"    if(currentRequest.data.length > 0){\r",
 					"       pm.execution.setNextRequest(pm.info.requestName);\r",
-					"    }\r",
-					"}"
+					"    }\r",
+					"}\t\t"
 				]
 			}
 		},
 		{
 			"listen": "test",
 			"script": {
-				"id": "bf664995-ebf4-4a3a-9b1f-33dd1c3611fe",
+				"id": "f064e2d2-16fc-4411-83e1-371a1b16cee5",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
