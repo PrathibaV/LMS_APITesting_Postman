@@ -90,8 +90,8 @@
 										"exec": [
 											"let bodyData = pm.response.json();\r",
 											"\r",
-											"let batchId = bodyData.batchId;\r",
-											"let batchName = bodyData.batchName;\r",
+											"let pgrmId = bodyData.programId;\r",
+											"let pgrmName = bodyData.programName;\r",
 											"\r",
 											"//To add the batch ids to an array\r",
 											"var batchIDs = pm.collectionVariables.get(\"batchIDs\");\r",
