@@ -289,12 +289,12 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": ""
+										"token": "{{token}}"
 									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": ""
+								"url": "{{baseURL}}allPrograms"
 							},
 							"response": []
 						},
@@ -360,7 +360,7 @@
 										}
 									}
 								},
-								"url": "{{baseURL}}programs/"
+								"url": "{{baseURL}}programs/16857"
 							},
 							"response": []
 						},
@@ -474,6 +474,34 @@
 									}
 								},
 								"url": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Update Program by Program Id Copy",
+							"id": "29c3594f-8cd2-4271-a1f5-3f0082d9e08a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{token}}"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"programName\": \"TechNovApiHackathon\",\r\n    \"programDescription\": \"API_Nov2024\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}putprogram/16857"
 							},
 							"response": []
 						}
