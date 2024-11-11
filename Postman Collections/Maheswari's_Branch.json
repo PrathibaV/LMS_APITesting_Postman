@@ -5810,7 +5810,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "55b188fd-dc53-4d3b-929b-843a4d85061d",
+				"id": "4d681d32-c89b-4ec7-8f6b-6e6d18c7046d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5892,7 +5892,7 @@
 					"}\r",
 					"const endpoint = variables.endpoint; \r",
 					"let fullURL;\r",
-					"if (pm.info.requestName=== \"GetBatchbyProgramId\") {\r",
+					"if (pm.info.requestName=== \"GetBatchbyprogramId\") {\r",
 					"    const programId = pm.environment.get(\"programID\");\r",
 					" fullURL = baseUrl + endpoint.replace(\"{programId}\", programId);  \r",
 					"}else {\r",
@@ -5904,7 +5904,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "39b34493-cd6d-429a-9966-a50505189749",
+				"id": "d6338d18-6a22-4a9a-8e0d-529d1dac447f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
