@@ -985,7 +985,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTA3NzI0NCwiZXhwIjoxNzMxMTA2MDQ0fQ.IGqfMUnW2lCRKV_cpVKhW4C5lUrexgsKemNMooWkPJgm3wZo7N2-O2y6Cezlio6KbjtHG0jMS1y0fAoasrUOQg"
+										"token": ""
 									}
 								},
 								"method": "GET",
@@ -1089,7 +1089,7 @@
 							]
 						},
 						{
-							"name": "GetBatchbyProgramId",
+							"name": "GetBatchbyprogramId",
 							"event": [
 								{
 									"listen": "test",
