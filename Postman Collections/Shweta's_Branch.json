@@ -607,10 +607,7 @@
 									"script": {
 										"id": "595b59ad-97da-4a76-bb6f-7cddcbfc081c",
 										"exec": [
-											"bodyData = pm.response.json();\r",
-											"dPgrmName = bodyData.programName,\r",
-											"console.log(\"pgrmName1: \" + dPgrmName)\r",
-											"pm.environment.set(\"pgrmName1\", dPgrmName);"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -625,21 +622,21 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": ""
+										"token": "{{token}}"
 									}
 								},
 								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
+									"raw": "{\r\n    \"programDescription\": \"APITestingWithPostman\",\r\n    \"programName\": \"TeamTwoCommandos2024\",\r\n    \"programStatus\": \"Active\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{baseURL}}program/"
+								"url": "{{baseURL}}program/TeamTwoCommandos"
 							},
 							"response": []
 						},
