@@ -471,7 +471,7 @@
 							"response": []
 						},
 						{
-							"name": "All Program",
+							"name": "Get All Program",
 							"id": "49558336-1809-4218-b3ae-2dd5a1dec453",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -480,7 +480,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{token}}"
+										"token": ""
 									}
 								},
 								"method": "GET",
