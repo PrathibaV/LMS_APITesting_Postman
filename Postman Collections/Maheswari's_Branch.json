@@ -5810,7 +5810,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "d7bc8aea-8845-4138-a913-a31608204377",
+				"id": "2e4976f3-be75-45a9-9b28-271b258867c3",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5866,7 +5866,7 @@
 					"\r",
 					"    if (variables.includeAuth.toLowerCase() === 'true') {\r",
 					"        const token = pm.globals.get('token');  \r",
-					"         pm.request.headers.add({ key: 'Authorization', value: 'Bearer ${token}'});\r",
+					"         pm.request.headers.add({ key: 'Authorization',  value: `Bearer ${token}` });\r",
 					"    } else {\r",
 					"       console.log(\"No Authorization header needed\"); \r",
 					"    }\r",
@@ -5909,7 +5909,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "81b0bdd4-7230-4f16-86d3-5607b02b7ad9",
+				"id": "e335c215-faa1-4de1-bb4c-cceac52ca765",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
