@@ -341,12 +341,12 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{token}}"
+										"token": ""
 									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": "{{baseURL}}allPrograms"
+								"url": ""
 							},
 							"response": []
 						},
@@ -360,12 +360,12 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{token}}"
+										"token": ""
 									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": "{{baseURL}}allProgramsWithUserss"
+								"url": ""
 							},
 							"response": []
 						},
