@@ -494,14 +494,14 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"API_Nov2024\",\r\n    \"programName\": \"TecApiHackathon\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": \"SelApi\",\r\n    \"programName\": \"TestProgramForHackathon\",\r\n    \"programStatus\": \"Active\"\r\n},",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{baseURL}}putprogram/16857"
+								"url": "{{baseURL}}putprogram/16326"
 							},
 							"response": []
 						}
@@ -714,7 +714,7 @@
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": "{{baseURL}}deletebyprogname/APINovThird"
+								"url": "{{baseURL}}deletebyprognam/TestProgramForHackathon"
 							},
 							"response": []
 						}
