@@ -490,7 +490,7 @@
 							"response": []
 						},
 						{
-							"name": "All program with user",
+							"name": "Get All program with user",
 							"id": "d3fb38be-1c3b-4d3d-b13a-61d7cb75891e",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -509,7 +509,7 @@
 							"response": []
 						},
 						{
-							"name": "Program By ProgramId",
+							"name": "Get Program By ProgramId",
 							"id": "dca9684e-4ed4-428c-80a9-3e6c90ebb055",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -551,7 +551,7 @@
 										}
 									}
 								},
-								"url": "{{baseURL}}programs/1680"
+								"url": "{{baseURL}}programs/"
 							},
 							"response": []
 						},
