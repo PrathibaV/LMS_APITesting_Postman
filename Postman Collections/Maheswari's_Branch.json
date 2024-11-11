@@ -284,6 +284,56 @@
 					"item": [
 						{
 							"name": "Create Program",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2ef14f5c-f868-4e5b-a510-186800d67b70",
+										"exec": [
+											"let bodyData = pm.response.json();\r",
+											"\r",
+											"let programID = bodyData.programId;\r",
+											"let programName = bodyData.programName;\r",
+											"\r",
+											"//To add the batch ids to an array\r",
+											"var programIDs = pm.collectionVariables.get(\"programIDs\");\r",
+											"    if (!programIDs) {\r",
+											"        programIDs = [];\r",
+											"    } else {\r",
+											"        programIDs = JSON.parse(programIDs);\r",
+											"    }\r",
+											"    \r",
+											"    //Storing the batchIds as local variable to use in consecutive operations\r",
+											"    if (programIDs.length === 0) {\r",
+											"        pm.collectionVariables.set(\"programID1\", programID);\r",
+											"        pm.collectionVariables.set(\"programName1\",programName); \r",
+											"        console.log(\"programID1:\" +programID);\r",
+											"    } else if (programIDs.length === 1) {\r",
+											"        //let programID2 = programID;\r",
+											"        pm.collectionVariables.set(\"programID2\", programID);\r",
+											"        pm.collectionVariables.set(\"programName2\", programName); \r",
+											"        console.log(\"programID2:\" +programID);\r",
+											"    }\r",
+											"    \r",
+											"    programIDs.push(programID);    \r",
+											"    pm.collectionVariables.set(\"programIDs\", JSON.stringify(programIDs));\r",
+											"\r",
+											"//To add the batch names to an array\r",
+											"var programNames = pm.collectionVariables.get(\"programNames\");\r",
+											"    if (!programNames) {\r",
+											"        programNames = [];\r",
+											"    } else {\r",
+											"        programNames = JSON.parse(programNames);\r",
+											"    }\r",
+											"    \r",
+											"    programNames.push(programName);    \r",
+											"    pm.collectionVariables.set(\"programNames\", JSON.stringify(programNames));"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "95be36e7-5039-4bcd-ac12-ee7ac9be2c6b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -6011,6 +6061,22 @@
 		},
 		{
 			"key": "batchName",
+			"value": ""
+		},
+		{
+			"key": "programID1",
+			"value": ""
+		},
+		{
+			"key": "programName1",
+			"value": ""
+		},
+		{
+			"key": "programIDs",
+			"value": ""
+		},
+		{
+			"key": "programNames",
 			"value": ""
 		}
 	]
