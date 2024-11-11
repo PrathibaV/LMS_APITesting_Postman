@@ -759,8 +759,80 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Get all Classes by Class Topic",
 					"id": "4792cd77-b3a8-44de-840a-8ccf9e64752f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Classes by BatchId",
+					"id": "9a8c9442-c0ba-4616-8e4a-771a9181bfc7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Classes by StaffId",
+					"id": "06f88ca6-38dd-4b1d-b209-59b0431d3b6c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get all recordings",
+					"id": "afc03b0b-9f20-4df1-b289-abdd82c3d948",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Class Recordings by Class Id",
+					"id": "10edf32d-fd90-45d5-a154-d85e2ba8d6e7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Upcoming Classes for particular Student",
+					"id": "0db4dcb3-2013-452c-b0d9-69984089d83c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Class Recordings Download by Class Id",
+					"id": "5db8054b-d804-4177-bb9c-548bf80c1be8",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
