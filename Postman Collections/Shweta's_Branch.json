@@ -671,12 +671,12 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{token}}"
+										"token": ""
 									}
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": "{{invalidBaseURL}}deletebyprogid/16847"
+								"url": "{{baseURL}}deletebyprogid/16857"
 							},
 							"response": []
 						},
