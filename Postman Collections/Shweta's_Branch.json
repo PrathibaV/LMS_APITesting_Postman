@@ -480,7 +480,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": ""
+										"token": "{{token}}"
 									}
 								},
 								"method": "GET",
