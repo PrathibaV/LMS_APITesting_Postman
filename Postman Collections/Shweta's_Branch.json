@@ -1006,7 +1006,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8ab4d6ad-e4b5-4349-b672-dee66ff286d2",
+				"id": "836e7089-389c-4f73-80f7-a7629fff13e5",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1071,7 +1071,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "f064e2d2-16fc-4411-83e1-371a1b16cee5",
+				"id": "d26fa704-2e57-4698-aed0-070627c1ab89",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1098,6 +1098,11 @@
 		},
 		{
 			"key": "invalidBaseURL",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "programIds",
 			"value": "",
 			"type": "string"
 		}
