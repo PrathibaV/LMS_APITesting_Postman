@@ -427,6 +427,9 @@
 									"script": {
 										"id": "82442eeb-30e1-4341-8019-6c63700fe24b",
 										"exec": [
+											"const scenario = pm.variables.get(\"scenario\");\r",
+											"console.log(\"Scenario: \"+ scenario);\r",
+											"\r",
 											"var Jsondata =pm.response.json();\r",
 											"\r",
 											"pm.test(\"Status code is 201\", function () {\r",
