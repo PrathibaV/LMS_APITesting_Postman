@@ -12,7 +12,7 @@
 					"name": "UserLogin",
 					"item": [
 						{
-							"name": "Admin Login",
+							"name": "User Login",
 							"event": [
 								{
 									"listen": "test",
@@ -145,10 +145,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseURL}}login",
-									"host": [
-										"{{baseURL}}login"
-									],
+									"raw": "",
 									"query": [
 										{
 											"key": "",
