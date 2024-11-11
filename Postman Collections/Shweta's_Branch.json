@@ -695,12 +695,12 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{TokenValue}}"
+										"token": "{{token}}"
 									}
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": "{{baseURL}}deletebyprogid/16956"
+								"url": "{{baseURL}}deletebyprogid/16847"
 							},
 							"response": []
 						},
