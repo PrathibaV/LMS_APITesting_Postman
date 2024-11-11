@@ -700,7 +700,7 @@
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": "{{baseURL}}deletebyprogid/16847"
+								"url": "{{invalidBaseURL}}deletebyprogid/16847"
 							},
 							"response": []
 						},
