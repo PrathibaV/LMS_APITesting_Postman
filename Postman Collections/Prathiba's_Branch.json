@@ -1187,7 +1187,7 @@
 					"response": []
 				},
 				{
-					"name": "Get all Upcoming Classes for Student",
+					"name": "Get all Upcoming Classes for particular Student",
 					"id": "0db4dcb3-2013-452c-b0d9-69984089d83c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
