@@ -143,7 +143,7 @@
 											"    commonTests.ClassDataValidation(batchId, classComments, classDate, classDescription, classNo, classNotes, classRecordingPath, classStaffId, classStatus, classTopic, batchName);\r",
 											"    commonTests.classPostPutSchemaValidation(); \r",
 											"\r",
-											"} else if ((scenario === \"create program with existing program\") || (scenario === \"create program without Authorization\") || (scenario === \"create program with no value in status\") || (scenario === \"create program with no value in status\") || (scenario === \"create program with no value in status\") || (scenario === \"create program with no value in status\") || (scenario === \"create program with no value in status\") || (scenario === \"create program with no value in status\") || (scenario === \"create program with no value in status\")) {\r",
+											"} else if ((scenario === \"create program with existing program\") || (scenario === \"create program without Authorization\") || (scenario === \"create program with no value in status\") || (scenario === \"create program with no value in program name\") || (scenario === \"create program with interger value in program name\") || (scenario === \"create program with invalid baseurl\") || (scenario === \"create program with invalid endpoint\") || (scenario === \"create program with already existing program\") || (scenario === \"create program with no values in all fields\")) {\r",
 											"        commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"        commonTests.checkResponseTime();        \r",
 											"} else {\r",
