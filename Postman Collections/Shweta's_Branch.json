@@ -88,8 +88,6 @@
 									"script": {
 										"id": "72b68a08-9e1e-4d6c-88c8-8b95b1a978cd",
 										"exec": [
-											"console.log(\"Scenario: \"+ pm.variables.get(\"scenario\"));\r",
-											"\r",
 											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
 											"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
 											"const expectedErrorMessage = pm.variables.get(\"expectedErrorMessage\");\r",
@@ -98,6 +96,8 @@
 											"const classComments = pm.variables.get(\"programName\");\r",
 											"const classDate = pm.variables.get(\"programStatus\");\r",
 											"const scenario = pm.variables.get(\"scenario\");\r",
+											"\r",
+											"console.log(\"Scenario: \"+ scenario);\r",
 											"\r",
 											"if ((scenario === \"create program with valid data first program\") || (scenario === \"create program with valid data second program\")) { \r",
 											"\r",
@@ -144,7 +144,7 @@
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkResponseHeader();\r",
 											"    commonTests.checkResponseHasBody(); \r",
-											"    commonTests.ProgramDataValidation(programId, programName, programDescription, programStatus);\r",
+											"    commonTests.ProgramDataValidation(pgrmId, pgrmName, programDescription, programStatus);\r",
 											"    commonTests.programPostPutSchemaValidation();\r",
 											"    commonTests.verifyStatusCode();\r",
 											"\r",
