@@ -320,6 +320,7 @@
 											"console.log(\"Scenario: \"+ scenario);\r",
 											"\r",
 											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+											"const expectedStatusCode = pm.variables.get(\"expectedStatusMessage\");\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkResponseHeader();\r",
