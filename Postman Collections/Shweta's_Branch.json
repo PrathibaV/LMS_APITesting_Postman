@@ -984,7 +984,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "f49c7d1c-2b10-4e5f-a30d-1c2466540c94",
+				"id": "27df9ffd-6621-4524-8658-397dc3d2ee16",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1049,7 +1049,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "0b72215c-2cf6-474a-b372-10a482b19a90",
+				"id": "661bde0c-1ace-4b1e-8daf-294933312188",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1097,20 +1097,15 @@
 					"        });\r",
 					"    },\r",
 					"\r",
-					"    ProgramDataValidation: function (batchId, classComments, classDate, classDescription, classNo, classNotes, classRecordingPath, classStaffId, classStatus, classTopic, batchName) {\r",
+					"    ProgramDataValidation: function (programId, programName, programDescription, programStatus, programStatus, creationTime, lastModTime, ) {\r",
 					"        pm.test(\"Data validations in the response body\", () => {\r",
-					"            pm.expect(pm.response.json().clsId).is.not.null;\r",
-					"            pm.expect(pm.response.json().batchId).to.be.equal(batchId);\r",
-					"            pm.expect(pm.response.json().classComments).to.be.equal(classComments);\r",
-					"            pm.expect(pm.response.json().classDate).to.be.equal(classDate);\r",
-					"            pm.expect(pm.response.json().classDescription).to.be.equal(classDescription);\r",
-					"            pm.expect(pm.response.json().classNo).to.be.equal(classNo);\r",
-					"            pm.expect(pm.response.json().classNotes).to.be.equal(classNotes);\r",
-					"            pm.expect(pm.response.json().classRecordingPath).to.be.equal(classRecordingPath);\r",
-					"            pm.expect(pm.response.json().classStaffId).to.be.equal(classStaffId);\r",
-					"            pm.expect(pm.response.json().classStatus).to.be.equal(classStatus);\r",
-					"            pm.expect(pm.response.json().classTopic).to.be.equal(classTopic);\r",
-					"            pm.expect(pm.response.json().batchName).to.be.equal(batchName);\r",
+					"            pm.expect(pm.response.json().programId).is.not.null;\r",
+					"            pm.expect(pm.response.json().programId).to.be.equal(programId);\r",
+					"            pm.expect(pm.response.json().programName).to.be.equal(programName);\r",
+					"            pm.expect(pm.response.json().programDescription).to.be.equal(programDescription);\r",
+					"            pm.expect(pm.response.json().programStatus).to.be.equal(programStatus);\r",
+					"            pm.expect(pm.response.json().creationTime).to.be.equal(creationTime);\r",
+					"            pm.expect(pm.response.json().lastModTime).to.be.equal(lastModTime);\r",
 					"        });\r",
 					"\r",
 					"        pm.test(\"Data type in the response body\", () => {\r",
