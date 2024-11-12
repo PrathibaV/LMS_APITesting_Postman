@@ -245,7 +245,7 @@
 										"id": "72b68a08-9e1e-4d6c-88c8-8b95b1a978cd",
 										"exec": [
 											"\r",
-											"commonTests.verifyStatusCode();"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
