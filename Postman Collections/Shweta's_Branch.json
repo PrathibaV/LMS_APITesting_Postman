@@ -984,7 +984,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "1863bdce-1679-4b2b-b338-d60a408a6961",
+				"id": "f49c7d1c-2b10-4e5f-a30d-1c2466540c94",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1049,7 +1049,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5c025659-e584-47a7-b1bf-9d920ae6470e",
+				"id": "0b72215c-2cf6-474a-b372-10a482b19a90",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1097,7 +1097,7 @@
 					"        });\r",
 					"    },\r",
 					"\r",
-					"    ClassDataValidation: function (batchId, classComments, classDate, classDescription, classNo, classNotes, classRecordingPath, classStaffId, classStatus, classTopic, batchName) {\r",
+					"    ProgramDataValidation: function (batchId, classComments, classDate, classDescription, classNo, classNotes, classRecordingPath, classStaffId, classStatus, classTopic, batchName) {\r",
 					"        pm.test(\"Data validations in the response body\", () => {\r",
 					"            pm.expect(pm.response.json().clsId).is.not.null;\r",
 					"            pm.expect(pm.response.json().batchId).to.be.equal(batchId);\r",
