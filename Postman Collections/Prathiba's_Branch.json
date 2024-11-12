@@ -283,7 +283,7 @@
 									"let bodyData = pm.response.json();\r",
 									"\r",
 									"let programId = bodyData.programId;\r",
-									"pm.environment.set(\"programID\", programId);"
+									"pm.collectionVariables.set(\"programID\", programId);"
 								],
 								"type": "text/javascript",
 								"packages": {}
