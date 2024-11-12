@@ -440,6 +440,27 @@
 						},
 						{
 							"name": "Get Program By ProgramId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0705c7bd-13cc-40c5-b970-4f0cc106075c",
+										"exec": [
+											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+											"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+											"const scenario = pm.variables.get(\"scenario\");\r",
+											"console.log(\"Scenario: \"+ scenario);\r",
+											"\r",
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+											"    commonTests.checkResponseTime();\r",
+											"    commonTests.checkResponseHasBody()\r",
+											"    commonTests.checkResponseBodyAsJson();"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "dca9684e-4ed4-428c-80a9-3e6c90ebb055",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
