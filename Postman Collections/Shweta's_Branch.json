@@ -113,6 +113,10 @@
 											"    } else {\r",
 											"        programIDs = JSON.parse(programIDs);\r",
 											"    }\r",
+											"\r",
+											"    programIDs.push(pgrmId);    \r",
+											"    pm.collectionVariables.set(\"programIDs\", JSON.stringify(programIDs));\r",
+											"\r",
 											"    var programNames = pm.collectionVariables.get(\"programNames\");\r",
 											"    if (!programNames) {\r",
 											"        programNames = [];\r",
@@ -120,6 +124,9 @@
 											"        programNames = JSON.parse(programNames);\r",
 											"    }\r",
 											"    \r",
+											"    programNames.push(pgrmName);    \r",
+											"    pm.collectionVariables.set(\"programNames\", JSON.stringify(programNames));\r",
+											"\r",
 											"    \r",
 											"    //Storing the batchIds as local variable to use in consecutive operations\r",
 											"    if (programIDs.length === 0) {\r",
@@ -134,11 +141,6 @@
 											"        console.log(\"ProgramId2:\" + pgrmId);\r",
 											"        console.log(\"ProgramName2:\" + pgrmName);\r",
 											"    }\r",
-											"    programIDs.push(pgrmId);    \r",
-											"\r",
-											"    programNames.push(pgrmName);\r",
-											"    pm.collectionVariables.set(\"programIDs\", JSON.stringify(programIDs));\r",
-											"    pm.collectionVariables.set(\"programNames\", JSON.stringify(programNames));\r",
 											"\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
@@ -1079,7 +1081,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "093a98cc-e151-434d-937d-c6b574e2522c",
+				"id": "8a2479aa-2729-4079-a68d-b21f662e0c25",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1144,7 +1146,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "fd177c75-e9de-4d7b-a25f-b0646321c234",
+				"id": "e05178c4-7ea7-4948-ab85-56f138116fe8",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1292,14 +1294,6 @@
 			"type": "string"
 		},
 		{
-			"key": "ProgramId",
-			"value": ""
-		},
-		{
-			"key": "ProgramName",
-			"value": ""
-		},
-		{
 			"key": "classID",
 			"value": ""
 		},
@@ -1309,6 +1303,14 @@
 		},
 		{
 			"key": "programNames",
+			"value": ""
+		},
+		{
+			"key": "ProgramId2",
+			"value": ""
+		},
+		{
+			"key": "ProgramName2",
 			"value": ""
 		}
 	]
