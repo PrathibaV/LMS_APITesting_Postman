@@ -152,7 +152,7 @@
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkResponseHeader();\r",
 											"    commonTests.checkResponseHasBody();\r",
-											"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);    \r",
+											"    commonTests.checkErrorMsg(expectedResponseMessage);    \r",
 											"}\r",
 											"\r",
 											"\r",
@@ -1059,7 +1059,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "809b25bb-d743-4be5-8f7c-27b5580c60f1",
+				"id": "98809240-7207-4267-84c4-238fe2e4c4fa",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1124,7 +1124,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "6a235a05-3bd2-424b-a6ce-be77b73eed74",
+				"id": "57fddbb0-b992-4773-85ee-021001f6d141",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1171,10 +1171,15 @@
 					"        pm.expect(pm.response.json().success).to.eql(expectedResponseStatus); \r",
 					"        });\r",
 					"    },\r",
-					"        checkErrorMsg: function(ErrorMessage) {      \r",
+					"        checkErrorMsg: function(expectedErrorMessage) {\r",
 					"        pm.test(\"Check if error message matches expected\", function () {\r",
-					"        pm.expect(pm.response.json().message).to.eql(ErrorMessage); \r",
-					"        });\r",
+					"        // Check if the response body contains the message field\r",
+					"        pm.expect(pm.response.json()).to.have.property('message');\r",
+					"\r",
+					"        // Assert that the message field matches the expected error message\r",
+					"        pm.expect(pm.response.json().message).to.eql(expectedErrorMessage);\r",
+					"    });\r",
+					"},\r",
 					"\r",
 					"    ProgramDataValidation: function (programId, programName, programDescription, programStatus, programStatus, creationTime, lastModTime, ) {\r",
 					"        pm.test(\"Data validations in the response body\", () => {\r",
