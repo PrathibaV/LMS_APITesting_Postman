@@ -466,7 +466,7 @@
 											"    commonTests.programPostPutSchemaValidation();\r",
 											"    }else{\r",
 											"\r",
-											"            commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkErrorMessage()\r",
 											"    }\r",
