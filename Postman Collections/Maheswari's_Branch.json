@@ -536,7 +536,7 @@
 											"    commonTests.BatchDataValidation();    \r",
 											"    commonTests.BatchfieldValidation(); \r",
 											"    commonTests.batchPostPutSchemaValidation(); \r",
-											" }else if((scenario === \"create class without authorization\") || (scenario === \"create class with invalid baseURL\") || (scenario === \"create class with invalid endpoint\")){\r",
+											" }else if((scenario === \"create batch without Authorization\") || (scenario === \"create batch with invalid baseURL\") || (scenario === \"create batch with invalid endpoint\")){\r",
 											"      commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"      commonTests.checkResponseTime();        \r",
 											" } else {\r",
