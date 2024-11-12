@@ -880,6 +880,36 @@
 					"item": [
 						{
 							"name": "Delete Program By Program ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "741c78bb-d8b6-402d-a86e-86f42915e292",
+										"exec": [
+											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+											"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+											"const scenario = pm.variables.get(\"scenario\");\r",
+											"console.log(\"Scenario: \"+ scenario);\r",
+											"\r",
+											"if(scenario === \"delete program with valid program Id\"){ \r",
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+											"    commonTests.checkResponseTime();\r",
+											"    commonTests.checkResponseHeader();\r",
+											"\r",
+											"}else if(scenario === \"delete program with program Id without authorization\"){\r",
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage),\r",
+											"    commonTests.checkResponseTime();\r",
+											"}else{\r",
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+											"    commonTests.checkResponseTime();\r",
+											"    commonTests.checkResponseHeader();\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "2ab6af3a-1cd4-4a65-b0d7-2198bb8d9622",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -888,7 +918,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{TokenValue}}"
+										"token": ""
 									}
 								},
 								"method": "DELETE",
