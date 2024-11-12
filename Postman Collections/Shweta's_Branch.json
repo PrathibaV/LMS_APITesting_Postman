@@ -101,6 +101,13 @@
 											"    } else {\r",
 											"        programIDs = JSON.parse(programIDs);\r",
 											"    }\r",
+											"    var programNames = pm.collectionVariables.get(\"programNames\");\r",
+											"    if (!programNames) {\r",
+											"        programNames = [];\r",
+											"    } else {\r",
+											"        programNames = JSON.parse(programNames);\r",
+											"    }\r",
+											"    \r",
 											"    \r",
 											"    //Storing the batchIds as local variable to use in consecutive operations\r",
 											"    if (programIDs.length === 0) {\r",
@@ -1075,7 +1082,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "98809240-7207-4267-84c4-238fe2e4c4fa",
+				"id": "2aa74f02-8c90-41a0-a405-5c10b2542fae",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1140,7 +1147,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "57fddbb0-b992-4773-85ee-021001f6d141",
+				"id": "25457c67-b7a3-4bb2-98b4-5687c7ec5472",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1294,10 +1301,6 @@
 		},
 		{
 			"key": "ProgramName",
-			"value": ""
-		},
-		{
-			"key": "programIDs",
 			"value": ""
 		},
 		{
