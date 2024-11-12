@@ -534,7 +534,7 @@
 									"    commonTests.checkResponseHeader();\r",
 									"    commonTests.checkResponseHasBody();\r",
 									"      if (scenario === \"update class with new batchId\") {\r",
-									"            let dynamicExpectedResponseMessage = expectedResponseMessage.replace(\"{classID}\", classID)\r",
+									"            let dynamicExpectedResponseMessage = expectedResponseMessage.replace(\"{classID1}\", classID)\r",
 									"                .replace(\"{batchID2}\", batchId2);\r",
 									"            commonTests.checkErrorMessage(dynamicExpectedResponseMessage, expectedResponseStatus);\r",
 									"   \r",
