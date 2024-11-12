@@ -272,8 +272,9 @@
 											"const scenario = pm.variables.get(\"scenario\");\r",
 											"console.log(\"Scenario: \"+ scenario);\r",
 											"\r",
-											"const scenario = pm.variables.get(\"scenario\");\r",
-											"console.log(\"Scenario: \"+ scenario);"
+											"commonTests.verifyStatusCode();\r",
+											"\r",
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -327,8 +328,7 @@
 											"const scenario = pm.variables.get(\"scenario\");\r",
 											"console.log(\"Scenario: \"+ scenario);\r",
 											"\r",
-											"const scenario = pm.variables.get(\"scenario\");\r",
-											"console.log(\"Scenario: \"+ scenario);\r",
+											"commonTests.verifyStatusCode();\r",
 											""
 										],
 										"type": "text/javascript",
@@ -1007,7 +1007,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "e569a5d2-fd58-4a77-97ab-0885d4d8daf4",
+				"id": "3b3d812c-bdbd-4447-ad06-7a6118aa2df8",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1072,7 +1072,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "078683a9-50eb-40e6-b743-3a8285f9185d",
+				"id": "fdc2958b-6fc8-4eb5-9063-2b2247f3fc73",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1085,17 +1085,6 @@
 					"            pm.response.to.have.status(expectedStatusMessage);\r",
 					"        });        \r",
 					"    },\r",
-					"\r",
-					"    verifyStatusCode:function() {\r",
-					"    let expectedStatusCode = pm.environment.get(\"expectedStatusCode\");\r",
-					"    let actualStatusCode = pm.response.code;\r",
-					"    console.log(\"Expected Status Code: \", expectedStatusCode);\r",
-					"    console.log(\"Actual Status Code: \", actualStatusCode);\r",
-					"\r",
-					"    pm.test(\"Status code is as expected\", function () {\r",
-					"        pm.expect(actualStatusCode).to.eql(parseInt(expectedStatusCode, 10));\r",
-					"    });\r",
-					"},\r",
 					"\r",
 					"    checkResponseHeader: function() {\r",
 					"        pm.test(\"Response Header Content-Type is application/json\", function () {\r",
