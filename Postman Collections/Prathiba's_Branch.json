@@ -1134,7 +1134,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b5020763-c955-42e0-ad0c-f2651185bf56",
+				"id": "13cee54c-4304-45d8-82e4-792c8dc4a340",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1198,7 +1198,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "dff7d229-9962-4c0c-b84d-472ec910feea",
+				"id": "57f669d8-3cdc-4759-98a1-351b09fe4203",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1243,6 +1243,12 @@
 					"\r",
 					"        pm.test(\"Check if response status is as expected\", function () {\r",
 					"        pm.expect(pm.response.json().success).to.eql(expectedResponseStatus); \r",
+					"        });\r",
+					"    },\r",
+					"\r",
+					"     checkResponseisArray: function() {\r",
+					"        pm.test(\"Response is an array\", function () {\r",
+					"            pm.expect(Array.isArray(pm.response.json())).to.be.true;\r",
 					"        });\r",
 					"    },\r",
 					"\r",
