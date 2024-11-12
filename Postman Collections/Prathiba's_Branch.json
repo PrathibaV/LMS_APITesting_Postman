@@ -762,6 +762,45 @@
 				},
 				{
 					"name": "Get Class Recordings by BatchId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b692af5-a938-43b8-84b5-10287901aa43",
+								"exec": [
+									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
+									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+									"const scenario = pm.variables.get(\"scenario\");\r",
+									"\r",
+									"console.log(\"Scenario: \"+ scenario);\r",
+									"\r",
+									"if (scenario === \"get class recordings by valid BatchId\") {\r",
+									"commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"commonTests.checkResponseTime();\r",
+									"commonTests.checkResponseHeader();\r",
+									"commonTests.checkResponseHasBody();\r",
+									"commonTests.checkResponseBodyAsJson();\r",
+									"\r",
+									"    pm.test(\"Data validations in the response body\", () => {\r",
+									"        const classIDs = JSON.parse(pm.collectionVariables.get(\"classIDs\"));\r",
+									"        const responseBody = pm.response.json();\r",
+									"\r",
+									"        responseBody.forEach(item => {\r",
+									"            pm.expect(classIDs).to.include(item.csId);\r",
+									"        });\r",
+									"    });\r",
+									"} else {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();    \r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "ef1bf340-2951-4082-b14e-b3b378715efb",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
