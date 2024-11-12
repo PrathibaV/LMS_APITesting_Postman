@@ -16,11 +16,17 @@
 							"script": {
 								"id": "ae8d7c71-2e67-4086-a1c3-8d097bb3f7c6",
 								"exec": [
-									"if (pm.response.status === 200) {\r",
-									"let bodyData = pm.response.json();\r",
+									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+									"const scenario = pm.variables.get(\"scenario\");\r",
 									"\r",
-									"let token = bodyData.token;\r",
-									"pm.globals.set(\"token\", token);\r",
+									"commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"\r",
+									"if (scenario === \"Admin login with valid credentials\") {\r",
+									"    let bodyData = pm.response.json();\r",
+									"\r",
+									"    let token = bodyData.token;\r",
+									"    pm.globals.set(\"token\", token);\r",
 									"}\r",
 									"/* pm.test('Verify user signed in', () => {\r",
 									"    const response = pm.response.json();\r",
@@ -1545,6 +1551,22 @@
 			"key": "staffId",
 			"value": "U37",
 			"type": "string"
+		},
+		{
+			"key": "batchID1",
+			"value": ""
+		},
+		{
+			"key": "batchName1",
+			"value": ""
+		},
+		{
+			"key": "batchID2",
+			"value": ""
+		},
+		{
+			"key": "batchName2",
+			"value": ""
 		}
 	]
 }
