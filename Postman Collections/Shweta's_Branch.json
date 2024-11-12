@@ -144,7 +144,7 @@
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkResponseHeader();\r",
 											"    commonTests.checkResponseHasBody(); \r",
-											"    commonTests.ProgramDataValidation(programId, programName, programDescription, programStatus, programStatus, creationTime, lastModTime);\r",
+											"    commonTests.ProgramDataValidation(programId, programName, programDescription, programStatus);\r",
 											"    commonTests.programPostPutSchemaValidation();\r",
 											"    commonTests.verifyStatusCode();\r",
 											"\r",
@@ -1079,7 +1079,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "e3e6f89e-801d-4d0f-86dd-ea609f04d332",
+				"id": "62087221-e16e-45f9-bf6f-0cafac992a4e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1144,7 +1144,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "748e0d55-5150-4874-8aa8-82d3df571d9f",
+				"id": "78fd997b-4a2a-4845-8f4b-6b900e3c01a4",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1201,7 +1201,7 @@
 					"    });\r",
 					"},\r",
 					"\r",
-					"    ProgramDataValidation: function (programId, programName, programDescription, programStatus, programStatus, creationTime, lastModTime) {\r",
+					"    ProgramDataValidation: function (programId, programName, programDescription, programStatus,creationTime, lastModTime) {\r",
 					"        pm.test(\"Data validations in the response body\", () => {\r",
 					"            pm.expect(pm.response.json().programId).is.not.null;\r",
 					"            pm.expect(pm.response.json().programId).to.be.equal(programId);\r",
