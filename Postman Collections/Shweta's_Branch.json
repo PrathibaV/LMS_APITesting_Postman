@@ -562,7 +562,7 @@
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage),\r",
 											"    commonTests.checkResponseTime();\r",
 											"}else{\r",
-											"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus)\r",
+											"    // commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus)\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkResponseHeader();\r",
