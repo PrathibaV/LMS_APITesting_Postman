@@ -257,13 +257,6 @@
 									"script": {
 										"id": "72b68a08-9e1e-4d6c-88c8-8b95b1a978cd",
 										"exec": [
-											"\r",
-											"const jsonData = pm.response.json();\r",
-											"const progname=jsonData.programName;\r",
-											"pm.environment.set(\"ProgramId\",jsonData.programId);\r",
-											"pm.environment.set(\"ProgramName\",progname )\r",
-											"const programId = jsonData.programId;\r",
-											"console.log(programId);\r",
 											""
 										],
 										"type": "text/javascript",
@@ -279,21 +272,21 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "{{TokenValue}}"
+										"token": "{{token}}"
 									}
 								},
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"APINov2024\",\r\n    \"programName\": \"TNApiHackathon\",\r\n    \"programStatus\": \"24\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": \"APINov1990\",\r\n    \"programName\": \"TNApiHackathonJan\",\r\n    \"programStatus\": \"Active\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{baseUrl}}saveprogram"
+								"url": "{{baseURL}}saveprogram"
 							},
 							"response": []
 						},
@@ -1008,7 +1001,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "fd517fb8-a21c-44f9-bb2b-6e767613f4dd",
+				"id": "5af14fed-abf8-41f7-a0b4-5a6e83c1f2e8",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1073,7 +1066,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "4ed49e38-4ce5-4e95-b07d-ce84678f3007",
+				"id": "1011d91a-1bb0-4f66-adbb-073a77f06eba",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1166,46 +1159,48 @@
 					"        });\r",
 					"    },\r",
 					"\r",
-					"    classPostPutSchemaValidation: function() {\r",
-					"        pm.test(\"Response schema is valid\", function () {\r",
-					"    const schema = {\r",
-					"        \"type\": \"object\",\r",
-					"            \"additionalProperties\": false,\r",
-					"            \"properties\": {\r",
-					"                \"csId\": {\"type\": \"integer\"},\r",
-					"                \"batchId\": {\"type\": \"integer\"},\r",
-					"                \"classNo\": {\"type\": \"integer\"},\r",
-					"                \"classDate\": {\"type\": \"string\",\"format\": \"date-time\"},\r",
-					"                \"classTopic\": {\"type\": \"string\"},\r",
-					"                \"classStatus\": {\"type\": \"string\"},\r",
-					"                \"classStaffId\": {\"type\": \"string\"},\r",
-					"                \"classDescription\": {\"type\": \"string\"},\r",
-					"                \"classComments\": {\"type\": \"string\"},\r",
-					"                \"classNotes\": {\"type\": \"string\"},\r",
-					"                \"classRecordingPath\": {\"type\": \"string\"},\r",
-					"                \"batchName\": {\"type\": \"string\"},\r",
-					"                \"classScheduledDates\": {\r",
-					"                    \"type\": \"array\",\r",
-					"                    \"items\": {\r",
-					"                        \"type\": \"string\",\r",
-					"                        \"format\": \"date-time\"\r",
-					"                    }\r",
-					"                }\r",
-					"            },\r",
-					"            \"required\": [\r",
-					"                \"batchId\",\r",
-					"                \"batchName\",\r",
-					"                \"classDate\",\r",
-					"                \"classNo\",\r",
-					"                \"classStatus\",\r",
-					"                \"classTopic\",\r",
-					"                \"csId\"\r",
-					"            ],\r",
+					"    classPostPutSchemaValidation: function() {{\r",
+					"  \"$schema\": \"http://json-schema.org/draft-07/schema#\",\r",
+					"  \"type\": \"object\",\r",
+					"  \"properties\": {\r",
+					"    \"programId\": {\r",
+					"      \"type\": \"integer\",\r",
+					"      \"minimum\": 1\r",
+					"    },\r",
+					"    \"programName\": {\r",
+					"      \"type\": \"string\",\r",
+					"      \"minLength\": 3,\r",
+					"      \"maxLength\": 100\r",
+					"    },\r",
+					"    \"programDescription\": {\r",
+					"      \"type\": \"string\",\r",
+					"      \"minLength\": 1,\r",
+					"      \"maxLength\": 500\r",
+					"    },\r",
+					"    \"programStatus\": {\r",
+					"      \"type\": \"string\",\r",
+					"      \"enum\": [\"Active\", \"Inactive\", \"Completed\", \"Pending\"]\r",
+					"    },\r",
+					"    \"creationTime\": {\r",
+					"      \"type\": \"string\",\r",
+					"      \"format\": \"date-time\"\r",
+					"    },\r",
+					"    \"lastModTime\": {\r",
+					"      \"type\": \"string\",\r",
+					"      \"format\": \"date-time\"\r",
 					"    }\r",
-					"            pm.expect(pm.response.json()).to.have.jsonSchema(schema);\r",
-					"        });\r",
-					"    }\r",
+					"  },\r",
+					"  \"required\": [\r",
+					"    \"programId\",\r",
+					"    \"programName\",\r",
+					"    \"programDescription\",\r",
+					"    \"programStatus\",\r",
+					"    \"creationTime\",\r",
+					"    \"lastModTime\"\r",
+					"  ],\r",
+					"  \"additionalProperties\": false\r",
 					"}\r",
+					"\r",
 					"\r",
 					""
 				]
