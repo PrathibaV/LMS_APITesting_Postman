@@ -1007,7 +1007,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a63458f6-38ed-425e-8ab9-af0d4d2e0506",
+				"id": "e569a5d2-fd58-4a77-97ab-0885d4d8daf4",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1072,7 +1072,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "f58245ea-e640-47d7-a2d4-a7104eef4767",
+				"id": "078683a9-50eb-40e6-b743-3a8285f9185d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1087,7 +1087,7 @@
 					"    },\r",
 					"\r",
 					"    verifyStatusCode:function() {\r",
-					"    let expectedStatusCode = pm.iterationData.get(\"expectedStatusCode\");\r",
+					"    let expectedStatusCode = pm.environment.get(\"expectedStatusCode\");\r",
 					"    let actualStatusCode = pm.response.code;\r",
 					"    console.log(\"Expected Status Code: \", expectedStatusCode);\r",
 					"    console.log(\"Actual Status Code: \", actualStatusCode);\r",
