@@ -384,11 +384,14 @@
 									"script": {
 										"id": "59e9f31c-4e90-41f4-9201-d7c016e8d5ad",
 										"exec": [
+											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+											"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
 											"const scenario = pm.variables.get(\"scenario\");\r",
 											"console.log(\"Scenario: \"+ scenario);\r",
 											"\r",
-											"commonTests.verifyStatusCode();\r",
-											""
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+											"    commonTests.checkResponseTime();\r",
+											"    commonTests.checkResponseHasBody()"
 										],
 										"type": "text/javascript",
 										"packages": {}
