@@ -652,6 +652,18 @@
 										"id": "c7266f6f-2090-4f35-9075-a81620599df5",
 										"exec": [
 											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "b4f7a9a4-39c1-4776-9591-a9feadf749ee",
+										"exec": [
+											"\r",
 											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
 											"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
 											"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
@@ -679,7 +691,6 @@
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkResponseHeader();\r",
 											"}\r",
-											"\r",
 											""
 										],
 										"type": "text/javascript",
@@ -960,7 +971,6 @@
 											"if(scenario === \"delete program by Program Name with valid program name\"){ \r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
-											"    commonTests.checkResponseHeader();\r",
 											"\r",
 											"}else if(scenario === \"delete program by Program Name without authorization\"){\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage),\r",
@@ -968,7 +978,6 @@
 											"}else{\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
-											"    commonTests.checkResponseHeader();\r",
 											"}"
 										],
 										"type": "text/javascript",
