@@ -128,7 +128,7 @@
 											"const classDate = pm.variables.get(\"programStatus\");\r",
 											"const scenario = pm.variables.get(\"scenario\");\r",
 											"\r",
-											"if ((scenario === \"create class with all fields\") || (scenario === \"create class with only mandatory fields\")) {\r",
+											"if ((scenario === \"create program with valid data first program\") || (scenario === \"create program with valid data second program\")) {\r",
 											"    try {\r",
 											"    let bodyData = pm.response.json();\r",
 											"    let classId = bodyData.csId;\r",
