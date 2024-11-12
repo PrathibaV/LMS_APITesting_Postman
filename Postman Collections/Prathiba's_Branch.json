@@ -835,7 +835,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Class details by Id",
+					"name": "Get Class details by Class Id",
 					"id": "8cb9404e-f31e-4428-b0e4-1fb3dfcfe091",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
