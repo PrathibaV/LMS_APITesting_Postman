@@ -984,7 +984,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "27df9ffd-6621-4524-8658-397dc3d2ee16",
+				"id": "a15c914f-f2f7-453c-ba2c-3a14d97fbe29",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1049,7 +1049,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "661bde0c-1ace-4b1e-8daf-294933312188",
+				"id": "86e017ea-e088-4c2e-be01-4bbc451e39f7",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1109,19 +1109,11 @@
 					"        });\r",
 					"\r",
 					"        pm.test(\"Data type in the response body\", () => {\r",
-					"            pm.expect(pm.response.json().csId).to.be.a('number'); \r",
-					"            pm.expect(pm.response.json().batchId).to.be.a('number'); \r",
-					"            pm.expect(pm.response.json().classComments).to.be.a('string'); \r",
-					"            pm.expect(pm.response.json().classDate).to.be.a('string'); \r",
-					"            pm.expect(pm.response.json().classDescription).to.be.a('string'); \r",
-					"            pm.expect(pm.response.json().classNo).to.be.a('number'); \r",
-					"            pm.expect(pm.response.json().classNotes).to.be.a('string'); \r",
-					"            pm.expect(pm.response.json().classRecordingPath).to.be.a('string'); \r",
-					"            pm.expect(pm.response.json().classStaffId).to.be.a('string'); \r",
-					"            pm.expect(pm.response.json().classStatus).to.be.a('string'); \r",
-					"            pm.expect(pm.response.json().classTopic).to.be.a('string'); \r",
-					"            pm.expect(pm.response.json().batchName).to.be.a('string'); \r",
-					"            pm.expect(pm.response.json().classScheduledDates).to.be.an('array');\r",
+					"            pm.expect(pm.response.json().programId).to.be.a('integer'); \r",
+					"            pm.expect(pm.response.json().programName).to.be.a('string'); \r",
+					"            pm.expect(pm.response.json().programDescription).to.be.a('string'); \r",
+					"            pm.expect(pm.response.json().programStatus).to.be.a('string'); \r",
+					"            pm.expect(pm.response.json().lastModTime).to.be.a('string'); \r",
 					"        });\r",
 					"    },\r",
 					"\r",
