@@ -737,14 +737,14 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"SelApi\",\r\n    \"programName\": \"TestProgramForHackathon\",\r\n    \"programStatus\": \"Active\"\r\n},",
+									"raw": "{\r\n    \"programDescription\": \"TestRunForHackathonOne\",\r\n    \"programName\": \"TestRunNameProgramOne\",\r\n    \"programStatus\": \"Active\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{baseURL}}putprogram/16326"
+								"url": "{{baseURL}}putprogram/18004"
 							},
 							"response": []
 						}
