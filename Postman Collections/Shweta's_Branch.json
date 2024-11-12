@@ -1059,7 +1059,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "3918f602-39ad-4ba4-89f3-7c47731d3575",
+				"id": "809b25bb-d743-4be5-8f7c-27b5580c60f1",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1124,7 +1124,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d6b2a02e-e47d-42c5-bd07-311cd7bcecb3",
+				"id": "6a235a05-3bd2-424b-a6ce-be77b73eed74",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1173,7 +1173,7 @@
 					"    },\r",
 					"        checkErrorMsg: function(ErrorMessage) {      \r",
 					"        pm.test(\"Check if error message matches expected\", function () {\r",
-					"        pm.expect(pm.response.json().message).to.eql(expectedResponseMessage); \r",
+					"        pm.expect(pm.response.json().message).to.eql(ErrorMessage); \r",
 					"        });\r",
 					"\r",
 					"    ProgramDataValidation: function (programId, programName, programDescription, programStatus, programStatus, creationTime, lastModTime, ) {\r",
