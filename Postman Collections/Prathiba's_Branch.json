@@ -759,6 +759,7 @@
 									"commonTests.checkResponseHeader();\r",
 									"commonTests.checkResponseHasBody();\r",
 									"commonTests.checkResponseBodyAsJson();\r",
+									"commonTests.checkResponseisArray();\r",
 									"} else {\r",
 									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 									"    commonTests.checkResponseTime();    \r",
