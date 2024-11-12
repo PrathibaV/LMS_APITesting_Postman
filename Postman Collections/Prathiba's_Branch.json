@@ -720,6 +720,34 @@
 				},
 				{
 					"name": "Get all Class List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4c246379-2651-47d1-9550-9bb6118f5a59",
+								"exec": [
+									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+									"const scenario = pm.variables.get(\"scenario\");\r",
+									"\r",
+									"console.log(\"Scenario: \"+ scenario);\r",
+									"\r",
+									"if (scenario === \"get all class list positive\") {\r",
+									"commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"commonTests.checkResponseTime();\r",
+									"commonTests.checkResponseHeader();\r",
+									"commonTests.checkResponseHasBody();\r",
+									"commonTests.checkResponseBodyAsJson();\r",
+									"} else {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();    \r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "07c9308f-fb50-4bea-a184-0e3e96076ed1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
