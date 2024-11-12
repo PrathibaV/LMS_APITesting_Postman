@@ -406,7 +406,7 @@
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkResponseHasBody()\r",
 											"\r",
-											"       if ((scenario === \"Get Program By ProgramId without Authorization\") || (scenario === \"Get All Program without Authorization\")) { \r",
+											"       if (scenario === \"Get All program with user without Authorization\") { \r",
 											"\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
