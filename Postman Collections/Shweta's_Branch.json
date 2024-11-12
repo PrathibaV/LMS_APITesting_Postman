@@ -140,7 +140,7 @@
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkResponseHeader();\r",
 											"    commonTests.checkResponseHasBody(); \r",
-											"    commonTests.ProgramDataValidation(programId, programName, programDescription, programStatus, programStatus, creationTime, lastModTime);\r",
+											"    commonTests.ProgramDataValidation();\r",
 											"    commonTests.programPostPutSchemaValidation();\r",
 											"    commonTests.verifyStatusCode();\r",
 											"\r",
