@@ -469,9 +469,9 @@
 											"        commonTests.checkResponseTime();\r",
 											"\r",
 											"    }else{\r",
+											"        commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"        commonTests.checkResponseTime();\r",
 											"        commonTests.checkResponseHasBody();\r",
-											"\r",
 											"    }\r",
 											""
 										],
