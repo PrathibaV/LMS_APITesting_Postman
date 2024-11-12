@@ -1304,6 +1304,14 @@
 		{
 			"key": "classID",
 			"value": ""
+		},
+		{
+			"key": "programIDs",
+			"value": ""
+		},
+		{
+			"key": "programNames",
+			"value": ""
 		}
 	]
 }
