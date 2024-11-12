@@ -685,7 +685,6 @@
 									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
 									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
 									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
-									"const classComments = pm.variables.get(\"classComments\");\r",
 									"const classID = pm.collectionVariables.get(\"classID\");\r",
 									"const scenario = pm.variables.get(\"scenario\");\r",
 									"\r",
