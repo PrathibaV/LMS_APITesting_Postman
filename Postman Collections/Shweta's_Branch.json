@@ -244,6 +244,15 @@
 									"script": {
 										"id": "72b68a08-9e1e-4d6c-88c8-8b95b1a978cd",
 										"exec": [
+											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+											"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+											"const expectedErrorMessage = pm.variables.get(\"expectedErrorMessage\");\r",
+											"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+											"const programDescription = pm.variables.get(\"programDescription\");\r",
+											"const programName = pm.variables.get(\"programName\");\r",
+											"const programStatus = pm.variables.get(\"programStatus\");\r",
+											"const scenario = pm.variables.get(\"scenario\");\r",
+											"\r",
 											"if ((scenario === \"create program with existing program\") || (scenario === \"create program without Authorization\") || (scenario === \"create program with no value in status\") || (scenario === \"create program with no value in program name\") || (scenario === \"create program with interger value in program name\") || (scenario === \"create program with invalid baseurl\") || (scenario === \"create program with invalid endpoint\") || (scenario === \"create program with already existing program\") || (scenario === \"create program with no values in all fields\")) {\r",
 											"        commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"        commonTests.checkResponseTime();        \r",
