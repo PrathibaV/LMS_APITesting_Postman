@@ -130,10 +130,10 @@
 											"    \r",
 											"    //Storing the batchIds as local variable to use in consecutive operations\r",
 											"    if (programIDs.length === 0) {\r",
-											"        pm.collectionVariables.set(\"ProgramId\", pgrmId); \r",
-											"        pm.collectionVariables.set(\"ProgramName\", pgrmName); \r",
-											"        console.log(\"ProgramId:\"+pgrmId);\r",
-											"        console.log(\"ProgramName:\"+pgrmName);\r",
+											"        pm.collectionVariables.set(\"ProgramId1\", pgrmId); \r",
+											"        pm.collectionVariables.set(\"ProgramName1\", pgrmName); \r",
+											"        console.log(\"ProgramId1:\"+pgrmId);\r",
+											"        console.log(\"ProgramName1:\"+pgrmName);\r",
 											"    }   else if (programIDs.length === 1) {\r",
 											"        let ProgramId2 = pgrmId;\r",
 											"        pm.collectionVariables.set(\"ProgramId2\", pgrmId);\r",
@@ -1081,7 +1081,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8a2479aa-2729-4079-a68d-b21f662e0c25",
+				"id": "78e66d7d-63ef-4cff-ba0b-055844a0d4aa",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1146,7 +1146,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e05178c4-7ea7-4948-ab85-56f138116fe8",
+				"id": "b3b284f9-e928-4cd6-9ccc-7a08e2685d44",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1285,11 +1285,6 @@
 		},
 		{
 			"key": "invalidBaseURL",
-			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "programIds",
 			"value": "",
 			"type": "string"
 		},
