@@ -1475,6 +1475,30 @@
 		{
 			"key": "classID",
 			"value": ""
+		},
+		{
+			"key": "programIDs",
+			"value": ""
+		},
+		{
+			"key": "programNames",
+			"value": ""
+		},
+		{
+			"key": "ProgramId1",
+			"value": ""
+		},
+		{
+			"key": "ProgramName1",
+			"value": ""
+		},
+		{
+			"key": "ProgramId2",
+			"value": ""
+		},
+		{
+			"key": "ProgramName2",
+			"value": ""
 		}
 	]
 }
