@@ -126,8 +126,6 @@
 											"    \r",
 											"    programNames.push(pgrmName);    \r",
 											"    pm.collectionVariables.set(\"programNames\", JSON.stringify(programNames));\r",
-											"\r",
-											"    \r",
 											"    //Storing the batchIds as local variable to use in consecutive operations\r",
 											"    if (programIDs.length === 1) {\r",
 											"        pm.collectionVariables.set(\"ProgramId1\", pgrmId); \r",
