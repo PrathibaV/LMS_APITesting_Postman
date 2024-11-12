@@ -562,7 +562,10 @@
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage),\r",
 											"    commonTests.checkResponseTime();\r",
 											"}else{\r",
-											"\r",
+											"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus)\r",
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+											"    commonTests.checkResponseTime();\r",
+											"    commonTests.checkResponseHeader();\r",
 											"\r",
 											"};  \r",
 											"\r",
@@ -1164,7 +1167,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "75cc46e1-bc0b-428e-8d87-2b72d8e2d661",
+				"id": "ce0025f0-070c-497c-9498-281281f9a67d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1229,7 +1232,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "7cb64636-5f25-4b7d-a1e9-c4e28767b812",
+				"id": "1048724d-4db5-4872-81e0-c9edd5b710de",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1276,15 +1279,6 @@
 					"        pm.expect(pm.response.json().success).to.eql(expectedResponseStatus); \r",
 					"        });\r",
 					"    },\r",
-					"        checkErrorMsg: function(expectedErrorMessage) {\r",
-					"        pm.test(\"Check if error message matches expected\", function () {\r",
-					"        // Check if the response body contains the message field\r",
-					"        pm.expect(pm.response.json()).to.have.property('message');\r",
-					"\r",
-					"        // Assert that the message field matches the expected error message\r",
-					"        pm.expect(pm.response.json().message).to.eql(expectedErrorMessage);\r",
-					"    });\r",
-					"},\r",
 					"\r",
 					"    ProgramDataValidation: function (programName, programDescription, programStatus) {\r",
 					"        pm.test(\"Data validations in the response body\", () => {\r",
