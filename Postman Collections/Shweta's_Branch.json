@@ -983,7 +983,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "82bbc709-c17b-4c8d-95d9-322f6cae1c60",
+				"id": "a63458f6-38ed-425e-8ab9-af0d4d2e0506",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1048,7 +1048,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d630acc3-7e50-46d5-89eb-7b0951ac1aa2",
+				"id": "f58245ea-e640-47d7-a2d4-a7104eef4767",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1062,21 +1062,16 @@
 					"        });        \r",
 					"    },\r",
 					"\r",
-					"    function verifyStatusCode() {\r",
-					"    // Get the expected status code from iteration data\r",
-					"    let expectedStatusCode = pm.iterationData.get(\"statusCode\");\r",
-					"    \r",
-					"    // Get the actual status code from the response\r",
+					"    verifyStatusCode:function() {\r",
+					"    let expectedStatusCode = pm.iterationData.get(\"expectedStatusCode\");\r",
 					"    let actualStatusCode = pm.response.code;\r",
-					"\r",
-					"    // Log both the expected and actual status codes to the console for debugging\r",
 					"    console.log(\"Expected Status Code: \", expectedStatusCode);\r",
 					"    console.log(\"Actual Status Code: \", actualStatusCode);\r",
 					"\r",
-					"    // Assert that the actual status code matches the expected one\r",
 					"    pm.test(\"Status code is as expected\", function () {\r",
 					"        pm.expect(actualStatusCode).to.eql(parseInt(expectedStatusCode, 10));\r",
 					"    });\r",
+					"},\r",
 					"\r",
 					"    checkResponseHeader: function() {\r",
 					"        pm.test(\"Response Header Content-Type is application/json\", function () {\r",
