@@ -836,11 +836,57 @@
 				},
 				{
 					"name": "Get Class details by Class Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8c8875ca-df3b-4c68-a38c-cb6cd36e0e43",
+								"exec": [
+									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
+									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+									"const scenario = pm.variables.get(\"scenario\");\r",
+									"\r",
+									"console.log(\"Scenario: \"+ scenario);\r",
+									"\r",
+									"if (scenario === \"get class details by valid ClassID\") {\r",
+									"commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"commonTests.checkResponseTime();\r",
+									"commonTests.checkResponseHeader();\r",
+									"commonTests.checkResponseHasBody();\r",
+									"commonTests.checkResponseBodyAsJson();\r",
+									"\r",
+									"    pm.test(\"Data validations in the response body\", () => {\r",
+									"        const classID = pm.collectionVariables.get(\"classID1\");\r",
+									"        pm.expect(pm.response.json().csId).to.be.eql(classID);\r",
+									"    });\r",
+									"} else if (scenario === \"get class details by invalid ClassID\") {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();\r",
+									"    commonTests.checkResponseHeader();\r",
+									"    commonTests.checkResponseHasBody();  \r",
+									"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);\r",
+									"}\r",
+									"\r",
+									"else {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();    \r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "8cb9404e-f31e-4428-b0e4-1fb3dfcfe091",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": []
 					},
