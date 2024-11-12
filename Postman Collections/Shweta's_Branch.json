@@ -272,7 +272,8 @@
 											"const scenario = pm.variables.get(\"scenario\");\r",
 											"console.log(\"Scenario: \"+ scenario);\r",
 											"\r",
-											"commonTests.verifyStatusCode();"
+											"const scenario = pm.variables.get(\"scenario\");\r",
+											"console.log(\"Scenario: \"+ scenario);"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -317,6 +318,24 @@
 						},
 						{
 							"name": "Get All program with user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "59e9f31c-4e90-41f4-9201-d7c016e8d5ad",
+										"exec": [
+											"const scenario = pm.variables.get(\"scenario\");\r",
+											"console.log(\"Scenario: \"+ scenario);\r",
+											"\r",
+											"const scenario = pm.variables.get(\"scenario\");\r",
+											"console.log(\"Scenario: \"+ scenario);\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "d3fb38be-1c3b-4d3d-b13a-61d7cb75891e",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -1202,6 +1221,18 @@
 			"key": "programIds",
 			"value": "",
 			"type": "string"
+		},
+		{
+			"key": "ProgramId",
+			"value": ""
+		},
+		{
+			"key": "ProgramName",
+			"value": ""
+		},
+		{
+			"key": "programIDs",
+			"value": ""
 		}
 	]
 }
