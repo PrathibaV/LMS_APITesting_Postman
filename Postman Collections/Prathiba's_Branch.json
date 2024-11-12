@@ -22,7 +22,7 @@
 									"let token = bodyData.token;\r",
 									"pm.globals.set(\"token\", token);\r",
 									"\r",
-									"pm.test('Verify user signed in', () => {\r",
+									"/* pm.test('Verify user signed in', () => {\r",
 									"    const response = pm.response.json();\r",
 									"    pm.expect(response.token).to.eql(pm.globals.get('token'));\r",
 									"});\r",
@@ -89,7 +89,7 @@
 									"\r",
 									"// PostmanLegacy.setNextRequest('Create New Dietician');\r",
 									"// pm.execution.setNextRequest('Create New Dietician Copy');\r",
-									""
+									"*/"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -492,250 +492,6 @@
 								}
 							}
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Class",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "2fc5c488-d7b7-4ff7-97d5-f93dea1ae5c4",
-								"exec": [
-									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
-									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
-									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
-									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
-									"const classComments = pm.variables.get(\"classComments\");\r",
-									"const classDate = pm.variables.get(\"classDate\");\r",
-									"const classDescription = pm.variables.get(\"classDescription\");\r",
-									"const classNo = pm.variables.get(\"classNo\");\r",
-									"const classNotes = pm.variables.get(\"classNotes\");\r",
-									"const classRecordingPath = pm.variables.get(\"classRecordingPath\");\r",
-									"const classStaffId = pm.variables.get(\"classStaffId\");\r",
-									"const classStatus = pm.variables.get(\"classStatus\");\r",
-									"const classTopic = pm.variables.get(\"classTopic\");\r",
-									"const batchId = pm.collectionVariables.get(\"batchID1\");\r",
-									"const batchName = pm.collectionVariables.get(\"batchName1\");\r",
-									"const classID = pm.collectionVariables.get(\"classID1\");\r",
-									"const scenario = pm.variables.get(\"scenario\");\r",
-									"const batchId2 = pm.collectionVariables.get(\"batchID2\");\r",
-									"\r",
-									"\r",
-									"console.log(\"Scenario: \"+ scenario);\r",
-									"\r",
-									"if ((scenario === \"update class with all fields\") || (scenario === \"update class with only mandatory fields\")) {\r",
-									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-									"    commonTests.checkResponseTime();\r",
-									"    commonTests.checkResponseHeader();\r",
-									"    commonTests.checkResponseHasBody(); \r",
-									"    commonTests.ClassDataValidation(batchId, classComments, classDate, classDescription, classNo, classNotes, classRecordingPath, classStaffId, classStatus, classTopic, batchName);\r",
-									"    commonTests.classPostPutSchemaValidation(); \r",
-									"\r",
-									"} else if ((scenario === \"update class without authorization\") || (scenario === \"update class with invalid baseURL\") || (scenario === \"update class with invalid endpoint\")) {\r",
-									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-									"    commonTests.checkResponseTime();        \r",
-									"} else {\r",
-									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-									"    commonTests.checkResponseTime();\r",
-									"    commonTests.checkResponseHeader();\r",
-									"    commonTests.checkResponseHasBody();\r",
-									"      if (scenario === \"update class with new batchId\") {\r",
-									"            let dynamicExpectedResponseMessage = expectedResponseMessage.replace(\"{classID1}\", classID)\r",
-									"                .replace(\"{batchID2}\", batchId2);\r",
-									"            commonTests.checkErrorMessage(dynamicExpectedResponseMessage, expectedResponseStatus);\r",
-									"   \r",
-									"        } else {\r",
-									"            commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);\r",
-									"        }\r",
-									"}"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "d2bcf3c5-d7a1-47be-a1b9-6e402c1f4fcf",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"batchId\": {{batchId}},\r\n    \"classNo\": {{classNo}},\r\n    \"classDate\": \"{{classDate}}\",\r\n    \"classTopic\": \"{{classTopic}}\",\r\n    \"classStatus\": \"{{classStatus}}\",\r\n    \"classStaffId\": \"{{classStaffId}}\",\r\n    \"classDescription\": \"{{classDescription}}\",\r\n    \"classComments\": \"{{classComments}}\",\r\n    \"classNotes\": \"{{classNotes}}\",\r\n    \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n    \"classScheduledDates\": [\r\n    \"{{classScheduledDates_1}}\",\r\n    \"{{classScheduledDates_2}}\"\r\n  ]\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update Class Recording Path",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "c925de78-530b-46eb-a91f-b1661ddebbaf",
-								"exec": [
-									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
-									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
-									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
-									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
-									"const classRecordingPath = pm.variables.get(\"classRecordingPath\");\r",
-									"const classID = pm.collectionVariables.get(\"classID\");\r",
-									"const scenario = pm.variables.get(\"scenario\");\r",
-									"\r",
-									"console.log(\"Scenario: \"+ scenario);\r",
-									"\r",
-									"if ((scenario === \"update class recordings with valid data\") || (scenario === \"update class recordings without classRecordingPath field\")) {\r",
-									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-									"    commonTests.checkResponseTime();\r",
-									"    commonTests.checkResponseHeader();\r",
-									"    commonTests.checkResponseHasBody(); \r",
-									"    commonTests.classRecPathDataValidation(classID, classRecordingPath);\r",
-									"    commonTests.classPostPutSchemaValidation(); \r",
-									"\r",
-									"} else if ((scenario === \"update class recordings without authorization\") || (scenario === \"update class recordings with invalid baseURL\") || (scenario === \"update class recordings with invalid endpoint\")) {\r",
-									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-									"    commonTests.checkResponseTime();        \r",
-									"} else {\r",
-									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-									"    commonTests.checkResponseTime();\r",
-									"    commonTests.checkResponseHeader();\r",
-									"    commonTests.checkResponseHasBody();     \r",
-									"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);        \r",
-									"}"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "d0fd92d3-2594-4c83-a3e3-3ffcdf7bd2bb",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n  \"csId\": {{classID}}\r\n}\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Class Negative",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "2ef1910f-a81c-4671-a381-0df8785b11c9",
-								"exec": [
-									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
-									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
-									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
-									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
-									"const classID = pm.collectionVariables.get(\"classID1\");\r",
-									"const scenario = pm.variables.get(\"scenario\");\r",
-									"\r",
-									"console.log(\"Scenario: \"+ scenario);\r",
-									"\r",
-									"if (scenario === \"delete class by non-existing classId\") {\r",
-									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-									"    commonTests.checkResponseTime();\r",
-									"    commonTests.checkResponseHeader();\r",
-									"    commonTests.checkResponseHasBody();\r",
-									"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);\r",
-									" \r",
-									"} else {\r",
-									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-									"    commonTests.checkResponseTime();        \r",
-									"} \r",
-									"\r",
-									"pm.collectionVariables.unset(\"batchIDs\");\r",
-									"pm.collectionVariables.unset(\"batchNames\");\r",
-									"\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "2221e166-2371-4cb2-918c-22212aa8ebc4",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "DELETE",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Class",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "0e6d8199-780a-4b34-b509-9743f2616224",
-								"exec": [
-									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
-									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
-									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
-									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
-									"const classID = pm.collectionVariables.get(\"classID1\");\r",
-									"const scenario = pm.variables.get(\"scenario\");\r",
-									"\r",
-									"console.log(\"Scenario: \"+ scenario);\r",
-									"\r",
-									"commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-									"commonTests.checkResponseTime();\r",
-									"commonTests.checkResponseHeader();\r",
-									"commonTests.checkResponseHasBody();\r",
-									"\r",
-									"let dynamicExpectedResponseMessage = expectedResponseMessage.replace(\"{classID}\", classID);\r",
-									"commonTests.checkErrorMessage(dynamicExpectedResponseMessage, expectedResponseStatus);\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "9612174e-8525-42e5-8d6b-f6d07e17dc67",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "DELETE",
-						"header": []
 					},
 					"response": []
 				},
@@ -1300,6 +1056,153 @@
 						"header": []
 					},
 					"response": []
+				},
+				{
+					"name": "Update Class",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2fc5c488-d7b7-4ff7-97d5-f93dea1ae5c4",
+								"exec": [
+									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
+									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+									"const classComments = pm.variables.get(\"classComments\");\r",
+									"const classDate = pm.variables.get(\"classDate\");\r",
+									"const classDescription = pm.variables.get(\"classDescription\");\r",
+									"const classNo = pm.variables.get(\"classNo\");\r",
+									"const classNotes = pm.variables.get(\"classNotes\");\r",
+									"const classRecordingPath = pm.variables.get(\"classRecordingPath\");\r",
+									"const classStaffId = pm.variables.get(\"classStaffId\");\r",
+									"const classStatus = pm.variables.get(\"classStatus\");\r",
+									"const classTopic = pm.variables.get(\"classTopic\");\r",
+									"const batchId = pm.collectionVariables.get(\"batchID1\");\r",
+									"const batchName = pm.collectionVariables.get(\"batchName1\");\r",
+									"const classID = pm.collectionVariables.get(\"classID1\");\r",
+									"const scenario = pm.variables.get(\"scenario\");\r",
+									"const batchId2 = pm.collectionVariables.get(\"batchID2\");\r",
+									"\r",
+									"\r",
+									"console.log(\"Scenario: \"+ scenario);\r",
+									"\r",
+									"if ((scenario === \"update class with all fields\") || (scenario === \"update class with only mandatory fields\")) {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();\r",
+									"    commonTests.checkResponseHeader();\r",
+									"    commonTests.checkResponseHasBody(); \r",
+									"    commonTests.ClassDataValidation(batchId, classComments, classDate, classDescription, classNo, classNotes, classRecordingPath, classStaffId, classStatus, classTopic, batchName);\r",
+									"    commonTests.classPostPutSchemaValidation(); \r",
+									"\r",
+									"} else if ((scenario === \"update class without authorization\") || (scenario === \"update class with invalid baseURL\") || (scenario === \"update class with invalid endpoint\")) {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();        \r",
+									"} else {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();\r",
+									"    commonTests.checkResponseHeader();\r",
+									"    commonTests.checkResponseHasBody();\r",
+									"      if (scenario === \"update class with new batchId\") {\r",
+									"            let dynamicExpectedResponseMessage = expectedResponseMessage.replace(\"{classID1}\", classID)\r",
+									"                .replace(\"{batchID2}\", batchId2);\r",
+									"            commonTests.checkErrorMessage(dynamicExpectedResponseMessage, expectedResponseStatus);\r",
+									"   \r",
+									"        } else {\r",
+									"            commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);\r",
+									"        }\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "d2bcf3c5-d7a1-47be-a1b9-6e402c1f4fcf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"batchId\": {{batchId}},\r\n    \"classNo\": {{classNo}},\r\n    \"classDate\": \"{{classDate}}\",\r\n    \"classTopic\": \"{{classTopic}}\",\r\n    \"classStatus\": \"{{classStatus}}\",\r\n    \"classStaffId\": \"{{classStaffId}}\",\r\n    \"classDescription\": \"{{classDescription}}\",\r\n    \"classComments\": \"{{classComments}}\",\r\n    \"classNotes\": \"{{classNotes}}\",\r\n    \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n    \"classScheduledDates\": [\r\n    \"{{classScheduledDates_1}}\",\r\n    \"{{classScheduledDates_2}}\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Class Recording Path",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c925de78-530b-46eb-a91f-b1661ddebbaf",
+								"exec": [
+									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
+									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+									"const classRecordingPath = pm.variables.get(\"classRecordingPath\");\r",
+									"const classID = pm.collectionVariables.get(\"classID\");\r",
+									"const scenario = pm.variables.get(\"scenario\");\r",
+									"\r",
+									"console.log(\"Scenario: \"+ scenario);\r",
+									"\r",
+									"if ((scenario === \"update class recordings with valid data\") || (scenario === \"update class recordings without classRecordingPath field\")) {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();\r",
+									"    commonTests.checkResponseHeader();\r",
+									"    commonTests.checkResponseHasBody(); \r",
+									"    commonTests.classRecPathDataValidation(classID, classRecordingPath);\r",
+									"    commonTests.classPostPutSchemaValidation(); \r",
+									"\r",
+									"} else if ((scenario === \"update class recordings without authorization\") || (scenario === \"update class recordings with invalid baseURL\") || (scenario === \"update class recordings with invalid endpoint\")) {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();        \r",
+									"} else {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();\r",
+									"    commonTests.checkResponseHeader();\r",
+									"    commonTests.checkResponseHasBody();     \r",
+									"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);        \r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "d0fd92d3-2594-4c83-a3e3-3ffcdf7bd2bb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n  \"csId\": {{classID}}\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "7c613a5e-f428-4864-a6ca-ac7d98d8dffa"
@@ -1311,7 +1214,105 @@
 		},
 		{
 			"name": "Delete",
-			"item": [],
+			"item": [
+				{
+					"name": "Delete Class Negative",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2ef1910f-a81c-4671-a381-0df8785b11c9",
+								"exec": [
+									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
+									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+									"const classID = pm.collectionVariables.get(\"classID1\");\r",
+									"const scenario = pm.variables.get(\"scenario\");\r",
+									"\r",
+									"console.log(\"Scenario: \"+ scenario);\r",
+									"\r",
+									"if (scenario === \"delete class by non-existing classId\") {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();\r",
+									"    commonTests.checkResponseHeader();\r",
+									"    commonTests.checkResponseHasBody();\r",
+									"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);\r",
+									" \r",
+									"} else {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();        \r",
+									"} \r",
+									"\r",
+									"pm.collectionVariables.unset(\"batchIDs\");\r",
+									"pm.collectionVariables.unset(\"batchNames\");\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "2221e166-2371-4cb2-918c-22212aa8ebc4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Class",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0e6d8199-780a-4b34-b509-9743f2616224",
+								"exec": [
+									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
+									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+									"const classID = pm.collectionVariables.get(\"classID1\");\r",
+									"const scenario = pm.variables.get(\"scenario\");\r",
+									"\r",
+									"console.log(\"Scenario: \"+ scenario);\r",
+									"\r",
+									"commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"commonTests.checkResponseTime();\r",
+									"commonTests.checkResponseHeader();\r",
+									"commonTests.checkResponseHasBody();\r",
+									"\r",
+									"let dynamicExpectedResponseMessage = expectedResponseMessage.replace(\"{classID}\", classID);\r",
+									"commonTests.checkErrorMessage(dynamicExpectedResponseMessage, expectedResponseStatus);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "9612174e-8525-42e5-8d6b-f6d07e17dc67",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "c4d229ab-c475-42a5-bf83-8c8147d759b1"
 		},
 		{
