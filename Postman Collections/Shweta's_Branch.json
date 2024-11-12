@@ -1079,7 +1079,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "fc833b12-4261-4d8d-8789-8adf7dbff4d1",
+				"id": "093a98cc-e151-434d-937d-c6b574e2522c",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1144,7 +1144,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "3890ac49-d6fc-4052-a3e6-dbb17fed12f3",
+				"id": "fd177c75-e9de-4d7b-a25f-b0646321c234",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1225,7 +1225,6 @@
 					"    programPostPutSchemaValidation: function() {\r",
 					"    pm.test(\"Response schema is valid\", function () {\r",
 					"    const schema = {\r",
-					"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
 					"  \"type\": \"object\",\r",
 					"  \"properties\": {\r",
 					"    \"programId\": {\r",
