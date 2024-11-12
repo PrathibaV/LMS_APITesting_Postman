@@ -651,6 +651,8 @@
 									"script": {
 										"id": "c7266f6f-2090-4f35-9075-a81620599df5",
 										"exec": [
+											"bodyData = pm.response.json();\r",
+											"\r",
 											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
 											"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
 											"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
@@ -664,7 +666,6 @@
 											"\r",
 											"\r",
 											"if(scenario === \"Update Program with valid program Id\"){ \r",
-											"\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkResponseHeader();\r",
