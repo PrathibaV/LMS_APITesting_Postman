@@ -319,7 +319,11 @@
 											"const scenario = pm.variables.get(\"scenario\");\r",
 											"console.log(\"Scenario: \"+ scenario);\r",
 											"\r",
-											"commonTests.verifyStatusCode();\r",
+											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+											"    commonTests.checkResponseTime();\r",
+											"    commonTests.checkResponseHeader();\r",
+											"    commonTests.checkResponseHasBody(); \r",
 											"\r",
 											""
 										],
