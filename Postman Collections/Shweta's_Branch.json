@@ -141,7 +141,8 @@
 											"    commonTests.checkResponseHeader();\r",
 											"    commonTests.checkResponseHasBody(); \r",
 											"    commonTests.ProgramDataValidation(programId, programName, programDescription, programStatus, programStatus, creationTime, lastModTime);\r",
-											"    commonTests.classPostPutSchemaValidation(); \r",
+											"    commonTests.programPostPutSchemaValidation();\r",
+											"    commonTests.verifyStatusCode();\r",
 											"\r",
 											"} else if ((scenario === \"create program with existing program\") || (scenario === \"create program without Authorization\") || (scenario === \"create program with no value in status\") || (scenario === \"create program with no value in program name\") || (scenario === \"create program with interger value in program name\") || (scenario === \"create program with invalid baseurl\") || (scenario === \"create program with invalid endpoint\") || (scenario === \"create program with already existing program\") || (scenario === \"create program with no values in all fields\")) {\r",
 											"        commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
@@ -166,8 +167,7 @@
 											"\r",
 											"\r",
 											"\r",
-											"commonTests.programPostPutSchemaValidation();\r",
-											"commonTests.verifyStatusCode();\r",
+											"\r",
 											"\r",
 											"\r",
 											""
@@ -1059,7 +1059,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "3b3d812c-bdbd-4447-ad06-7a6118aa2df8",
+				"id": "3918f602-39ad-4ba4-89f3-7c47731d3575",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1124,7 +1124,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "fdc2958b-6fc8-4eb5-9063-2b2247f3fc73",
+				"id": "d6b2a02e-e47d-42c5-bd07-311cd7bcecb3",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1171,6 +1171,10 @@
 					"        pm.expect(pm.response.json().success).to.eql(expectedResponseStatus); \r",
 					"        });\r",
 					"    },\r",
+					"        checkErrorMsg: function(ErrorMessage) {      \r",
+					"        pm.test(\"Check if error message matches expected\", function () {\r",
+					"        pm.expect(pm.response.json().message).to.eql(expectedResponseMessage); \r",
+					"        });\r",
 					"\r",
 					"    ProgramDataValidation: function (programId, programName, programDescription, programStatus, programStatus, creationTime, lastModTime, ) {\r",
 					"        pm.test(\"Data validations in the response body\", () => {\r",
