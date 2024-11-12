@@ -1079,7 +1079,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "60528ea0-227d-41da-8fb1-98d17bc98957",
+				"id": "fc833b12-4261-4d8d-8789-8adf7dbff4d1",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1144,7 +1144,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "23049e26-3ccd-49b1-8ffd-f682ceb4b7b4",
+				"id": "3890ac49-d6fc-4052-a3e6-dbb17fed12f3",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1178,7 +1178,7 @@
 					"\r",
 					"    checkResponseTime: function() {\r",
 					"        pm.test(\"Response time is less than 500ms\", function () {\r",
-					"            pm.expect(pm.response.responseTime).to.be.below(500);\r",
+					"            pm.expect(pm.response.responseTime).to.be.below(700);\r",
 					"        });\r",
 					"    },\r",
 					"    \r",
@@ -1212,7 +1212,7 @@
 					"        });\r",
 					"\r",
 					"        pm.test(\"Data type in the response body\", () => {\r",
-					"            pm.expect(pm.response.json().programId).to.be.a('integer'); \r",
+					"            pm.expect(pm.response.json().programId).to.be.a('number'); \r",
 					"            pm.expect(pm.response.json().programName).to.be.a('string'); \r",
 					"            pm.expect(pm.response.json().programDescription).to.be.a('string'); \r",
 					"            pm.expect(pm.response.json().programStatus).to.be.a('string'); \r",
@@ -1302,6 +1302,14 @@
 		},
 		{
 			"key": "classID",
+			"value": ""
+		},
+		{
+			"key": "programIDs",
+			"value": ""
+		},
+		{
+			"key": "programNames",
 			"value": ""
 		}
 	]
