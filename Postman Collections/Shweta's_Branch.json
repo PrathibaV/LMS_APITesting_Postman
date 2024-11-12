@@ -91,8 +91,8 @@
 											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
 											"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
 											"const expectedErrorMessage = pm.variables.get(\"expectedErrorMessage\");\r",
-											"//const expectedResponseMessage = pm.variables.get(\"ErrorMessage\");\r",
-											"const expectedResponseStatus = pm.variables.get(\"programDescription\");\r",
+											"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+											"const programDescription = pm.variables.get(\"programDescription\");\r",
 											"const classComments = pm.variables.get(\"programName\");\r",
 											"const classDate = pm.variables.get(\"programStatus\");\r",
 											"const scenario = pm.variables.get(\"scenario\");\r",
@@ -1302,6 +1302,14 @@
 		},
 		{
 			"key": "classID",
+			"value": ""
+		},
+		{
+			"key": "programIDs",
+			"value": ""
+		},
+		{
+			"key": "programNames",
 			"value": ""
 		}
 	]
