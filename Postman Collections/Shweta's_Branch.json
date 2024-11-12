@@ -252,6 +252,7 @@
 											"const programName = pm.variables.get(\"programName\");\r",
 											"const programStatus = pm.variables.get(\"programStatus\");\r",
 											"const scenario = pm.variables.get(\"scenario\");\r",
+											"console.log(\"Scenario: \"+ scenario);\r",
 											"\r",
 											"if ((scenario === \"create program with existing program\") || (scenario === \"create program without Authorization\") || (scenario === \"create program with no value in status\") || (scenario === \"create program with no value in program name\") || (scenario === \"create program with interger value in program name\") || (scenario === \"create program with invalid baseurl\") || (scenario === \"create program with invalid endpoint\") || (scenario === \"create program with already existing program\") || (scenario === \"create program with no values in all fields\")) {\r",
 											"        commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
