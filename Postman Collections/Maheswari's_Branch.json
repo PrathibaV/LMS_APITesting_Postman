@@ -6230,6 +6230,14 @@
 		{
 			"key": "batchName2",
 			"value": ""
+		},
+		{
+			"key": "programIDs",
+			"value": ""
+		},
+		{
+			"key": "programNames",
+			"value": ""
 		}
 	]
 }
