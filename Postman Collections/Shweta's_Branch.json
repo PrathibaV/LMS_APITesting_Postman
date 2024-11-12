@@ -107,7 +107,7 @@
 											"        pm.collectionVariables.set(\"ProgramId\", pgrmId); \r",
 											"        pm.collectionVariables.set(\"ProgramName\", pgrmName); \r",
 											"        console.log(\"ProgramId:\"+pgrmId);\r",
-											"        console.log(\"ProgramId:\"+pgrmName);\r",
+											"        console.log(\"ProgramName:\"+pgrmName);\r",
 											"    }   else if (programIDs.length === 1) {\r",
 											"        let ProgramId2 = pgrmId;\r",
 											"        pm.collectionVariables.set(\"ProgramId2\", pgrmId);\r",
@@ -1282,6 +1282,10 @@
 		},
 		{
 			"key": "programIDs",
+			"value": ""
+		},
+		{
+			"key": "classID",
 			"value": ""
 		}
 	]
