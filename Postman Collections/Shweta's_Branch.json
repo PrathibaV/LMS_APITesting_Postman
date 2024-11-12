@@ -984,7 +984,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a15c914f-f2f7-453c-ba2c-3a14d97fbe29",
+				"id": "835812a0-1208-4b99-b827-188a577c3287",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1049,7 +1049,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "86e017ea-e088-4c2e-be01-4bbc451e39f7",
+				"id": "0449d0d7-c053-470a-8e64-2c9e00ad3615",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1117,17 +1117,6 @@
 					"        });\r",
 					"    },\r",
 					"\r",
-					"    classRecPathDataValidation: function (classId, classRecordingPath) {\r",
-					"        pm.test(\"Data validations in the response body\", () => {\r",
-					"            pm.expect(pm.response.json().csId).to.be.equal(classId);          \r",
-					"            pm.expect(pm.response.json().classRecordingPath).to.be.equal(classRecordingPath);            \r",
-					"        });\r",
-					"\r",
-					"        pm.test(\"Data type in the response body\", () => {\r",
-					"            pm.expect(pm.response.json().csId).to.be.a('number');             \r",
-					"            pm.expect(pm.response.json().classRecordingPath).to.be.a('string');             \r",
-					"        });\r",
-					"    },\r",
 					"\r",
 					"    programPostPutSchemaValidation: function() {\r",
 					"    pm.test(\"Response schema is valid\", function () {\r",
