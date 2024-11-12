@@ -333,6 +333,9 @@
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkResponseHasBody()\r",
 											"\r",
+											"    if ((scenario === \"Get Program By ProgramId without Authorization\") || (scenario === \"Get All Program without Authorization\")) { \r",
+											"\r",
+											"\r",
 											""
 										],
 										"type": "text/javascript",
