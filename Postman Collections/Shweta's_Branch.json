@@ -156,7 +156,7 @@
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkResponseHeader();\r",
 											"    commonTests.checkResponseHasBody();\r",
-											"    commonTests.checkErrorMsg(expectedResponseMessage);    \r",
+											"    commonTests.checkErrorMsg(xpectedResponseMessage, expectedResponseStatus);    \r",
 											"}\r",
 											"// const validScenarios = [\r",
 											"//     \"create program with valid data first program\",\r",
