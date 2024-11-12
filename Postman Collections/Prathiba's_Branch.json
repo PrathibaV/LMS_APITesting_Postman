@@ -16,12 +16,12 @@
 							"script": {
 								"id": "ae8d7c71-2e67-4086-a1c3-8d097bb3f7c6",
 								"exec": [
-									"\r",
+									"if (pm.response.status === 200) {\r",
 									"let bodyData = pm.response.json();\r",
 									"\r",
 									"let token = bodyData.token;\r",
 									"pm.globals.set(\"token\", token);\r",
-									"\r",
+									"}\r",
 									"/* pm.test('Verify user signed in', () => {\r",
 									"    const response = pm.response.json();\r",
 									"    pm.expect(response.token).to.eql(pm.globals.get('token'));\r",
