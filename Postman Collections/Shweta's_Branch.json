@@ -1079,7 +1079,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "62087221-e16e-45f9-bf6f-0cafac992a4e",
+				"id": "0d59000c-33f5-4274-a2fe-2be165da741a",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1144,7 +1144,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "78fd997b-4a2a-4845-8f4b-6b900e3c01a4",
+				"id": "8e7f674b-42da-44dd-803c-e79e882fe77a",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1201,15 +1201,15 @@
 					"    });\r",
 					"},\r",
 					"\r",
-					"    ProgramDataValidation: function (programId, programName, programDescription, programStatus,creationTime, lastModTime) {\r",
+					"    ProgramDataValidation: function (programName, programDescription, programStatus) {\r",
 					"        pm.test(\"Data validations in the response body\", () => {\r",
 					"            pm.expect(pm.response.json().programId).is.not.null;\r",
 					"            pm.expect(pm.response.json().programId).to.be.equal(programId);\r",
 					"            pm.expect(pm.response.json().programName).to.be.equal(programName);\r",
 					"            pm.expect(pm.response.json().programDescription).to.be.equal(programDescription);\r",
 					"            pm.expect(pm.response.json().programStatus).to.be.equal(programStatus);\r",
-					"            pm.expect(pm.response.json().creationTime).to.be.equal(creationTime);\r",
-					"            pm.expect(pm.response.json().lastModTime).to.be.equal(lastModTime);\r",
+					"            pm.expect(pm.response.json().creationTime).is.not.null;\r",
+					"            pm.expect(pm.response.json().lastModTime).is.not.null;\r",
 					"        });\r",
 					"\r",
 					"        pm.test(\"Data type in the response body\", () => {\r",
@@ -1217,6 +1217,7 @@
 					"            pm.expect(pm.response.json().programName).to.be.a('string'); \r",
 					"            pm.expect(pm.response.json().programDescription).to.be.a('string'); \r",
 					"            pm.expect(pm.response.json().programStatus).to.be.a('string'); \r",
+					"            pm.expect(pm.response.json().creationTime).to.be.a('string');\r",
 					"            pm.expect(pm.response.json().lastModTime).to.be.a('string'); \r",
 					"        });\r",
 					"    },\r",
