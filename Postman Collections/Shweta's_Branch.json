@@ -140,7 +140,7 @@
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkResponseHeader();\r",
 											"    commonTests.checkResponseHasBody(); \r",
-											"    commonTests.ClassDataValidation(batchId, classComments, classDate, classDescription, classNo, classNotes, classRecordingPath, classStaffId, classStatus, classTopic, batchName);\r",
+											"    commonTests.ProgramDataValidation(programId, programName, programDescription, programStatus, programStatus, creationTime, lastModTime);\r",
 											"    commonTests.classPostPutSchemaValidation(); \r",
 											"\r",
 											"} else if ((scenario === \"create program with existing program\") || (scenario === \"create program without Authorization\") || (scenario === \"create program with no value in status\") || (scenario === \"create program with no value in program name\") || (scenario === \"create program with interger value in program name\") || (scenario === \"create program with invalid baseurl\") || (scenario === \"create program with invalid endpoint\") || (scenario === \"create program with already existing program\") || (scenario === \"create program with no values in all fields\")) {\r",
