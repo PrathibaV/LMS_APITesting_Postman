@@ -120,6 +120,7 @@
 											"\r",
 											"\r",
 											"commonTests.programPostPutSchemaValidation();\r",
+											"commonTests.verifyStatusCode();\r",
 											"\r",
 											"\r",
 											""
@@ -182,12 +183,7 @@
 											"// const programId = jsonData.programId;\r",
 											"// console.log(programId);\r",
 											"\r",
-											"console.log(\"Scenario: \"+ pm.variables.get(\"scenario\"));\r",
-											"if (pm.variables.get(\"scenario\") === \"create program with valid data\") {\r",
-											"    let bodyData = pm.response.json();\r",
-											"let PgrmId = bodyData.programId;\r",
-											"pm.environment.set(\"ProgramId\", PgrmId);\r",
-											"}"
+											"commonTests.verifyStatusCode();"
 										],
 										"type": "text/javascript",
 										"packages": {}
