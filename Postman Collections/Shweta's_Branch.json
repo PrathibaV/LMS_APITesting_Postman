@@ -540,7 +540,7 @@
 											"\r",
 											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
 											"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
-											"const expectedErrorMessage = pm.variables.get(\"expectedErrorMessage\");\r",
+											"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
 											"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
 											"const programDescription = pm.variables.get(\"programDescription\");\r",
 											"const programName = pm.variables.get(\"programName\");\r",
