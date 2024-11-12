@@ -1188,11 +1188,54 @@
 				},
 				{
 					"name": "Get all Upcoming Classes for particular Student",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c51b637e-6a9d-48cc-9c85-17ed1b03597c",
+								"exec": [
+									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
+									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+									"const scenario = pm.variables.get(\"scenario\");\r",
+									"\r",
+									"console.log(\"Scenario: \"+ scenario);\r",
+									"\r",
+									"if (scenario === \"get all upcoming classes by valid studentId\") {\r",
+									"commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"commonTests.checkResponseTime();\r",
+									"commonTests.checkResponseHeader();\r",
+									"commonTests.checkResponseHasBody();\r",
+									"commonTests.checkResponseBodyAsJson();\r",
+									"commonTests.checkResponseisArray();   \r",
+									"} else if ((scenario === \"get all upcoming classes by invalid studentId\")||(scenario === \"get all upcoming classes by staffId\")) {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();\r",
+									"    commonTests.checkResponseHeader();\r",
+									"    commonTests.checkResponseHasBody(); \r",
+									"    \r",
+									"    pm.test(\"Response is an empty array\", function() {    \r",
+									"    pm.expect(pm.response.json()).to.have.lengthOf(0);\r",
+									"    }); \r",
+									"} else {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();    \r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "0db4dcb3-2013-452c-b0d9-69984089d83c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": []
 					},
