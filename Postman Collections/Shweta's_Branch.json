@@ -521,7 +521,7 @@
 										}
 									}
 								},
-								"url": "{{baseURL}}programs/16857"
+								"url": "{{baseURL}}programs/17884"
 							},
 							"response": []
 						},
@@ -894,7 +894,6 @@
 											"if(scenario === \"delete program with valid program Id\"){ \r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
-											"    commonTests.checkResponseHeader();\r",
 											"\r",
 											"}else if(scenario === \"delete program with program Id without authorization\"){\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage),\r",
@@ -902,7 +901,6 @@
 											"}else{\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
-											"    commonTests.checkResponseHeader();\r",
 											"}"
 										],
 										"type": "text/javascript",
@@ -948,6 +946,36 @@
 						},
 						{
 							"name": "Delete Program By Program Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b462bab6-f8bc-429c-b8ca-a28b9b13358d",
+										"exec": [
+											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+											"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+											"const scenario = pm.variables.get(\"scenario\");\r",
+											"console.log(\"Scenario: \"+ scenario);\r",
+											"\r",
+											"if(scenario === \"delete program by Program Name with valid program name\"){ \r",
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+											"    commonTests.checkResponseTime();\r",
+											"    commonTests.checkResponseHeader();\r",
+											"\r",
+											"}else if(scenario === \"delete program by Program Name without authorization\"){\r",
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage),\r",
+											"    commonTests.checkResponseTime();\r",
+											"}else{\r",
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+											"    commonTests.checkResponseTime();\r",
+											"    commonTests.checkResponseHeader();\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "4aa5b682-5584-486e-916b-9c7bd0d5d133",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
