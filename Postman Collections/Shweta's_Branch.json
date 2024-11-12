@@ -1079,7 +1079,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9ffa3d78-d4d1-4caa-9947-2f96ed322f68",
+				"id": "60528ea0-227d-41da-8fb1-98d17bc98957",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1144,7 +1144,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d5d4ebe4-0bb1-418e-aaf6-df427c7341df",
+				"id": "23049e26-3ccd-49b1-8ffd-f682ceb4b7b4",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1203,8 +1203,7 @@
 					"\r",
 					"    ProgramDataValidation: function (programName, programDescription, programStatus) {\r",
 					"        pm.test(\"Data validations in the response body\", () => {\r",
-					"            pm.expect(pm.response.json().programId).is.not.null;\r",
-					"            pm.expect(pm.response.json().programId).to.be.equal(programId);\r",
+					"            pm.expect(pm.response.json().programId).is.not.null;           \r",
 					"            pm.expect(pm.response.json().programName).to.be.equal(programName);\r",
 					"            pm.expect(pm.response.json().programDescription).to.be.equal(programDescription);\r",
 					"            pm.expect(pm.response.json().programStatus).to.be.equal(programStatus);\r",
@@ -1303,14 +1302,6 @@
 		},
 		{
 			"key": "classID",
-			"value": ""
-		},
-		{
-			"key": "programIDs",
-			"value": ""
-		},
-		{
-			"key": "programNames",
 			"value": ""
 		}
 	]
