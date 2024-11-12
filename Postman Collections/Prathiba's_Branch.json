@@ -946,11 +946,59 @@
 				},
 				{
 					"name": "Get all Classes by BatchId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2fbcf61c-647e-4816-865e-610a9d2a7d38",
+								"exec": [
+									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
+									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+									"const scenario = pm.variables.get(\"scenario\");\r",
+									"\r",
+									"console.log(\"Scenario: \"+ scenario);\r",
+									"\r",
+									"if (scenario === \"get all classes by valid batchId\") {\r",
+									"commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"commonTests.checkResponseTime();\r",
+									"commonTests.checkResponseHeader();\r",
+									"commonTests.checkResponseHasBody();\r",
+									"commonTests.checkResponseBodyAsJson();\r",
+									"\r",
+									"   pm.test(\"Data validations in the response body\", () => {\r",
+									"        const classIDs = JSON.parse(pm.collectionVariables.get(\"classIDs\"));\r",
+									"        const responseBody = pm.response.json();\r",
+									"\r",
+									"        responseBody.forEach(item => {\r",
+									"            pm.expect(classIDs).to.include(item.csId);\r",
+									"        });\r",
+									"    });\r",
+									"} else if (scenario === \"get all classes by invalid batchId\") {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();\r",
+									"    commonTests.checkResponseHeader();\r",
+									"    commonTests.checkResponseHasBody();  \r",
+									"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);\r",
+									"} else {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();    \r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "9a8c9442-c0ba-4616-8e4a-771a9181bfc7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": []
 					},
@@ -958,11 +1006,58 @@
 				},
 				{
 					"name": "Get all Classes by StaffId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4c362783-731b-473b-8b6a-f14ca1dff01e",
+								"exec": [
+									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
+									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+									"const scenario = pm.variables.get(\"scenario\");\r",
+									"\r",
+									"console.log(\"Scenario: \"+ scenario);\r",
+									"\r",
+									"if (scenario === \"get all classes by valid StaffId\") {\r",
+									"commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"commonTests.checkResponseTime();\r",
+									"commonTests.checkResponseHeader();\r",
+									"commonTests.checkResponseHasBody();\r",
+									"commonTests.checkResponseBodyAsJson();\r",
+									"\r",
+									"    pm.test(\"Data validations in the response body\", () => {\r",
+									"        const staffId = pm.collectionVariables.get(\"staffId\");\r",
+									"        const responseBody = pm.response.json();\r",
+									"\r",
+									"        responseBody.forEach(item => {\r",
+									"            pm.expect(staffId).to.include(item.classStaffId);\r",
+									"        });    });\r",
+									"} else if (scenario === \"get all classes by invalid StaffId\") {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();\r",
+									"    commonTests.checkResponseHeader();\r",
+									"    commonTests.checkResponseHasBody();  \r",
+									"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);\r",
+									"} else {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();    \r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "06f88ca6-38dd-4b1d-b209-59b0431d3b6c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": []
 					},
