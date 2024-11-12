@@ -133,7 +133,7 @@
 											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
 											"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
 											"const expectedErrorMessage = pm.variables.get(\"expectedErrorMessage\");\r",
-											"const expectedResponseMessage = pm.variables.get(\"ErrorMessage\");\r",
+											"//const expectedResponseMessage = pm.variables.get(\"ErrorMessage\");\r",
 											"const expectedResponseStatus = pm.variables.get(\"programDescription\");\r",
 											"const classComments = pm.variables.get(\"programName\");\r",
 											"const classDate = pm.variables.get(\"programStatus\");\r",
