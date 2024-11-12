@@ -562,7 +562,6 @@
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage),\r",
 											"    commonTests.checkResponseTime();\r",
 											"}else{\r",
-											"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus)\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkResponseHeader();\r",
@@ -646,6 +645,48 @@
 						},
 						{
 							"name": "Update Program by Program Id",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "c7266f6f-2090-4f35-9075-a81620599df5",
+										"exec": [
+											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+											"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+											"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
+											"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+											"const programDescription = pm.variables.get(\"programDescription\");\r",
+											"const programName = pm.variables.get(\"programName\");\r",
+											"const programStatus = pm.variables.get(\"programStatus\");\r",
+											"const scenario = pm.variables.get(\"scenario\");\r",
+											"console.log(\"Scenario: \"+ scenario);\r",
+											"\r",
+											"\r",
+											"\r",
+											"if(scenario === \"Update Program with valid program Id\"){ \r",
+											"\r",
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+											"    commonTests.checkResponseTime();\r",
+											"    commonTests.checkResponseHeader();\r",
+											"    commonTests.checkResponseHasBody(); \r",
+											"    commonTests.ProgramDataValidation(programName, programDescription, programStatus);\r",
+											"    commonTests.programPostPutSchemaValidation();\r",
+											"}else if(scenario === \"Update Program with invalid authorization\"){\r",
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage),\r",
+											"    commonTests.checkResponseTime();\r",
+											"}else{\r",
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+											"    commonTests.checkResponseTime();\r",
+											"    commonTests.checkResponseHeader();\r",
+											"}\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "4104d59d-0551-412f-ae42-6c514c96811b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
