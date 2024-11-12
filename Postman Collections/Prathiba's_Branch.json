@@ -1039,7 +1039,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "ccabd18b-2748-4faa-9330-40e9df32c2fe",
+				"id": "b5020763-c955-42e0-ad0c-f2651185bf56",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1103,7 +1103,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "3987aaf1-2431-48a5-811c-2e4f80c1fd68",
+				"id": "dff7d229-9962-4c0c-b84d-472ec910feea",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1246,6 +1246,13 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "staffId",
+			"value": "U37",
+			"type": "string"
 		}
 	]
 }
