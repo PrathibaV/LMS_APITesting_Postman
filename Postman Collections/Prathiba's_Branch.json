@@ -1355,12 +1355,12 @@
 									"\r",
 									"pm.collectionVariables.set(\"classIDs\", JSON.stringify(classIDArray));\r",
 									"\r",
-									"if (classIDArray.length > 0) {\r",
+									"/* if (classIDArray.length > 0) {\r",
 									"    pm.execution.setNextRequest(pm.info.requestName);\r",
 									"} else {\r",
 									"    pm.collectionVariables.unset(\"classIDs\");\r",
 									"    pm.execution.setNextRequest(null); \r",
-									"}"
+									"} */"
 								],
 								"type": "text/javascript",
 								"packages": {}
