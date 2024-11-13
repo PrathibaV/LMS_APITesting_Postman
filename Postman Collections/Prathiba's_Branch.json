@@ -1279,11 +1279,57 @@
 				},
 				{
 					"name": "Get Assigned Program/Batch by User Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0303125e-7306-4403-a544-d4d2af831e66",
+								"exec": [
+									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
+									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+									"const scenario = pm.variables.get(\"scenario\");\r",
+									"\r",
+									"console.log(\"Scenario: \"+ scenario);\r",
+									"\r",
+									"if (scenario === \"get assigned program/batch by valid userId\") {\r",
+									"commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"commonTests.checkResponseTime();\r",
+									"commonTests.checkResponseHeader();\r",
+									"commonTests.checkResponseHasBody();\r",
+									"commonTests.checkResponseBodyAsJson();\r",
+									"\r",
+									"    pm.test(\"Data validations in the response body\", () => {\r",
+									"        const userID = pm.collectionVariables.get(\"userId\");\r",
+									"        pm.expect(pm.response.json().userId).to.be.eql(userID);\r",
+									"    });\r",
+									"} else if (scenario === \"get assigned program/batch by invalid userId\") {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();\r",
+									"    commonTests.checkResponseHeader();\r",
+									"    commonTests.checkResponseHasBody();  \r",
+									"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);\r",
+									"}\r",
+									"\r",
+									"else {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();    \r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "dcc4b9bb-a96f-443a-a27d-98b30330d124",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": []
 					},
@@ -1453,7 +1499,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "86066695-826f-4eb3-9b4a-c5bd321d797b",
+				"id": "e14cac20-d160-4abd-8ab9-d7916d8ae735",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1517,7 +1563,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5b321f00-5f2a-4698-aaf9-6839156f062b",
+				"id": "405cb782-506c-4488-9ff4-0edf747b69e1",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1728,6 +1774,11 @@
 		{
 			"key": "classTopic1",
 			"value": ""
+		},
+		{
+			"key": "userId",
+			"value": "U57",
+			"type": "string"
 		}
 	]
 }
