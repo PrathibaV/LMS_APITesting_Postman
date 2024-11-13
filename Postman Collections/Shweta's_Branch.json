@@ -1269,7 +1269,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "bd8fafb5-d33d-43a1-ae36-9353bf84f651",
+				"id": "efeb7e0a-b3f5-47e1-b3f3-5dbbb862903f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1334,7 +1334,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "50ac4d04-1716-4358-ad13-ca037f14c9c6",
+				"id": "1a2300e8-8523-4e75-9613-e6c71cae9190",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1469,30 +1469,6 @@
 		},
 		{
 			"key": "classID",
-			"value": ""
-		},
-		{
-			"key": "programIDs",
-			"value": ""
-		},
-		{
-			"key": "programNames",
-			"value": ""
-		},
-		{
-			"key": "ProgramId1",
-			"value": ""
-		},
-		{
-			"key": "ProgramName1",
-			"value": ""
-		},
-		{
-			"key": "ProgramId2",
-			"value": ""
-		},
-		{
-			"key": "ProgramName2",
 			"value": ""
 		}
 	]
