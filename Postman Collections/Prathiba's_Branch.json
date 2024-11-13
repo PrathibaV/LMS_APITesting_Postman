@@ -443,7 +443,7 @@
 									"    classIDs.push(classId);    \r",
 									"    pm.collectionVariables.set(\"classIDs\", JSON.stringify(classIDs));\r",
 									"\r",
-									"    if (classIDs.length === 0) {\r",
+									"    if (classIDs.length === 1) {\r",
 									"        pm.collectionVariables.set(\"classID1\", classId);\r",
 									"        console.log(\"classID1:\" +classId);\r",
 									"        pm.collectionVariables.set(\"classTopic1\", classTopic);\r",
