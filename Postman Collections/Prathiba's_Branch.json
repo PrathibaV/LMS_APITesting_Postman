@@ -1291,51 +1291,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Class",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "0e6d8199-780a-4b34-b509-9743f2616224",
-								"exec": [
-									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
-									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
-									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
-									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
-									"const classID = pm.collectionVariables.get(\"classID1\");\r",
-									"const scenario = pm.variables.get(\"scenario\");\r",
-									"\r",
-									"console.log(\"Scenario: \"+ scenario);\r",
-									"\r",
-									"commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-									"commonTests.checkResponseTime();\r",
-									"commonTests.checkResponseHeader();\r",
-									"commonTests.checkResponseHasBody();\r",
-									"\r",
-									"let dynamicExpectedResponseMessage = expectedResponseMessage.replace(\"{classID}\", classID);\r",
-									"commonTests.checkErrorMessage(dynamicExpectedResponseMessage, expectedResponseStatus);\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "9612174e-8525-42e5-8d6b-f6d07e17dc67",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "DELETE",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Class on Loop",
+					"name": "Delete Class Positive",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -1371,7 +1327,24 @@
 									"const classIDsList = pm.collectionVariables.get(\"classIDs\");\r",
 									"const classIDArray = JSON.parse(classIDsList);\r",
 									"\r",
-									"console.log(\"classIDs: \"+classIDsList );\r",
+									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
+									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+									"const classID = pm.collectionVariables.get(\"classID1\");\r",
+									"const scenario = pm.variables.get(\"scenario\");\r",
+									"\r",
+									"console.log(\"Scenario: \"+ scenario);\r",
+									"console.log(\"classIDs: \"+classIDsList);\r",
+									"\r",
+									"commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"commonTests.checkResponseTime();\r",
+									"commonTests.checkResponseHeader();\r",
+									"commonTests.checkResponseHasBody();\r",
+									"\r",
+									"let dynamicExpectedResponseMessage = expectedResponseMessage.replace(\"{classID}\", classID);\r",
+									"commonTests.checkErrorMessage(dynamicExpectedResponseMessage, expectedResponseStatus);\r",
+									"\r",
 									"\r",
 									"if (classIDArray.length > 0) {\r",
 									"    pm.execution.setNextRequest(pm.info.requestName);\r",
