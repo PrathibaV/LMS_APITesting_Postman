@@ -1358,7 +1358,31 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": ""
+									}
+								},
+								"method": "DELETE",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteBatchbybatchId  Negative",
+							"id": "4bc6f946-484c-4197-9d0a-4daa5b35a32f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": ""
+									}
+								},
+								"method": "DELETE",
 								"header": []
 							},
 							"response": []
