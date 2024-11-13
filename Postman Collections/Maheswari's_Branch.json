@@ -1353,6 +1353,59 @@
 					"item": [
 						{
 							"name": "DeleteBatchbybatchId",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "4d6e4f6f-8614-45df-996a-7a03eed470bc",
+										"exec": [
+											"const baseURL = pm.environment.get(\"baseURL\");\r",
+											"const endpoint = \" /batches/\";\r",
+											"\r",
+											"const batchIDs = pm.collectionVariables.get(\"batchIDs\");\r",
+											"const batchIDArray = JSON.parse(batchIDs);\r",
+											"\r",
+											"console.log(\"batchIDs: \"+batchIDs );\r",
+											"const batchID = classIDArray.shift();\r",
+											"\r",
+											"const token = pm.globals.get('token');  \r",
+											"pm.request.headers.add({ key: 'Authorization', value: `Bearer ${token}` });\r",
+											"\r",
+											"pm.request.url = baseURL + endpoint + batchID;\r",
+											"\r",
+											"pm.collectionVariables.set(\"batchIDs\", JSON.stringify(batchIDArray));"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "6e5dc040-72da-49d0-9326-8a57e41b3baa",
+										"exec": [
+											"const batchIDs = pm.collectionVariables.get(\"batchIDs\");\r",
+											"const batchIDArray = JSON.parse(batchIDs);\r",
+											"\r",
+											"console.log(\"batchIDs: \"+batchIDs);\r",
+											"\r",
+											"commonTests.checkStatusLine(200, \"OK\");\r",
+											"commonTests.checkResponseTime();\r",
+											"commonTests.checkResponseHeader();\r",
+											"commonTests.checkResponseHasBody();\r",
+											"\r",
+											"if (batchIDArray.length > 0) {\r",
+											"    pm.execution.setNextRequest(pm.info.requestName);\r",
+											"} else {\r",
+											"    pm.collectionVariables.unset(\"batchIDs\");\r",
+											"    pm.execution.setNextRequest(null); \r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "148c2de2-d5bc-4a17-b30f-2f9e5be39c8d",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
