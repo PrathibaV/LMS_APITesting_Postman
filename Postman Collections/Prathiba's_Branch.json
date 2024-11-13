@@ -1334,7 +1334,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "13cee54c-4304-45d8-82e4-792c8dc4a340",
+				"id": "91f23cf8-2d5f-4fa1-892d-d0ad585e4a67",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1398,7 +1398,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "57f669d8-3cdc-4759-98a1-351b09fe4203",
+				"id": "0bb561d5-532e-44a6-aefe-6352b2b69f68",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1573,10 +1573,6 @@
 		},
 		{
 			"key": "programID",
-			"value": ""
-		},
-		{
-			"key": "classIDs",
 			"value": ""
 		}
 	]
