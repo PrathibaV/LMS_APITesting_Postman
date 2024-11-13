@@ -1234,11 +1234,43 @@
 			"item": [
 				{
 					"name": "Get Assigned Program/Batch of All Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "db9c5cb7-87d8-421f-9bc5-35fcf5912cef",
+								"exec": [
+									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+									"const scenario = pm.variables.get(\"scenario\");\r",
+									"\r",
+									"console.log(\"Scenario: \"+ scenario);\r",
+									"\r",
+									"if (scenario === \"get assigned program/batch of all users positive\") {\r",
+									"commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"commonTests.checkResponseTime();\r",
+									"commonTests.checkResponseHeader();\r",
+									"commonTests.checkResponseHasBody();\r",
+									"commonTests.checkResponseBodyAsJson();\r",
+									"commonTests.checkResponseisArray();\r",
+									"} else {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();    \r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "90a14123-c326-45fd-9cbe-9354ccd2f4e9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": []
 					},
