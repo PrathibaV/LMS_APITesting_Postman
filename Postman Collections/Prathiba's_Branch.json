@@ -1351,6 +1351,9 @@
 									"console.log(\"classIDs: \"+classIDsList );\r",
 									"const classID = classIDArray.shift();\r",
 									"\r",
+									"const token = pm.globals.get('token');  \r",
+									"pm.request.headers.add({ key: 'Authorization', value: `Bearer ${token}` });\r",
+									"\r",
 									"pm.request.url = baseURL + endpoint + classID;\r",
 									"\r",
 									"pm.collectionVariables.set(\"classIDs\", JSON.stringify(classIDArray));\r",
@@ -1388,10 +1391,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTUxNzcxMiwiZXhwIjoxNzMxNTQ2NTEyfQ.ZW3VeLKSZVaqmpq_8IKuPOyoCa1eg0kAhJJta8DD0XylHG1so0l0iQJnzSI8eYVTU6hZIL4OdLX66ovM5cgV7w"
-							}
+							"type": "noauth"
 						},
 						"method": "DELETE",
 						"header": [],
