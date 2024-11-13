@@ -265,6 +265,18 @@
 							"body": "{\n    \"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3MjMxMDY2OTAsImV4cCI6MTcyMzEzNTQ5MH0.WV-CLS9y0d88RBPwpK4NFIecR9Fckx5gvua3kJFa8baE3D8I4E2dCG6dgGm4Ss0shiPZfPA9sA9r-fvyhYVT2w\",\n    \"type\": \"Bearer \",\n    \"userId\": 7048,\n    \"loginUserEmail\": \"Team6@gmail.com\",\n    \"roles\": [\n        \"ROLE_ADMIN\"\n    ]\n}"
 						}
 					]
+				},
+				{
+					"name": "Admin Login",
+					"id": "641900c4-5217-40a5-816e-2038334a9458",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "0d86c0ff-8632-4dc5-b3f2-939fc95c45d2"
@@ -1381,6 +1393,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTUxNzcxMiwiZXhwIjoxNzMxNTQ2NTEyfQ.ZW3VeLKSZVaqmpq_8IKuPOyoCa1eg0kAhJJta8DD0XylHG1so0l0iQJnzSI8eYVTU6hZIL4OdLX66ovM5cgV7w"
+							}
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": ""
@@ -1647,10 +1665,6 @@
 		},
 		{
 			"key": "batchNames",
-			"value": ""
-		},
-		{
-			"key": "classIDs",
 			"value": ""
 		},
 		{
