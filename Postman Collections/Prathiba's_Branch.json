@@ -1336,6 +1336,7 @@
 									"const classIDsList = pm.collectionVariables.get(\"classIDs\");\r",
 									"const classIDArray = JSON.parse(classIDsList);\r",
 									"\r",
+									"console.log(\"classIDs: \"+classIDsList );\r",
 									"const classID = classIDArray.shift();\r",
 									"\r",
 									"pm.request.url = baseURL + endpoint + classID;\r",
@@ -1345,6 +1346,7 @@
 									"if (classIDArray.length > 0) {\r",
 									"    pm.execution.setNextRequest(pm.info.requestName);\r",
 									"} else {\r",
+									"    pm.collectionVariables.unset(\"classIDs\");\r",
 									"    pm.execution.setNextRequest(null); \r",
 									"}"
 								],
@@ -1357,7 +1359,17 @@
 							"script": {
 								"id": "1e3f3925-fc96-42f7-bcde-d5071c74754b",
 								"exec": [
-									""
+									"const classIDsList = pm.collectionVariables.get(\"classIDs\");\r",
+									"const classIDArray = JSON.parse(classIDsList);\r",
+									"\r",
+									"console.log(\"classIDs: \"+classIDsList );\r",
+									"\r",
+									"if (classIDArray.length > 0) {\r",
+									"    pm.execution.setNextRequest(pm.info.requestName);\r",
+									"} else {\r",
+									"    pm.collectionVariables.unset(\"classIDs\");\r",
+									"    pm.execution.setNextRequest(null); \r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {}
