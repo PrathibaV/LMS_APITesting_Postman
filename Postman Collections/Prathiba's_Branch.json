@@ -1321,6 +1321,18 @@
 						"header": []
 					},
 					"response": []
+				},
+				{
+					"name": "Delete Class on Loop",
+					"id": "3ec70fb3-819d-4eac-a617-06a71788126e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "c4d229ab-c475-42a5-bf83-8c8147d759b1"
