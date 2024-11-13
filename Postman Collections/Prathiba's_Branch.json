@@ -1334,7 +1334,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "d8157ed5-94e3-40cf-8e68-428f1a3ec5b2",
+				"id": "3458fc43-9391-4d81-8287-34e64ba9db8d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1398,7 +1398,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5272198c-7c8b-491a-a92d-612d4e808a28",
+				"id": "d4807e7e-5c04-4d98-8496-f3ae76bb9932",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1579,14 +1579,6 @@
 			"key": "studentId",
 			"value": "U07",
 			"type": "string"
-		},
-		{
-			"key": "batchIDs",
-			"value": ""
-		},
-		{
-			"key": "batchNames",
-			"value": ""
 		}
 	]
 }
