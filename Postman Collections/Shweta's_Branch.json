@@ -33,7 +33,9 @@
 											"\r",
 											"if (scenario === \"Admin login with valid credentials\") {\r",
 											"        commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-											"        commonTests.checkResponseTime();        \r",
+											"        commonTests.checkResponseTime();  \r",
+											"        commonTests.checkResponseHeader();\r",
+											"        commonTests.checkResponseHasBody();       \r",
 											"} else {\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
@@ -1285,7 +1287,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "efeb7e0a-b3f5-47e1-b3f3-5dbbb862903f",
+				"id": "d6ca3a5d-d9b0-43eb-9e7f-0db5644c37ec",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1350,7 +1352,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "1a2300e8-8523-4e75-9613-e6c71cae9190",
+				"id": "17b71896-2617-439c-9a2b-4ec9d79fb797",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1455,7 +1457,29 @@
 					"            pm.expect(pm.response.json()).to.have.jsonSchema(schema);\r",
 					"        });\r",
 					"    }\r",
-					"}\r",
+					"},\r",
+					"\r",
+					"    LoginDataValidation: function (programName, programDescription, programStatus) {\r",
+					"        pm.test(\"Data validations in the response body\", () => {\r",
+					"            pm.expect(pm.response.json().programId).is.not.null;           \r",
+					"            pm.expect(pm.response.json().programName).to.be.equal(programName);\r",
+					"            pm.expect(pm.response.json().programDescription).to.be.equal(programDescription);\r",
+					"            pm.expect(pm.response.json().programStatus).to.be.equal(programStatus);\r",
+					"            pm.expect(pm.response.json().creationTime).is.not.null;\r",
+					"            pm.expect(pm.response.json().lastModTime).is.not.null;\r",
+					"        });\r",
+					"\r",
+					"        pm.test(\"Data type in the response body\", () => {\r",
+					"            pm.expect(pm.response.json().programId).to.be.a('number'); \r",
+					"            pm.expect(pm.response.json().programName).to.be.a('string'); \r",
+					"            pm.expect(pm.response.json().programDescription).to.be.a('string'); \r",
+					"            pm.expect(pm.response.json().programStatus).to.be.a('string'); \r",
+					"            pm.expect(pm.response.json().creationTime).to.be.a('string');\r",
+					"            pm.expect(pm.response.json().lastModTime).to.be.a('string'); \r",
+					"        });\r",
+					"    }\r",
+					"\r",
+					"\r",
 					"\r",
 					""
 				]
