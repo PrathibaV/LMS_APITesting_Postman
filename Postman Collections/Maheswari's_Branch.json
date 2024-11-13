@@ -1361,7 +1361,30 @@
 			"item": [
 				{
 					"name": "UserLogin",
-					"item": [],
+					"item": [
+						{
+							"name": "New Request",
+							"id": "3d496a3f-05ea-4533-ba39-86dfd3c6e703",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n     \"userLoginEmailId\":\"sdet@gmail.com\",\r\n                  \"password\":\"LmsHackathon@2024\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}login"
+							},
+							"response": []
+						}
+					],
 					"id": "9f505804-10df-4f7f-8f45-8a3f1e99388e"
 				},
 				{
