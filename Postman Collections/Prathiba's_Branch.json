@@ -1324,13 +1324,50 @@
 				},
 				{
 					"name": "Delete Class on Loop",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6983090f-71dc-4b98-903c-d19d22337d5f",
+								"exec": [
+									"const baseURL = pm.environment.get(\"baseURL\");\r",
+									"const endpoint = \"deleteByClass/\";\r",
+									"\r",
+									"const classIDsList = pm.collectionVariables.get(\"classIDs\");\r",
+									"const classIDArray = JSON.parse(classIDsList);\r",
+									"\r",
+									"const classID =  classIDArray[0];\r",
+									"\r",
+									"pm.request.url = baseURL+ endpoint+ classID;\r",
+									"\r",
+									"if (classIDArray.length > 0) {\r",
+									"    pm.execution.setNextRequest(pm.info.requestName);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "1e3f3925-fc96-42f7-bcde-d5071c74754b",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "3ec70fb3-819d-4eac-a617-06a71788126e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "DELETE",
+						"header": [],
+						"url": ""
 					},
 					"response": []
 				}
