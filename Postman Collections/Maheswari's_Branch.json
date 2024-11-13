@@ -484,7 +484,7 @@
 											"const expectedErrorMessage = pm.variables.get(\"expectedErrorMessage\");\r",
 											"const batchNoOfClasses = pm.variables.get(\"batchNoOfClasses\");\r",
 											"const batchDescription = pm.variables.get(\"batchDescription\");\r",
-											"const batchName = pm.variables.get(\"batchName\");\r",
+											"//const batchName = pm.variables.get(\"batchName\");\r",
 											"const batchStatus = pm.variables.get(\"batchStatus\");\r",
 											"const programId = pm.variables.get(\"programId\");\r",
 											"const programName = pm.variables.get(\"programName\");\r",
