@@ -1253,8 +1253,8 @@
 									"    commonTests.checkResponseTime();        \r",
 									"} \r",
 									"\r",
-									"pm.collectionVariables.unset(\"batchIDs\");\r",
-									"pm.collectionVariables.unset(\"batchNames\");\r",
+									"//pm.collectionVariables.unset(\"batchIDs\");\r",
+									"//pm.collectionVariables.unset(\"batchNames\");\r",
 									"\r",
 									"\r",
 									""
