@@ -19,7 +19,6 @@
 									"script": {
 										"id": "ae8d7c71-2e67-4086-a1c3-8d097bb3f7c6",
 										"exec": [
-											"const scenario = pm.variables.get(\"scenario\");\r",
 											"\r",
 											"bodyData = pm.response.json();\r",
 											"TokenValue = bodyData.token;\r",
@@ -38,7 +37,7 @@
 											"        commonTests.checkResponseTime();  \r",
 											"        commonTests.checkResponseHeader();\r",
 											"        commonTests.checkResponseHasBody();   \r",
-											"        // commonTests.loginPostPutSchemaValidation();   \r",
+											"        commonTests.loginPostPutSchemaValidation();   \r",
 											"        // commonTests.LoginDataValidation(userLoginEmailId, password);\r",
 											"} else {\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
