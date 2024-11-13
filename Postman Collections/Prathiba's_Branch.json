@@ -265,28 +265,6 @@
 							"body": "{\n    \"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJUZWFtNkBnbWFpbC5jb20iLCJpYXQiOjE3MjMxMDY2OTAsImV4cCI6MTcyMzEzNTQ5MH0.WV-CLS9y0d88RBPwpK4NFIecR9Fckx5gvua3kJFa8baE3D8I4E2dCG6dgGm4Ss0shiPZfPA9sA9r-fvyhYVT2w\",\n    \"type\": \"Bearer \",\n    \"userId\": 7048,\n    \"loginUserEmail\": \"Team6@gmail.com\",\n    \"roles\": [\n        \"ROLE_ADMIN\"\n    ]\n}"
 						}
 					]
-				},
-				{
-					"name": "Admin Login",
-					"id": "641900c4-5217-40a5-816e-2038334a9458",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{ \"userLoginEmailId\" : \"sdet@gmail.com\",\r\n  \"password\" : \"LmsHackathon@2024\"}\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseURL}}login"
-					},
-					"response": []
 				}
 			],
 			"id": "0d86c0ff-8632-4dc5-b3f2-939fc95c45d2"
@@ -1493,9 +1471,6 @@
 									"const classIDsList = pm.collectionVariables.get(\"classIDs\");\r",
 									"const classIDArray = JSON.parse(classIDsList);\r",
 									"\r",
-									"const scenario = pm.variables.get(\"scenario\");\r",
-									"\r",
-									"console.log(\"Scenario: \"+ scenario);\r",
 									"console.log(\"classIDs: \"+classIDsList);\r",
 									"\r",
 									"commonTests.checkStatusLine(200, \"OK\");\r",
