@@ -1287,7 +1287,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "d7d85a49-195d-471e-b7e0-d3f6ecb74c22",
+				"id": "8db2d57e-7feb-4828-8e3b-35fa79800cd6",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1352,7 +1352,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "0aa4aa7c-d714-4b46-a62a-d90e6d6a833b",
+				"id": "b6cd377b-fe9d-4843-a550-812d8957309c",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1468,12 +1468,11 @@
 					"        });\r",
 					"\r",
 					"        pm.test(\"Data type in the response body\", () => {\r",
-					"            pm.expect(pm.response.json().programId).to.be.a('number'); \r",
-					"            pm.expect(pm.response.json().programName).to.be.a('string'); \r",
-					"            pm.expect(pm.response.json().programDescription).to.be.a('string'); \r",
-					"            pm.expect(pm.response.json().programStatus).to.be.a('string'); \r",
-					"            pm.expect(pm.response.json().creationTime).to.be.a('string');\r",
-					"            pm.expect(pm.response.json().lastModTime).to.be.a('string'); \r",
+					"            pm.expect(pm.response.json().programId).to.be.equal('Number');       \r",
+					"            pm.expect(pm.response.json().type).to.be.equal('string');\r",
+					"            pm.expect(pm.response.json().email).to.be.equal('string');\r",
+					"            pm.expect(pm.response.json().status).to.be.equal('string');\r",
+					"            pm.expect(pm.response.json().roles).to.be.equal('string');\r",
 					"        });\r",
 					"}\r",
 					"}"
