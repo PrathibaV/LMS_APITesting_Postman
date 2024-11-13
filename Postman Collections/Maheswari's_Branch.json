@@ -1293,47 +1293,6 @@
 								"url": ""
 							},
 							"response": []
-						},
-						{
-							"name": "DeleteBatchbybatchId",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "1985d359-3791-4b50-99fb-9908cb8ef96f",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Response time is less than 500ms\", function () {\r",
-											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
-											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
-											"    pm.response.to.have.status(\"OK\");\r",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "e43bca07-b8be-4e46-a4d1-3d121428b916",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": ""
-									}
-								},
-								"method": "DELETE",
-								"header": [],
-								"url": ""
-							},
-							"response": []
 						}
 					],
 					"id": "2ea6b934-e134-434a-b674-d5a1beb218d9"
@@ -1352,7 +1311,7 @@
 					"name": "Delete",
 					"item": [
 						{
-							"name": "DeleteBatchbybatchId",
+							"name": "DeleteBatchbybatchId positive",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -1424,6 +1383,38 @@
 						},
 						{
 							"name": "DeleteBatchbybatchId  Negative",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e40bcd9b-8c88-4de0-a3a7-4e11ce52a039",
+										"exec": [
+											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+											"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+											"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
+											"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+											"const batchID = pm.collectionVariables.get(\"batchID2\");\r",
+											"const scenario = pm.variables.get(\"scenario\");\r",
+											"\r",
+											"console.log(\"Scenario: \"+ scenario);\r",
+											"\r",
+											"if (scenario === \"delete batch by batchId\") {\r",
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+											"    commonTests.checkResponseTime();\r",
+											"    commonTests.checkResponseHeader();\r",
+											"    commonTests.checkResponseHasBody();\r",
+											"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);\r",
+											" \r",
+											"} else {\r",
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+											"    commonTests.checkResponseTime();        \r",
+											"} "
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "4bc6f946-484c-4197-9d0a-4daa5b35a32f",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
