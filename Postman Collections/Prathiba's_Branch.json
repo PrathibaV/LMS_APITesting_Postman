@@ -419,7 +419,7 @@
 									"const classNo = pm.variables.get(\"classNo\");\r",
 									"const classNotes = pm.variables.get(\"classNotes\");\r",
 									"const classRecordingPath = pm.variables.get(\"classRecordingPath\");\r",
-									"const classStaffId = pm.variables.get(\"classStaffId\");\r",
+									"const classStaffId = pm.collectionVariables.get(\"staffId\");\r",
 									"const classStatus = pm.variables.get(\"classStatus\");\r",
 									"const classTopic = pm.variables.get(\"classTopic\");\r",
 									"const batchId = pm.collectionVariables.get(\"batchID1\");\r",
