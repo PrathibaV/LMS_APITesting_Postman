@@ -1579,6 +1579,14 @@
 			"key": "studentId",
 			"value": "U07",
 			"type": "string"
+		},
+		{
+			"key": "batchIDs",
+			"value": ""
+		},
+		{
+			"key": "batchNames",
+			"value": ""
 		}
 	]
 }
