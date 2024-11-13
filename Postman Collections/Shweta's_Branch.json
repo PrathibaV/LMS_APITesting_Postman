@@ -38,7 +38,7 @@
 											"        commonTests.checkResponseHeader();\r",
 											"        commonTests.checkResponseHasBody();   \r",
 											"        commonTests.loginPostPutSchemaValidation();   \r",
-											"        // commonTests.LoginDataValidation(userLoginEmailId, password);\r",
+											"        commonTests.LoginDataValidation(userLoginEmailId, password);\r",
 											"} else {\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
