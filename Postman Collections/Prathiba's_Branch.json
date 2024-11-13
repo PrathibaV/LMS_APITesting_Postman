@@ -1185,7 +1185,7 @@
 									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
 									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
 									"const classRecordingPath = pm.variables.get(\"classRecordingPath\");\r",
-									"const classID = pm.collectionVariables.get(\"classID\");\r",
+									"const classID = pm.collectionVariables.get(\"classID1\");\r",
 									"const scenario = pm.variables.get(\"scenario\");\r",
 									"\r",
 									"console.log(\"Scenario: \"+ scenario);\r",
