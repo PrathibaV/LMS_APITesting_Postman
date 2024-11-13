@@ -1204,7 +1204,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n  \"csId\": {{classID}}\r\n}\r\n",
+							"raw": "{\r\n  \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n  \"csId\": {{classID1}}\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
