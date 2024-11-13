@@ -1452,7 +1452,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "029f6a83-cc26-43ad-8572-2024b3f11e1f",
+				"id": "5e95e399-9599-4ae2-9826-f1ccb9dffe14",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1516,7 +1516,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5972441c-65a5-48ce-a7ae-8462b2221e29",
+				"id": "521b77d9-919b-4901-bc05-12e8b3e3b614",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1570,7 +1570,7 @@
 					"        });\r",
 					"    },\r",
 					"\r",
-					"    ClassDataValidation: function (batchId, classComments, classDate, classDescription, classNo, classNotes, classRecordingPath, classStaffId, classStatus, classTopic, batchName) {\r",
+					"    classDataValidation: function (batchId, classComments, classDate, classDescription, classNo, classNotes, classRecordingPath, classStaffId, classStatus, classTopic, batchName) {\r",
 					"        pm.test(\"Data validations in the response body\", () => {\r",
 					"            pm.expect(pm.response.json().csId).is.not.null;\r",
 					"            pm.expect(pm.response.json().batchId).to.be.equal(batchId);\r",
@@ -1612,6 +1612,16 @@
 					"        pm.test(\"Data type in the response body\", () => {\r",
 					"            pm.expect(pm.response.json().csId).to.be.a('number');             \r",
 					"            pm.expect(pm.response.json().classRecordingPath).to.be.a('string');             \r",
+					"        });\r",
+					"    },\r",
+					"\r",
+					"     roleprogramBatchMapDataValidation: function () {\r",
+					"        pm.test(\"Data type in the response body\", () => {\r",
+					"            pm.expect(pm.response.json().userId).to.be.a('string');             \r",
+					"            pm.expect(pm.response.json().roleId).to.be.a('string'); \r",
+					"            pm.expect(pm.response.json().programId).to.be.a('string');\r",
+					"            pm.expect(pm.response.json().batchId).to.be.a('string');\r",
+					"            pm.expect(pm.response.json().userRoleProgramBatchStatus).to.be.a('string');            \r",
 					"        });\r",
 					"    },\r",
 					"\r",
