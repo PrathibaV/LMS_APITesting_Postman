@@ -1287,7 +1287,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "597fa522-c1ae-46bc-91ac-f377511ed6bb",
+				"id": "168db233-8bfa-4d9f-91ea-5bda97f6f779",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1352,7 +1352,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "6898bd7f-f1ed-42d4-832e-17800489bce4",
+				"id": "d6e513d7-be9e-4543-b2bc-d59e5f3933d8",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1456,10 +1456,8 @@
 					"}\r",
 					"            pm.expect(pm.response.json()).to.have.jsonSchema(schema);\r",
 					"        });\r",
-					"    }\r",
-					"},\r",
-					"\r",
-					"    LoginDataValidation: function (userLoginEmailId, password ) {\r",
+					"    },\r",
+					"        LoginDataValidation: function (userLoginEmailId, password ) {\r",
 					"        pm.test(\"Data validations in the response body\", () => {\r",
 					"            pm.expect(pm.response.json().programId).is.not.null;           \r",
 					"            pm.expect(pm.response.json().programName).to.be.equal(programName);\r",
@@ -1477,11 +1475,8 @@
 					"            pm.expect(pm.response.json().creationTime).to.be.a('string');\r",
 					"            pm.expect(pm.response.json().lastModTime).to.be.a('string'); \r",
 					"        });\r",
-					"    }\r",
-					"\r",
-					"\r",
-					"\r",
-					""
+					"}\r",
+					"}"
 				]
 			}
 		}
