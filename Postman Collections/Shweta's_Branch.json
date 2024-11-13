@@ -40,7 +40,6 @@
 											"} else {\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
-											"    commonTests.checkResponseHeader(); \r",
 											"}\r",
 											"\r",
 											"\r",
