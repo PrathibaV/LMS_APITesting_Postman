@@ -1231,7 +1231,47 @@
 		},
 		{
 			"name": "ProgramBatchMapController",
-			"item": [],
+			"item": [
+				{
+					"name": "Get Assigned Program/Batch of All Users",
+					"id": "90a14123-c326-45fd-9cbe-9354ccd2f4e9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Assigned Program/Batch by User Id",
+					"id": "dcc4b9bb-a96f-443a-a27d-98b30330d124",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All Programs/Batches assigned to the User By UserId",
+					"id": "1955891a-4131-44d1-859e-ebe2a4ddc955",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "2584b132-f1ec-43c3-b1cc-0531b72c8712"
 		},
 		{
