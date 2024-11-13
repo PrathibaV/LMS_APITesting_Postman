@@ -1341,6 +1341,39 @@
 				},
 				{
 					"name": "Delete All Programs/Batches assigned to the User By UserId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "155a8449-ce3e-4682-9d28-0857ad6b5593",
+								"exec": [
+									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
+									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+									"const classID = pm.collectionVariables.get(\"classID1\");\r",
+									"const scenario = pm.variables.get(\"scenario\");\r",
+									"\r",
+									"console.log(\"Scenario: \"+ scenario);\r",
+									"\r",
+									"\r",
+									"if (scenario === \"delete all programs/batches assigned to the user By valid userId\" || scenario === \"delete all programs/batches assigned to the user By invalid userId\") {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();\r",
+									"    commonTests.checkResponseHeader();\r",
+									"    commonTests.checkResponseHasBody();\r",
+									"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);\r",
+									"} else {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "1955891a-4131-44d1-859e-ebe2a4ddc955",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
