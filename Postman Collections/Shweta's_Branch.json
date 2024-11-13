@@ -550,11 +550,6 @@
 									"script": {
 										"id": "595b59ad-97da-4a76-bb6f-7cddcbfc081c",
 										"exec": [
-											"bodyData = pm.response.json();\r",
-											"dPgrmName = bodyData.programName,\r",
-											"console.log(\"pgrmName1: \" + dPgrmName)\r",
-											"pm.environment.set(\"pgrmName1\", dPgrmName);\r",
-											"\r",
 											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
 											"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
 											"const programDescription = pm.variables.get(\"programDescription\");\r",
@@ -566,6 +561,10 @@
 											"\r",
 											"\r",
 											"if(scenario === \"Update Program with valid program name\"){ \r",
+											"    bodyData = pm.response.json();\r",
+											"    dPgrmName = bodyData.programName,\r",
+											"    console.log(\"pgrmName1: \" + dPgrmName)\r",
+											"    pm.environment.set(\"pgrmName1\", dPgrmName);\r",
 											"\r",
 											"    commonTests.checkStatusLine(expectedStatusCode,expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
