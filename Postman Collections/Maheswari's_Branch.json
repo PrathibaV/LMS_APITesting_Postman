@@ -479,7 +479,7 @@
 										"exec": [
 											"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
 											"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
-											"const expectedErrorMessage = pm.variables.get(\"expectedErrorMessage\");\r",
+											"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
 											"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
 											"const batchNoOfClasses = pm.variables.get(\"batchNoOfClasses\");\r",
 											"const batchDescription = pm.variables.get(\"batchDescription\");\r",
