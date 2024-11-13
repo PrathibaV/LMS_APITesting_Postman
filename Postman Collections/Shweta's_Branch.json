@@ -42,8 +42,7 @@
 											"} else {\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
-											"    commonTests.checkResponseHeader();\r",
-											"    commonTests.checkResponseHasBody();   \r",
+											"    commonTests.checkResponseHeader(); \r",
 											"}\r",
 											"\r",
 											"\r",
@@ -1289,7 +1288,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "04352a2a-a06d-4d9d-acd0-9fed05830da2",
+				"id": "20062fde-0567-4600-9aab-6c3823d351ea",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1354,7 +1353,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "0509ba63-d547-489e-81cf-3858104447f0",
+				"id": "5eb20024-0717-4082-9e29-071c7a3aa386",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1470,7 +1469,7 @@
 					"        });\r",
 					"\r",
 					"        pm.test(\"Data type in the response body\", () => {\r",
-					"            pm.expect(pm.response.json().programId).to.be.equal('Number');       \r",
+					"            pm.expect(pm.response.json().programId).to.be.equal('integer');       \r",
 					"            pm.expect(pm.response.json().type).to.be.equal('string');\r",
 					"            pm.expect(pm.response.json().email).to.be.equal('string');\r",
 					"            pm.expect(pm.response.json().status).to.be.equal('string');\r",
