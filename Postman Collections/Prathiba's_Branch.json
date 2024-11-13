@@ -273,8 +273,18 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"userLoginEmailId\" : \"sdet@gmail.com\",\r\n  \"password\" : \"LmsHackathon@2024\"}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}login"
 					},
 					"response": []
 				}
