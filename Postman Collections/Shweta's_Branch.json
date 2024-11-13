@@ -1287,7 +1287,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8db2d57e-7feb-4828-8e3b-35fa79800cd6",
+				"id": "9fedae8e-0eaf-4581-882d-db5a20c8a700",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1352,7 +1352,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b6cd377b-fe9d-4843-a550-812d8957309c",
+				"id": "4b7f7c38-19aa-459b-83b7-4bed673f21ed",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1474,7 +1474,45 @@
 					"            pm.expect(pm.response.json().status).to.be.equal('string');\r",
 					"            pm.expect(pm.response.json().roles).to.be.equal('string');\r",
 					"        });\r",
+					"    },\r",
+					"\r",
+					"     loginPostPutSchemaValidation: function() {\r",
+					"    pm.test(\"Response schema is valid\", function () {\r",
+					"    const schema = {\r",
+					"  \"type\": \"object\",\r",
+					"  \"properties\": {\r",
+					"    \"programId\": {\r",
+					"      \"type\": \"integer\"\r",
+					"    },\r",
+					"    \"programName\": {\r",
+					"      \"type\": \"string\"\r",
+					"    },\r",
+					"    \"programDescription\": {\r",
+					"      \"type\": \"string\"\r",
+					"    },\r",
+					"    \"programStatus\": {\r",
+					"      \"type\": \"string\"\r",
+					"    },\r",
+					"    \"creationTime\": {\r",
+					"      \"type\": \"string\"\r",
+					"    },\r",
+					"    \"lastModTime\": {\r",
+					"      \"type\": \"string\"\r",
+					"    }\r",
+					"  },\r",
+					"  \"required\": [\r",
+					"    \"programId\",\r",
+					"    \"programName\",\r",
+					"    \"programDescription\",\r",
+					"    \"programStatus\",\r",
+					"    \"creationTime\",\r",
+					"    \"lastModTime\"\r",
+					"  ]\r",
 					"}\r",
+					"            pm.expect(pm.response.json()).to.have.jsonSchema(schema);\r",
+					"        });\r",
+					"     } \r",
+					"\r",
 					"}"
 				]
 			}
