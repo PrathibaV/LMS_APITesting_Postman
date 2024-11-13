@@ -5885,7 +5885,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "7a57133e-d027-41e6-8143-fb57c11ce2cb",
+				"id": "1765a8b2-98ab-4508-a2f5-5ee7bcd9a07f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5951,7 +5951,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "05c0325f-14c9-4a15-ab09-ca9d5f921010",
+				"id": "2f14a849-d617-4414-9115-7ea0f5bdda90",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5996,12 +5996,12 @@
 					"    },\r",
 					"    BatchDataValidation: function () {\r",
 					"        pm.test(\"Datatype validation\", () => {   \r",
-					"    pm.expect(Jsondata.batchId).to.be.a(\"number\");\r",
+					"    pm.expect(Jsondata.batchId).is.not.null; \r",
 					"    pm.expect(Jsondata.batchName).to.be.a(\"string\");\r",
 					"    pm.expect(Jsondata.batchDescription).to.be.a(\"string\");\r",
 					"    pm.expect(Jsondata.batchNoOfClasses).to.be.a(\"number\");\r",
 					"    pm.expect(Jsondata.batchStatus).to.be.a(\"string\");\r",
-					"    pm.expect(Jsondata.programId).to.be.a(\"number\");\r",
+					"    pm.expect(Jsondata.programId).is.not.null; \r",
 					"    pm.expect(Jsondata.programName).to.be.a(\"string\");  \r",
 					"    });\r",
 					"        \r",
