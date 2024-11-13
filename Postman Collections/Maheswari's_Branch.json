@@ -4968,12 +4968,12 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDk5MDIzMSwiZXhwIjoxNzMxMDE5MDMxfQ.fiE9_l6Xsr-sde9p3xAJE-oAhuGVxWBmljENDLPtooLJZMCFWLWhFmNvnvL3UFj8k36dkLjJPPQqZ5pjn2avuQ"
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTUxMjU3OCwiZXhwIjoxNzMxNTQxMzc4fQ.VwEgJpeV7-VDcYzqI8Rw-YWDi3MzAALIObWcYwg8YBuCnbrWkW0gsmzkIKMFm54rCYLr-wI7f3jOoC2hNb8v8g"
 									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches/batchId"
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches/batchId/$10059"
 							},
 							"response": [
 								{
@@ -4982,7 +4982,7 @@
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
-										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches/batchId"
+										"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches/batchId/"
 									},
 									"status": "Method Not Allowed",
 									"code": 405,
