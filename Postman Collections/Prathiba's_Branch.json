@@ -1253,6 +1253,7 @@
 									"commonTests.checkResponseHasBody();\r",
 									"commonTests.checkResponseBodyAsJson();\r",
 									"commonTests.checkResponseisArray();\r",
+									"commonTests.roleprogramBatchMapDataValidation();\r",
 									"} else {\r",
 									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 									"    commonTests.checkResponseTime();    \r",
@@ -1452,7 +1453,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "5e95e399-9599-4ae2-9826-f1ccb9dffe14",
+				"id": "86066695-826f-4eb3-9b4a-c5bd321d797b",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1516,7 +1517,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "521b77d9-919b-4901-bc05-12e8b3e3b614",
+				"id": "5b321f00-5f2a-4698-aaf9-6839156f062b",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1615,13 +1616,17 @@
 					"        });\r",
 					"    },\r",
 					"\r",
-					"     roleprogramBatchMapDataValidation: function () {\r",
-					"        pm.test(\"Data type in the response body\", () => {\r",
-					"            pm.expect(pm.response.json().userId).to.be.a('string');             \r",
-					"            pm.expect(pm.response.json().roleId).to.be.a('string'); \r",
-					"            pm.expect(pm.response.json().programId).to.be.a('string');\r",
-					"            pm.expect(pm.response.json().batchId).to.be.a('string');\r",
-					"            pm.expect(pm.response.json().userRoleProgramBatchStatus).to.be.a('string');            \r",
+					"    roleprogramBatchMapDataValidation: function () {\r",
+					"        pm.test(\"Data type validation in the response body\", () => {\r",
+					"            const responseData = pm.response.json();\r",
+					"\r",
+					"            responseData.forEach(item => {\r",
+					"                pm.expect(item.userId).to.be.a('string');            \r",
+					"                pm.expect(item.roleId).to.be.a('string');\r",
+					"                pm.expect(item.programId).to.be.a('number');\r",
+					"                pm.expect(item.batchId).to.be.a('number');\r",
+					"                pm.expect(item.userRoleProgramBatchStatus).to.be.a('string');\r",
+					"            });\r",
 					"        });\r",
 					"    },\r",
 					"\r",
