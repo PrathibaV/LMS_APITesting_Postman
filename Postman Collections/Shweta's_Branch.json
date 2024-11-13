@@ -1287,7 +1287,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "d6ca3a5d-d9b0-43eb-9e7f-0db5644c37ec",
+				"id": "597fa522-c1ae-46bc-91ac-f377511ed6bb",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1352,7 +1352,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "17b71896-2617-439c-9a2b-4ec9d79fb797",
+				"id": "6898bd7f-f1ed-42d4-832e-17800489bce4",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1459,7 +1459,7 @@
 					"    }\r",
 					"},\r",
 					"\r",
-					"    LoginDataValidation: function (programName, programDescription, programStatus) {\r",
+					"    LoginDataValidation: function (userLoginEmailId, password ) {\r",
 					"        pm.test(\"Data validations in the response body\", () => {\r",
 					"            pm.expect(pm.response.json().programId).is.not.null;           \r",
 					"            pm.expect(pm.response.json().programName).to.be.equal(programName);\r",
