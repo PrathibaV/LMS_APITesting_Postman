@@ -1354,13 +1354,7 @@
 									"pm.request.url = baseURL + endpoint + classID;\r",
 									"\r",
 									"pm.collectionVariables.set(\"classIDs\", JSON.stringify(classIDArray));\r",
-									"\r",
-									"/* if (classIDArray.length > 0) {\r",
-									"    pm.execution.setNextRequest(pm.info.requestName);\r",
-									"} else {\r",
-									"    pm.collectionVariables.unset(\"classIDs\");\r",
-									"    pm.execution.setNextRequest(null); \r",
-									"} */"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -1413,7 +1407,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "aa0d2531-5b14-43cc-a1e6-efd7dcf4186a",
+				"id": "029f6a83-cc26-43ad-8572-2024b3f11e1f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1477,7 +1471,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5fa579d4-29ae-419a-bf66-3002bdf12594",
+				"id": "5972441c-65a5-48ce-a7ae-8462b2221e29",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
