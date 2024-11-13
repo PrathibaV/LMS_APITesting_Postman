@@ -1319,7 +1319,7 @@
 										"id": "4d6e4f6f-8614-45df-996a-7a03eed470bc",
 										"exec": [
 											"const baseURL = pm.environment.get(\"baseURL\");\r",
-											"const endpoint = \" /batches/\";\r",
+											"const endpoint = \"batches/\";\r",
 											"\r",
 											"const batchIDs = pm.collectionVariables.get(\"batchIDs\");\r",
 											"const batchIDArray = JSON.parse(batchIDs);\r",
