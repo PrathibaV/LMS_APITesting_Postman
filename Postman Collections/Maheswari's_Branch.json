@@ -5801,8 +5801,24 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
-								"header": []
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTUxMjU3OCwiZXhwIjoxNzMxNTQxMzc4fQ.VwEgJpeV7-VDcYzqI8Rw-YWDi3MzAALIObWcYwg8YBuCnbrWkW0gsmzkIKMFm54rCYLr-wI7f3jOoC2hNb8v8g"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"batchName\": \"APICommandos120\",\r\n    \"batchDescription\": \"Axwdrfretvbd\",\r\n    \"batchStatus\": \"\",\r\n    \"batchNoOfClasses\": 10,\r\n    \"programId\": 18237,\r\n    \"programName\": \"APICommandosSix\"\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches/10021"
 							},
 							"response": []
 						}
