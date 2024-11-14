@@ -5959,7 +5959,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "84ba3892-c036-47a4-8e2e-fcf6a9f26b95",
+				"id": "3f2969e0-cd8b-49c0-8644-f4152c372126",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6025,7 +6025,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "ec238c16-5ce8-49e5-b97a-110c6aa70948",
+				"id": "99c0f211-e84c-4bec-b534-175f04cd3155",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6080,13 +6080,13 @@
 					"    pm.expect(pm.response.json().programName).to.equal(programName);\r",
 					"    });  \r",
 					"    pm.test(\"Data type validation\", () => { \r",
-					"    pm.expect(pm.response.json().batchId).to.be.a(\"number\");\r",
-					"    pm.expect(pm.response.json().batchName).to.be.a(\"string\");\r",
-					"    pm.expect(pm.response.json().batchDescription).to.be.a(\"string\");\r",
-					"    pm.expect(pm.response.json().batchNoOfClasses).to.be.a(\"number\");\r",
-					"    pm.expect(pm.response.json().batchStatus).to.be.a(\"string\");\r",
-					"    pm.expect(pm.response.json().programId).to.be.a(\"number\");\r",
-					"    pm.expect(pm.response.json().programName).to.be.a(\"string\");  \r",
+					"    pm.expect(pm.response.json().batchId).to.be.a('number');\r",
+					"    pm.expect(pm.response.json().batchName).to.be.a('string');\r",
+					"    pm.expect(pm.response.json().batchDescription).to.be.a('string');\r",
+					"    pm.expect(pm.response.json().batchNoOfClasses).to.be.a('number');\r",
+					"    pm.expect(pm.response.json().batchStatus).to.be.a('string');\r",
+					"    pm.expect(pm.response.json().programId).to.be.a('number');\r",
+					"    pm.expect(pm.response.json().programName).to.be.a('string');  \r",
 					"    }); \r",
 					"    },  \r",
 					"\r",
