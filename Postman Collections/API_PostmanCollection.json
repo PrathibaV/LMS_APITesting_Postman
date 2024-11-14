@@ -3347,6 +3347,18 @@
 		{
 			"key": "classTopic1",
 			"value": ""
+		},
+		{
+			"key": "programIDs",
+			"value": ""
+		},
+		{
+			"key": "programNames",
+			"value": ""
+		},
+		{
+			"key": "batchNames",
+			"value": ""
 		}
 	]
 }
