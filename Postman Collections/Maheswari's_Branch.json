@@ -460,15 +460,21 @@
 											"    pm.collectionVariables.set(\"batchNames\", JSON.stringify(batchNames));\r",
 											"\r",
 											" }\r",
-											" if ((scenario === \"create batch with all fields\") || (scenario === \"create batch with mandatory fields\")) {\r",
+											" if ((scenario === \"create batch1 with all fields\") || (scenario === \"create batch2 with all fields\")) {\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkResponseHeader();\r",
 											"    commonTests.checkResponseHasBody(); \r",
 											"    commonTests.BatchDataValidation();    \r",
 											"    commonTests.BatchfieldValidation(); \r",
-											"    commonTests.batchPostPutSchemaValidation(); \r",
-											" }else if((scenario === \"create batch without Authorization\") || (scenario === \"create batch with invalid baseURL\") || (scenario === \"create batch with invalid endpoint\")){\r",
+											"    commonTests.batchPostPutSchemaValidation(); }\r",
+											"    else if((scenario ===\"create batch with mandatory fields\")){\r",
+											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+											"    commonTests.checkResponseTime();\r",
+											"    commonTests.checkResponseHeader();\r",
+											"    commonTests.checkResponseHasBody(); \r",
+											"    }\r",
+											" else if((scenario === \"create batch without Authorization\") || (scenario === \"create batch with invalid baseURL\") || (scenario === \"create batch with invalid endpoint\")){\r",
 											"      commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"      commonTests.checkResponseTime();        \r",
 											" } else {\r",
@@ -6125,10 +6131,6 @@
 		},
 		{
 			"key": "batchName1",
-			"value": ""
-		},
-		{
-			"key": "batchIDs",
 			"value": ""
 		},
 		{
