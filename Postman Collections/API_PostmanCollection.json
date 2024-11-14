@@ -813,10 +813,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": ""
-							}
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [],
@@ -974,10 +971,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": ""
-							}
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -1119,10 +1113,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": ""
-							}
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -1264,10 +1255,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": ""
-							}
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -1409,10 +1397,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": ""
-							}
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -1564,10 +1549,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": ""
-							}
+							"type": "noauth"
 						},
 						"method": "PUT",
 						"header": [],
