@@ -28,7 +28,7 @@
 									"        bodyData = pm.response.json();\r",
 									"        TokenValue = bodyData.token;\r",
 									"        console.log(\"Token: \" + TokenValue);\r",
-									"        pm.globals.set(\"token\", TokenValue);\r",
+									"        pm.environment.set(\"token\", TokenValue);\r",
 									"        commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 									"        commonTests.checkResponseTime();  \r",
 									"        commonTests.checkResponseHeader();\r",
@@ -2615,7 +2615,7 @@
 									"console.log(\"classIDs: \"+classIDsList );\r",
 									"const classID = classIDArray.shift();\r",
 									"\r",
-									"const token = pm.globals.get('token');  \r",
+									"const token = pm.environment.get('token');  \r",
 									"pm.request.headers.add({ key: 'Authorization', value: `Bearer ${token}` });\r",
 									"\r",
 									"pm.request.url = baseURL + endpoint + classID;\r",
@@ -2829,7 +2829,7 @@
 									"console.log(\"batchIDs: \"+batchIDs );\r",
 									"const batchID = batchIDArray.shift();\r",
 									"\r",
-									"const token = pm.globals.get('token');  \r",
+									"const token = pm.environment.get('token');  \r",
 									"pm.request.headers.add({ key: 'Authorization', value: `Bearer ${token}` });\r",
 									"\r",
 									"pm.request.url = baseURL + endpoint + batchID;\r",
@@ -2873,10 +2873,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": ""
-							}
+							"type": "noauth"
 						},
 						"method": "DELETE",
 						"header": []
@@ -2891,7 +2888,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "573cfa2b-f20e-4404-93bb-dc9e6ab5ec2d",
+				"id": "ee42ad9d-f752-4646-bee6-3ebcbf4346f3",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2937,7 +2934,7 @@
 					"    pm.request.url = fullURL;\r",
 					"\r",
 					"    if (variables.includeAuth.toLowerCase() === 'true') {\r",
-					"        const token = pm.globals.get('token');  \r",
+					"        const token = pm.environment.get('token');  \r",
 					"        pm.request.headers.add({ key: 'Authorization', value: `Bearer ${token}` });\r",
 					"    } else {\r",
 					"       console.log(\"No Authorization header needed\"); \r",
@@ -2955,7 +2952,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "1feb4b0d-8bff-4305-b1c4-a3f1fb50cd17",
+				"id": "92f385a1-ec1b-43e1-9811-3c1ddba1b2ce",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
