@@ -2721,7 +2721,7 @@
 									"    pm.execution.setNextRequest(pm.info.requestName);\r",
 									"} else {\r",
 									"    pm.collectionVariables.unset(\"batchIDs\");\r",
-									"    pm.execution.setNextRequest(\"DeleteBatchbybatchId  Negative\"); \r",
+									"    pm.execution.setNextRequest(\"DeleteBatchbybatchId Negative\"); \r",
 									"}"
 								],
 								"type": "text/javascript",
@@ -2746,7 +2746,7 @@
 					"response": []
 				},
 				{
-					"name": "DeleteBatchbybatchId  Negative",
+					"name": "DeleteBatchbybatchId Negative",
 					"event": [
 						{
 							"listen": "test",
