@@ -319,7 +319,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"APINov1990\",\r\n    \"programName\": \"TNApiHackathonJanuary\",\r\n    \"programStatus\": \"\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": \"APINov1990\",\r\n    \"programName\": \"TNApiHackathonJanuary\",\r\n    \"programStatus\": \"Active\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -537,7 +537,7 @@
 										}
 									}
 								},
-								"url": "{{baseURL}}programs/17884"
+								"url": "{{baseURL}}programs/18534"
 							},
 							"response": []
 						},
@@ -751,7 +751,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"APINov1990\",\r\n    \"programName\": \"TNApiHackathonJaFebn\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"raw": "{\r\n    \"programDescription\": \"APINov1990\",\r\n    \"programName\": \"TNApiHackathonJaFeburary\",\r\n    \"programStatus\": \"Active\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
