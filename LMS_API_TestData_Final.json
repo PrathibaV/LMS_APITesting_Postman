@@ -1,0 +1,2450 @@
+[
+   {
+     "requests": [
+       {
+         "name": "User Login",
+         "data": [
+           {
+             "scenario": "Admin login with valid credentials",
+             "userLoginEmailId": "sdet@gmail.com",
+             "password": "LmsHackathon@2024",
+             "endpoint": "login",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Admin login with invalid login Id",
+             "userLoginEmailId": "sdetgmail.com",
+             "password": "LmsHackathon@2024",
+             "endpoint": "login",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Admin login with invalid password",
+             "userLoginEmailId": "sdetgmail.com",
+             "password": "LmsHackathon@2024",
+             "endpoint": "login",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Admin login with no value in login Id  ",
+             "userLoginEmailId": "",
+             "password": "LmsHackathon@2024",
+             "endpoint": "login",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Admin login with no value in password field ",
+             "userLoginEmailId": "sdet@gmail.com",
+             "password": "",
+             "endpoint": "login",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Admin login with invalid endpoint ",
+             "userLoginEmailId": "sdet@gmail.com",
+             "password": "LmsHackathon@2024",
+             "endpoint": "logn",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Admin login with invalid baseurl ",
+             "userLoginEmailId": "sdet@gmail.com",
+             "password": "LmsHackathon@2024",
+             "endpoint": "logn",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Create Program with valid Authorization",
+         "data": [
+           {
+             "scenario": "create program with valid data first program",
+             "programDescription": "TestRunForHackathonOne",
+             "programName": "APICommandosAE",
+             "programStatus": "Active",
+             "expectedStatusCode": 201,
+             "expectedStatusMessage": "Created",
+             "endpoint": "saveprogram",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create program with valid data second program",
+             "programDescription": "TestRunForHackathonOne",
+             "programName": "APICommandosBE",
+             "programStatus": "Active",
+             "expectedStatusCode": 201,
+             "expectedStatusMessage": "Created",
+             "endpoint": "saveprogram",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create program without passing program description",
+             "programDescription": "",
+             "programName": "APICommandosCE",
+             "programStatus": "Active",
+             "expectedStatusCode": 201,
+             "expectedStatusMessage": "Created",
+             "endpoint": "saveprogram",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Create Program with Invalid Test Data",
+         "data": [
+           {
+             "scenario": "create program with existing program",
+             "programDescription": "APINov2024",
+             "programName": "TNApiHackathon",
+             "programStatus": "Active",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedErrorMessage": "cannot create program , since already exists",
+             "expectedResponseStatus": false,
+             "endpoint": "saveprogram",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create program without Authorization",
+             "programDescription": "APIValidation",
+             "programName": "TeamTwo-CommandosNov",
+             "programStatus": "Active",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "expectedErrorMessage": "Invalid Status: must be Active or Inactive",
+             "expectedResponseStatus": false,
+             "endpoint": "saveprogram",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "create program with no value in status",
+             "programDescription": "APIValidation",
+             "programName": "TeamTwo-CommandosNov",
+             "programStatus": "",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedErrorMessage": "Invalid Status: must be Active or Inactive",
+             "expectedResponseStatus": false,
+             "endpoint": "saveprogram",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create program with no value in program name",
+             "programDescription": "APITestingSprint",
+             "programName": "",
+             "programStatus": "Active",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedErrorMessage": "programName Must contain only letters and sometimes hyphens",
+             "expectedResponseStatus": false,
+             "endpoint": "saveprogram",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create program with interger value in program name",
+             "programDescription": "APITestingSprint",
+             "programName": "TNApiHackathon24",
+             "programStatus": "Active",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedErrorMessage": "programName Must contain only letters and sometimes hyphens",
+             "expectedResponseStatus": false,
+             "endpoint": "saveprogram",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create program with invalid baseurl",
+             "programDescription": "APITestingSprint1",
+             "programName": "TNApiHackathon",
+             "programStatus": "Active",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedErrorMessage": "programName Must contain only letters and sometimes hyphens",
+             "expectedResponseStatus": false,
+             "endpoint": "saveprogram",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create program with invalid endpoint",
+             "programDescription": "APITestingSprint1",
+             "programName": "TNApiHackathon",
+             "programStatus": "Active",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedErrorMessage": "Invalid endpoint",
+             "expectedResponseStatus": false,
+             "endpoint": "saveprograme",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create program with already existing program",
+             "programDescription": "APIPrimeDescript",
+             "programName": "TeamSecondtwentyFive",
+             "programStatus": "Active",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedErrorMessage": "cannot create program , since already exists",
+             "expectedResponseStatus": false,
+             "endpoint": "saveprogram",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create program with no values in all fields",
+             "programDescription": "",
+             "programName": "",
+             "programStatus": "",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedErrorMessage": "programName Must contain only letters and sometimes hyphens",
+             "expectedResponseStatus": false,
+             "endpoint": "saveprogram",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Get All Program",
+         "data": [
+           {
+             "scenario": "Get All Program with valid endpoint",
+             "endpoint": "allPrograms",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "expectedResponseStatus": true,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Get All Program without Authorization",
+             "endpoint": "allPrograms",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "expectedResponseStatus": false,
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "Get All Program with invalid baseurl",
+             "endpoint": "allPrograms",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseStatus": false,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Get All Program with invalid endpoint",
+             "endpoint": "allProgram",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseStatus": false,
+             "expectedErrorMessage": "Invalid endpoint",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Get All program with user",
+         "data": [
+           {
+             "scenario": "Get All program with user with valid User endpoint",
+             "endpoint": "allProgramsWithUsers",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "expectedResponseStatus": true,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Get All program with user without Authorization",
+             "endpoint": "allProgramsWithUsers",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "expectedResponseStatus": false,
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "Get All program with user with invalid baseurl",
+             "endpoint": "allProgramsWithUsers",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseStatus": false,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Get All program with user with Invalid User endpoint",
+             "endpoint": "allProgramsWithUsrs",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseStatus": false,
+             "expectedErrorMessage": "Invalid endpoint",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Get Program By ProgramId",
+         "data": [
+           {
+             "scenario": "Get Program By ProgramId with valid endpoint",
+             "endpoint": "programs/{{ProgramId1}}",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "expectedResponseStatus": true,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Get Program By ProgramId without Authorization",
+             "endpoint": "programs/{{ProgramId1}}",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "expectedResponseStatus": false,
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "Get Program By ProgramId with invalid baseurl",
+             "endpoint": "programs/{{ProgramId1}}",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseStatus": false,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Get Program By ProgramId with invalid endpoint",
+             "endpoint": "program/{{ProgramId1}}",
+             "expectedStatusCode": 405,
+             "expectedStatusMessage": "Method Not Allowed",
+             "expectedResponseStatus": false,
+             "expectedErrorMessage": "Request method 'GET' is not supported",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Get Program By Non Existing ProgramId",
+             "endpoint": "programs/256",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseStatus": false,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Get Program By without passing ProgramId",
+             "endpoint": "programs/",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseStatus": false,
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Update Program By Program Name",
+         "data": [
+           {
+             "scenario": "Update Program with valid program name",
+             "programDescription": "ProgDescUpdateIDBD",
+             "programName": "APICommandosBD",
+             "programStatus": "Active",
+             "endpoint": "program/{{ProgramName1}}",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "expectedResponseStatus": true,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Update Program with Invalid authorization with program name",
+             "programDescription": "String",
+             "programName": "CommandosAPITeamLily",
+             "programStatus": "Active",
+             "endpoint": "program/{{ProgramName1}}",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "expectedResponseStatus": false,
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "Update Program with Invalid program name",
+             "programDescription": "String",
+             "programName": "CommandosAPITeamLily16",
+             "programStatus": "Active",
+             "endpoint": "program/{{ProgramName1}}",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseStatus": false,
+             "expectedResponseMessage": "programName Must contain only letters and sometimes hyphens",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Update Program with no value in program name field",
+             "programDescription": "APITestingWithPostman",
+             "programName": "",
+             "programStatus": "Active",
+             "endpoint": "program/{{ProgramName1}}",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseStatus": false,
+             "expectedResponseMessage": "programName Must contain only letters and sometimes hyphens",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Update Program with no value in program status field",
+             "programDescription": "APITestingWithPostman",
+             "programName": "CommandosAPITeamLily",
+             "programStatus": "",
+             "endpoint": "program/{{ProgramName1}}",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseStatus": false,
+             "expectedResponseMessage": "Invalid Status: must be Active or Inactive",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Update Program with invalid endpoint ",
+             "programDescription": "APITestingWithPostman",
+             "programName": "CommandosAPITeamLily",
+             "programStatus": "Active",
+             "endpoint": "programs/{{ProgramName1}}",
+             "expectedStatusCode": 405,
+             "expectedStatusMessage": "Method Not Allowed",
+             "expectedResponseStatus": false,
+             "expectedResponseMessage": "Invalid Status: must be Active or Inactive",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Update Program by Program Id",
+         "data": [
+           {
+             "scenario": "Update Program with valid program Id",
+             "programDescription": "ProgDescUpdateIDAD",
+             "programName": "APICommandosAD",
+             "programStatus": "Active",
+             "endpoint": "putprogram/{{ProgramId1}}",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "expectedResponseStatus": true,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Update Program with invalid authorization with Id",
+             "programDescription": "APIPrimeDescript",
+             "programName": "CommandosAPITeamNovember",
+             "programStatus": "Active",
+             "endpoint": "putprogram/{{ProgramId1}}",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "expectedResponseStatus": true,
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "Update Program with non existing program Id",
+             "programDescription": "APIPrimeDescript",
+             "programName": "CommandosAPITeamNovember",
+             "programStatus": "Active",
+             "endpoint": "putprogram/268",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseStatus": false,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Update Program without passing program Id",
+             "programDescription": "APIPrimeDescript",
+             "programName": "CommandosAPITeamNovember",
+             "programStatus": "Active",
+             "endpoint": "putprogram/",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseStatus": false,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Update Program with invalid endpoint ",
+             "programDescription": "APIPrimeDescript",
+             "programName": "CommandosAPITeamNovember",
+             "programStatus": "Active",
+             "endpoint": "putprogrm/{{ProgramId1}}",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseStatus": false,
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Delete Program By Program ID",
+         "data": [
+           {
+             "scenario": "delete program with valid program Id",
+             "endpoint": "deletebyprogid/{{ProgramId1}}",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "expectedResponseStatus": true,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "delete program with program Id without authorization",
+             "endpoint": "deletebyprogid/{{ProgramId1}}",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "expectedResponseStatus": false,
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "delete program with non existing program Id",
+             "endpoint": "deletebyprogid/359",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseStatus": false,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "delete program by program Id  with invalid endpoint",
+             "endpoint": "deletebyprogi/{{ProgramId1}}",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseStatus": false,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "delete program by program Id with invalid baseurl",
+             "endpoint": "deletebyprogid/{{ProgramId1}}",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseStatus": false,
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Delete Program By Program Name",
+         "data": [
+           {
+             "scenario": "delete program by Program Name with valid program name",
+             "endpoint": "deletebyprogname/{{pgrmName1}}",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "expectedResponseStatus": true,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "delete program by Program Name without authorization",
+             "endpoint": "deletebyprogname/{{pgrmName1}}",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "expectedResponseStatus": false,
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "delete program by Program Name with invalid endpoint",
+             "endpoint": "deletebyprogname/{{pgrmName1}}",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseStatus": false,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "delete program by Program Name with invalid baseurl",
+             "endpoint": "deletebyprogname/{{pgrmName1}}",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseStatus": false,
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "delete program by Program Name with non existing program",
+             "endpoint": "deletebyprogname/OctBatchHackathon",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseStatus": false,
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Create Batch",
+         "data": [
+           {
+             "scenario": "create batch1 with all fields",
+             "batchName": "APICommandos221",
+             "batchDescription": "Nov Hackathon",
+             "batchStatus": "Active",
+             "batchNoOfClasses": 10,
+             "programId": "{{ProgramId2}}",
+             "programName": "{{ProgramName2}}",
+             "expectedStatusCode": 201,
+             "expectedStatusMessage": "Created",
+             "endpoint": "batches",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create batch2 with all fields",
+             "batchName": "APICommandos222",
+             "batchDescription": "November Hackathon",
+             "batchStatus": "Active",
+             "batchNoOfClasses": 10,
+             "programId": "{{ProgramId2}}",
+             "programName": "{{ProgramName2}}",
+             "expectedStatusCode": 201,
+             "expectedStatusMessage": "Created",
+             "endpoint": "batches",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create batch with mandatory fields",
+             "batchName": "APICommandos223",
+             "batchDescription": " ",
+             "batchStatus": "Active",
+             "batchNoOfClasses": 10,
+             "programId": "{{ProgramId2}}",
+             "expectedStatusCode": 201,
+             "expectedStatusMessage": "Created",
+             "endpoint": "batches",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create batch without batchName",
+             "batchName": " ",
+             "batchDescription": "HGTY ",
+             "batchStatus": "Active",
+             "batchNoOfClasses": 10,
+             "programId": "{{ProgramId2}}",
+             "programName": "{{ProgramName2}}",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "batchName Please provide a valid name and must begin with letter and can have letters,numbers and sometimes hyphens",
+             "expectedResponseStatus": false,
+             "endpoint": "batches",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create batch with invalid baseURL",
+             "batchName": "APICommandos150",
+             "batchDescription": "HGTY ",
+             "batchStatus": "Active",
+             "batchNoOfClasses": 10,
+             "programId": "{{ProgramId2}}",
+             "programName": "{{ProgramName2}}",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "batches",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create batch with invalid endpoint",
+             "batchName": "APICommandos150",
+             "batchDescription": "HGTY ",
+             "batchStatus": "Active",
+             "batchNoOfClasses": 10,
+             "programId": "{{ProgramId2}}",
+             "programName": "{{ProgramName2}}",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "batchestest",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create batch without Authorization",
+             "batchName": "APICommandos150",
+             "batchDescription": "HGTY ",
+             "batchStatus": "Active",
+             "batchNoOfClasses": 10,
+             "programId": "{{ProgramId2}}",
+             "programName": "{{ProgramName2}}",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "batches",
+             "includeAuth": "false"
+           }
+         ]
+       },
+       {
+         "name": "GetAllBatches",
+         "data": [
+           {
+             "scenario": "get all batches",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "batches",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all batches with invalid baseURL",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseCode": 404,
+             "expectedResponseMessage": "Not Found",
+             "endpoint": "batches",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all batches with invalid endpoint",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseCode": 404,
+             "expectedResponseMessage": "Not Found",
+             "endpoint": "batchestest",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all batches without Authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "expectedResponseCode": 401,
+             "expectedResponseMessage": "Unauthorized",
+             "endpoint": "batches",
+             "includeAuth": "false"
+           }
+         ]
+       },
+       {
+         "name": "GetBatchbybatchId",
+         "data": [
+           {
+             "scenario": "get batch by batchId",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "batches/batchId/{{batchID2}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get batch by invalid batchId",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseCode": 400,
+             "expectedResponseMessage": "Bad Request",
+             "endpoint": "batches/batchId/${{batchID2}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get batch by batchId without Authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "expectedResponseCode": 401,
+             "expectedResponseMessage": "Unauthorized",
+             "endpoint": "batches/batchId/{{batchID2}}",
+             "includeAuth": "false"
+           }
+         ]
+       },
+       {
+         "name": "GetBatchbybatchName",
+         "data": [
+           {
+             "scenario": "get batch by batchName",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "batches/batchName/{{batchName2}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get batch by invalid batchName",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseCode": 400,
+             "expectedResponseMessage": "Bad Request",
+             "endpoint": "batches/batchName/${{batchName2}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get batch by batchName without Authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "expectedResponseCode": 401,
+             "expectedResponseMessage": "Unauthorized",
+             "endpoint": "batches/batchName/{{batchName2}}",
+             "includeAuth": "false"
+           }
+         ]
+       },
+       {
+         "name": "GetBatchbyprogramId",
+         "data": [
+           {
+             "scenario": "get batch by programId",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "batches/program/{{ProgramId2}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get batch by invalid programId",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseCode": 400,
+             "expectedResponseMessage": "Bad Request",
+             "endpoint": "batches/program/@{{ProgramId2}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get batch by programId without Authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "expectedResponseCode": 401,
+             "expectedResponseMessage": "Unauthorized",
+             "endpoint": "batches/program/{{ProgramId2}}",
+             "includeAuth": "false"
+           }
+         ]
+       },
+       {
+         "name": "UpdateBatchbybatchId",
+         "data": [
+           {
+             "scenario": "update batch with all fields",
+             "batchName": "APICommandos178",
+             "batchDescription": "Team 2 batch description",
+             "batchStatus": "Active",
+             "batchNoOfClasses": 10,
+             "programId": "{{ProgramId2}}",
+             "programName": "{{ProgramName2}}",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "batches/{{batchID2}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update batch with invalid batchId",
+             "batchName": "APICommandos178",
+             "batchDescription": "bgtyhfrtgyhhhhhhhf",
+             "batchStatus": "Active",
+             "batchNoOfClasses": 10,
+             "programId": "{{ProgramId2}}",
+             "programName": "{{ProgramName2}}",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseCode": 400,
+             "expectedResponseMessage": "Bad Request",
+             "endpoint": "batches/@{{batchID2}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update batch with mandatory field empty",
+             "batchName": "APICommandos178",
+             "batchDescription": "bgtyhfrtgyhhhhhhhf",
+             "batchStatus": "",
+             "batchNoOfClasses": 10,
+             "programId": "{{ProgramId2}}",
+             "programName": "{{ProgramName2}}",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Batch status is needed",
+             "expectedResponseStatus": false,
+             "endpoint": "batches/{{batchID2}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update batch with invalid baseURL",
+             "batchName": "APICommandos178",
+             "batchDescription": "bgtyhfrtgyhhhhhhhf",
+             "batchStatus": "Active",
+             "batchNoOfClasses": 10,
+             "programId": "{{ProgramId2}}",
+             "programName": "{{ProgramName2}}",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseCode": 404,
+             "expectedResponseMessage": "Not Found",
+             "endpoint": "batches/{{batchID2}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update batch with invalid endpoint",
+             "batchName": "APICommandos178",
+             "batchDescription": "bgtyhfrtgyhhhhhhhf",
+             "batchStatus": "Active",
+             "batchNoOfClasses": 10,
+             "programId": "{{ProgramId2}}",
+             "programName": "{{ProgramName2}}",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseCode": 404,
+             "expectedResponseMessage": "Not Found",
+             "endpoint": "batches/test{{batchID2}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update batch without Authorization",
+             "batchName": "APICommandos178",
+             "batchDescription": "bgtyhfrtgyhhhhhhhf",
+             "batchStatus": "Active",
+             "batchNoOfClasses": 10,
+             "programId": "{{ProgramId2}}",
+             "programName": "{{ProgramName2}}",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "expectedResponseCode": 401,
+             "expectedResponseMessage": "Unauthorized",
+             "endpoint": "batches/{{batchID2}}",
+             "includeAuth": "false"
+           }
+         ]
+       },
+       {
+         "name": "DeleteBatchbybatchId Negative",
+         "data": [
+           {
+             "scenario": "delete batch with invalid batchId",
+             "endpoint": "batches/@{{batchID2}}",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseCode": 400,
+             "expectedResponseMessage": "Bad Request",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "delete batch without Authorization",
+             "endpoint": "batches/{{batchID2}}",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "expectedResponseCode": 401,
+             "expectedResponseMessage": "Unauthorized",
+             "includeAuth": "false"
+           }
+         ]
+       },
+       {
+         "name": "Create Class",
+         "data": [
+           {
+             "scenario": "create class with all fields",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java sessions",
+             "classDate": "2024-11-21T15:11:08.750+00:00",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "test notes",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "{{staffId}}",
+             "classStatus": "Active",
+             "classTopic": "Team 2 APICommandos topic1",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 201,
+             "expectedStatusMessage": "Created",
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class with only mandatory fields",
+             "batchId": "{{batchID1}}",
+             "classComments": "",
+             "classDate": "2024-11-21T15:11:08.750+00:00",
+             "classDescription": "",
+             "classNo": 2,
+             "classNotes": "",
+             "classRecordingPath": "",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "super keywords AD142",
+             "classScheduledDates_1": "",
+             "classScheduledDates_2": "",
+             "expectedStatusCode": 201,
+             "expectedStatusMessage": "Created",
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class without classTopic",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Class Topic cannot be null or empty",
+             "expectedResponseStatus": false,
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class without classDate",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "super keywords AH11",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Class date cannot be null or empty",
+             "expectedResponseStatus": false,
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class without classNo",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": "null",
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic AH1",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Class No cannot be null or empty",
+             "expectedResponseStatus": false,
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class without staff Id",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "",
+             "classStatus": "Active",
+             "classTopic": "Java topic AH2",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Staff Id cannot be null or empty",
+             "expectedResponseStatus": false,
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class without classStatus",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "{{staffId}}",
+             "classStatus": "",
+             "classTopic": "Team 2 APICommandos topic2",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Class Status cannot be null or empty",
+             "expectedResponseStatus": false,
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class with past classDate",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-08-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic AI7",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Please provide a Future Class Date",
+             "expectedResponseStatus": false,
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class with past classScheduleDates",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic AH6",
+             "classScheduledDates_1": "2024-09-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-02-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Please provide Future Class Dates for Class Schedule",
+             "expectedResponseStatus": false,
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class with mismatch between classNo and classScheduledDates",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 1,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic 06",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Count of Class Scheduled Dates should be equal to Number of Classes",
+             "expectedResponseStatus": false,
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class with existing classTopic",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java Fundamentals",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Class already exists with given Class Topic : Java Fundamentals ",
+             "expectedResponseStatus": false,
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class with non-existing batch Id",
+             "batchId": 987987,
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic 0783",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "Batch not found with Id : 987987 ",
+             "expectedResponseStatus": false,
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class with special characters in classComments",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps!@$#$%^^&*(+_",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic 08",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Class Comments must begin with letter and can only have letters, numbers, comma, hyphen, colon, period, underscore and space",
+             "expectedResponseStatus": false,
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class with special characters in classDescription",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description!@$#$%^^&*(+_",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic 09",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Class description must begin with letter and can only have letters, numbers, comma, hyphen, colon, period, underscore and space",
+             "expectedResponseStatus": false,
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class with classNo as 0",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 0,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic 10",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "ClassNo should be greater than 0",
+             "expectedResponseStatus": false,
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class with studentId as classStaffId",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-10T15:11:08.750+00:00",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U07",
+             "classStatus": "Active",
+             "classTopic": "Java topic AH8",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "User not found with Role(Admin/Staff) : U07 ",
+             "expectedResponseStatus": false,
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class without authorization",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "topic123",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "create class with invalid baseURL",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "super keywords AC15",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "CreateClassSchedule",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "create class with invalid endpoint",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "super keywords AC16",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "CreateClassScheduletest",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Update Class",
+         "data": [
+           {
+             "scenario": "update class with all fields",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java update",
+             "classDate": "2025-01-21T15:11:08.750+00:00",
+             "classDescription": "description update",
+             "classNo": 2,
+             "classNotes": "notes update",
+             "classRecordingPath": "C:/Recordings/testupdate",
+             "classStaffId": "U37",
+             "classStatus": "Active",
+             "classTopic": "Updated Java with Selenium for team2",
+             "classScheduledDates_1": "2025-01-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2025-01-21T15:11:08.750+00:00",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class with only mandatory fields",
+             "batchId": "{{batchID1}}",
+             "classComments": "",
+             "classDate": "2024-12-09",
+             "classDescription": "",
+             "classNo": 2,
+             "classNotes": "",
+             "classRecordingPath": "",
+             "classStaffId": "U26",
+             "classStatus": "Inactive",
+             "classTopic": "super keywords AC1320",
+             "classScheduledDates_1": "",
+             "classScheduledDates_2": "",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class without classTopic",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java update",
+             "classDate": "2024-12-20",
+             "classDescription": "description update",
+             "classNo": 2,
+             "classNotes": "notes update",
+             "classRecordingPath": "C:/Recordings/testupdate",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "",
+             "classScheduledDates_1": "2025-01-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2025-01-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Class Topic cannot be null or empty",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class without classDate",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "super keywords AC14",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Class date cannot be null or empty",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class without classNo",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": "null",
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic 01",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Class No cannot be null or empty",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class without staff Id",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "",
+             "classStatus": "Active",
+             "classTopic": "Java topic 02",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Staff Id cannot be null or empty",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class without classStatus",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "",
+             "classTopic": "Java topic updated",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Class Status cannot be null or empty",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class with past classDate",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-08-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic 21",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Please provide a Future Class Date",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class with past classScheduleDates",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic 05",
+             "classScheduledDates_1": "2024-09-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-02-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Please provide Future Class Dates for Class Schedule",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class with mismatch between classNo and classScheduledDates",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 1,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic 06",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Count of Class Scheduled Dates should be equal to Number of Classes",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class with existing classTopic",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java Fundamentals",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Class already exists with given Class Topic : super keywords AC12",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class with non-existing batch Id",
+             "batchId": 987987,
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic 37",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "Batch not found with Id : 987987 ",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class with special characters in classComments",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps!@$#$%^^&*(+_",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic 08",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Class Comments must begin with letter and can only have letters, numbers, comma, hyphen, colon, period, underscore and space",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class with special characters in classDescription",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description!@$#$%^^&*(+_",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic 09",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Class description must begin with letter and can only have letters, numbers, comma, hyphen, colon, period, underscore and space",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class with classNo as 0",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 0,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic 10",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "ClassNo should be greater than 0",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class with studentId as classStaffId",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U07",
+             "classStatus": "Active",
+             "classTopic": "Java topic 45",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "User not found with Role(Staff) : U07 ",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class with non-existing classStaffId",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "12345",
+             "classStatus": "Active",
+             "classTopic": "Java topic 05",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "Staff Id 12345 not found",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class with special characters in classStatus",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "!@$#$%^^&*(+_",
+             "classTopic": "Java topic 55",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "expectedResponseMessage": "Class Status can only be Active or Inactive",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class  for non-existing class Id",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java update 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic 05",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "Class not found with Id : 7894561 ",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/7894561",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class with new batchId",
+             "batchId": "{{batchID2}}",
+             "classComments": "Java 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:/Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "Java topic 05",
+             "classScheduledDates_1": "2024-12-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-12-21T15:11:08.750+00:00",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "ClassId with {classID1} and batchId with {batchID2} not found",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class without authorization",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java new update",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "topic123",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "update class with invalid baseURL",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java new update 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "super keywords AC15",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "updateClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class with invalid endpoint",
+             "batchId": "{{batchID1}}",
+             "classComments": "Java new update 1223Opps",
+             "classDate": "2024-12-09",
+             "classDescription": "description",
+             "classNo": 2,
+             "classNotes": "notes123",
+             "classRecordingPath": "C:Recordings",
+             "classStaffId": "U49",
+             "classStatus": "Active",
+             "classTopic": "super keywords AC16",
+             "classScheduledDates_1": "2024-11-21T15:11:08.750+00:00",
+             "classScheduledDates_2": "2024-11-21T15:11:08.750+00:00",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "updateClasstestss/{{classID1}}",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Update Class Recording Path",
+         "data": [
+           {
+             "scenario": "update class recordings with valid data",
+             "classRecordingPath": "c:recordingForJavaSessions",
+             "csId": "{{classID1}}",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "updateClassrecording/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class recordings without classRecordingPath field",
+             "classRecordingPath": "",
+             "csId": "{{classID1}}",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "updateClassrecording/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class recordings non-existing classId",
+             "classRecordingPath": "c:recording",
+             "csId": "{{classID1}}",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "no record found with 789451",
+             "expectedResponseStatus": false,
+             "endpoint": "updateClassrecording/789451",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class recordings without authorization",
+             "classRecordingPath": "c:update recording",
+             "csId": "{{classID1}}",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "updateClassrecording/{{classID1}}",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "update class recordings with invalid baseURL",
+             "classRecordingPath": "c:recording update 2",
+             "csId": "{{classID1}}",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "updateClassrecording/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "update class recordings with invalid endpoint",
+             "classRecordingPath": "c:recording update 3",
+             "csId": "{{classID1}}",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "updateClasstestss/{{classID1}}",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Get all Class List",
+         "data": [
+           {
+             "scenario": "get all class list positive",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "allClasses",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all class list without authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "allClasses",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "get all class list with invalid baseURL",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "allClasses",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all class list with invalid endpoint",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "allClassestestendpoint",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Get Class Recordings by BatchId",
+         "data": [
+           {
+             "scenario": "get class recordings by valid BatchId",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "batchRecordings/{{batchID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get class recordings by invalid BatchId",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "Class Recording not found with batchId :903632",
+             "expectedResponseStatus": false,
+             "endpoint": "batchRecordings/903632",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get class recordings without authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "batchRecordings/{{batchID1}}",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "get class recordings with invalid baseURL",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "batchRecordings/{{batchID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get class recordings with invalid endpoint",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "batchRecordingstestEndpoint/{{batchID1}}",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Get Class details by Class Id",
+         "data": [
+           {
+             "scenario": "get class details by valid ClassID",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "class/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get class details by invalid ClassID",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "ClassSchedule is not found for classId :903632",
+             "expectedResponseStatus": false,
+             "endpoint": "class/903632",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get class details by id without authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "class/{{classID1}}",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "get class details by id with invalid baseURL",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "class/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get class details by id with invalid endpoint",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "classtestEndpoint/{{classID1}}",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Get all Classes by Class Topic",
+         "data": [
+           {
+             "scenario": "get all classes by valid class topic",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "classes/{{classTopic1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all classes by non-existing class topic",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "classes with class topic Name: testClassTopic for test not found",
+             "expectedResponseStatus": false,
+             "endpoint": "classes/testClassTopic for test",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all classes by class topic with special characters",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "endpoint": "classes/topic!@$%^&*(",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all classes by class topic without authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "classes/{{classTopic1}}",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "get all classes by class topic with invalid baseURL",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "classes/{{classTopic1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all classes by class topic with invalid endpoint",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "classTestEndpoint/{{classTopic1}}",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Get all Classes by BatchId",
+         "data": [
+           {
+             "scenario": "get all classes by valid batchId",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "classesbyBatch/{{batchID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all classes by invalid batchId",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "classes with this batchId 97411111not found",
+             "expectedResponseStatus": false,
+             "endpoint": "classesbyBatch/97411111",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all classes by batchId with special characters",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "endpoint": "classesbyBatch/974!@$%^&*()",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all classes by batchId without authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "classesbyBatch/{{batchID1}}",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "get all classes by batchId with invalid baseURL",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "classesbyBatch/{{batchID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all classes by batchId with invalid endpoint",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "classesbyBatchTestEndpoint/{{batchID1}}",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Get all Classes by StaffId",
+         "data": [
+           {
+             "scenario": "get all classes by valid StaffId",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "classesByStaff/{{staffId}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all classes by invalid StaffId",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "classes with this staffId U0777 not found",
+             "expectedResponseStatus": false,
+             "endpoint": "classesByStaff/U0777",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all classes by class topic with special characters",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "endpoint": "classesByStaff/0777!@$%^",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all classes by class topic without authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "classesByStaff/{{staffId}}",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "get all classes by class topic with invalid baseURL",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "classesByStaff/{{staffId}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all classes by class topic with invalid endpoint",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "classesByStaff{{staffId}}",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Get all recordings",
+         "data": [
+           {
+             "scenario": "Get all recordings positive",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "classrecordings",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Get all recordings without authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "classrecordings",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "Get all recordings with invalid baseURL",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "classrecordings",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "Get all recordings with invalid endpoint",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "classrecordingstestendpoint",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Get Class Recordings by Class Id",
+         "data": [
+           {
+             "scenario": "get class recordings by valid classId",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "classRecordings/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get class recordings by invalid ClassID",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "Class not found with Id : 903632 ",
+             "expectedResponseStatus": false,
+             "endpoint": "classRecordings/903632",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get class recordings by ClassID with no recordings",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "Class recording url not found for class id: 577",
+             "expectedResponseStatus": false,
+             "endpoint": "classRecordings/577",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get class recordings by ClassID without authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "classRecordings/{{classID1}}",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "get class recordings by ClassID with invalid baseURL",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "classRecordings/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get class recordings by ClassID with invalid endpoint",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "classRecordingstestEndpoint/{{classID1}}",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Get all Upcoming Classes for particular Student",
+         "data": [
+           {
+             "scenario": "get all upcoming classes by valid studentId",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "upcomingClasses/{{studentId}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all upcoming classes by invalid studentId",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "upcomingClasses/903632",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all upcoming classes by studentId without authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "upcomingClasses/{{studentId}}",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "get all upcoming classes by studentId with invalid baseURL",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "upcomingClasses/{{studentId}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get all upcoming classes by studentId with invalid endpoint",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "upcomingClassestestEndpoint/{{studentId}}",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Get Class Recordings Download by Class Id",
+         "data": [
+           {
+             "scenario": "get class recordings download by valid classId",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "download/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get class recordings download by invalid classID",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "Class not found with Id : 903632 ",
+             "expectedResponseStatus": false,
+             "endpoint": "download/903632",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get class recordings download by classID with no recordings",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "Class recording url not found for class id: 577",
+             "expectedResponseStatus": false,
+             "endpoint": "download/577",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get class recordings download by classID without authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "download/{{classID1}}",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "get class recordings download by classID with invalid baseURL",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "download/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get class recordings download by classID with invalid endpoint",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "downloadtestEndpoint/{{classID1}}",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Delete Class Negative",
+         "data": [
+           {
+             "scenario": "delete class by non-existing classId",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "record not found with classId",
+             "expectedResponseStatus": false,
+             "endpoint": "deleteByClass/789456123",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "delete class without authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "deleteByClass/{{classID1}}",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "delete class with invalid baseURL",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "deleteByClass/{{classID1}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "delete class with invalid endpoint",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "deleteByClasstestt/{{classID1}}",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Get Assigned Program/Batch of All Users",
+         "data": [
+           {
+             "scenario": "get assigned program/batch of all users positive",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "userRoleProgramBatchMap",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get assigned program/batch of all users without authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "userRoleProgramBatchMap",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "get assigned program/batch of all users with invalid baseURL",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "userRoleProgramBatchMap",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get assigned program/batch of all users with invalid endpoint",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "userRoleProgramBatchMapTesting",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Get Assigned Program/Batch by User Id",
+         "data": [
+           {
+             "scenario": "get assigned program/batch by valid userId",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "userRoleProgramBatchMap/{{userId}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get assigned program/batch by invalid userId",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "UserRoleProgramBatchMap not found with Id : U01111 ",
+             "expectedResponseStatus": false,
+             "endpoint": "userRoleProgramBatchMap/U01111",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get assigned program/batch by special characters in userId",
+             "expectedStatusCode": 400,
+             "expectedStatusMessage": "Bad Request",
+             "endpoint": "userRoleProgramBatchMap/!@$%^&123",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get assigned program/batch by userId without authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "userRoleProgramBatchMap/{{userId}}",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "get assigned program/batch by userId with invalid baseURL",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "userRoleProgramBatchMap/{{userId}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "get assigned program/batch by userId with invalid endpoint",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "userRoleProgramBatchMapTesting/{{userId}}",
+             "includeAuth": "true"
+           }
+         ]
+       },
+       {
+         "name": "Delete All Programs/Batches assigned to the User By UserId",
+         "data": [
+           {
+             "scenario": "delete all programs/batches assigned to the user By valid userId",
+             "expectedStatusCode": 200,
+             "expectedStatusMessage": "OK",
+             "endpoint": "userRoleProgramBatchMap/deleteAll/{{userId}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "delete all programs/batches assigned to the user By invalid userId",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseMessage": "UserRoleProgramBatchMap not found with id : U5000 ",
+             "expectedResponseStatus": false,
+             "endpoint": "userRoleProgramBatchMap/deleteAll/U5000",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "delete all programs/batches assigned to the user By userId without authorization",
+             "expectedStatusCode": 401,
+             "expectedStatusMessage": "Unauthorized",
+             "endpoint": "userRoleProgramBatchMap/deleteAll/{{userId}}",
+             "includeAuth": "false"
+           },
+           {
+             "scenario": "delete all programs/batches assigned to the user By userId with invalid baseURL",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "userRoleProgramBatchMap/deleteAll/{{userId}}",
+             "includeAuth": "true"
+           },
+           {
+             "scenario": "delete all programs/batches assigned to the user By userId with invalid endpoint",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "endpoint": "userRoleProgramBatchMap/deleteAlltesting/{{userId}}",
+             "includeAuth": "true"
+           }
+         ]
+       }
+     ]
+   }
+ ]
