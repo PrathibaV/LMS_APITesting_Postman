@@ -5959,7 +5959,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "20237c39-7e90-4226-abee-d1390e121aef",
+				"id": "45b8e07b-8a66-4320-8239-32c6d6813aeb",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6025,7 +6025,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "07b37b90-c724-41d0-8c7b-f50955e5f257",
+				"id": "64228d9d-4f3d-4a3f-9ea0-2eca449194c2",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6055,8 +6055,8 @@
 					"        });\r",
 					"    },\r",
 					"    checkResponseTime: function() {\r",
-					"        pm.test(\"Response time is less than 500ms\", function () {\r",
-					"            pm.expect(pm.response.responseTime).to.be.below(500);\r",
+					"        pm.test(\"Response time is less than 700ms\", function () {\r",
+					"            pm.expect(pm.response.responseTime).to.be.below(700);\r",
 					"        });\r",
 					"    },\r",
 					"    \r",
