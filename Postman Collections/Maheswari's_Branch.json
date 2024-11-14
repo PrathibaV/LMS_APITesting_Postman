@@ -5902,7 +5902,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "accaf41e-4746-4eda-bbf2-cd9970f33ec4",
+				"id": "f2fc5a13-edef-4080-9344-a33865516e5b",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5968,7 +5968,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "816acdf0-3892-41d8-b5a0-2a312d136b23",
+				"id": "afb8feb6-ad70-40de-a0cf-e2d6adb0125d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6011,17 +6011,18 @@
 					"        pm.expect(pm.response.json().success).to.eql(expectedResponseStatus); \r",
 					"        });\r",
 					"    },\r",
+					"\r",
 					"    BatchDataValidation: function (batchName,batchDescription,batchNoOfClasses,batchStatus,programId,programName) {    \r",
-					"    pm.test(\"value of fields in response\", () => { \r",
+					"    pm.test(\"Data validation in response\", () => { \r",
 					"    pm.expect(pm.response.json().batchId).is.not.null;   \r",
-					"    pm.expect(pm.response.json() .batchName).to.be.equal(batchName);\r",
+					"    pm.expect(pm.response.json().batchName).to.be.equal(batchName);\r",
 					"    pm.expect(pm.response.json().batchDescription).to.equal(batchDescription);\r",
 					"    pm.expect(pm.response.json().batchNoOfClasses).to.equal(batchNoOfClasses);\r",
 					"    pm.expect(pm.response.json().batchStatus).to.equal(batchStatus);\r",
 					"    pm.expect(pm.response.json().programId).to.equal(programId);\r",
-					"    pm.expect(Jsondata.programName).to.equal(programName);\r",
+					"    pm.expect(pm.response.json().programName).to.equal(programName);\r",
 					"    });  \r",
-					"    pm.test(\"Datatype validation\", () => { \r",
+					"    pm.test(\"Data type validation\", () => { \r",
 					"    pm.expect(pm.response.json().batchId).to.be.a(\"number\");\r",
 					"    pm.expect(pm.response.json().batchName).to.be.a(\"string\");\r",
 					"    pm.expect(pm.response.json().batchDescription).to.be.a(\"string\");\r",
@@ -6030,7 +6031,8 @@
 					"    pm.expect(pm.response.json().programId).to.be.a(\"number\");\r",
 					"    pm.expect(pm.response.json().programName).to.be.a(\"string\");  \r",
 					"    }); \r",
-					"    },     \r",
+					"    },  \r",
+					"\r",
 					"    batchPostPutSchemaValidation: function() {\r",
 					"    pm.test(\"Response schema is valid\", function () {\r",
 					"    const schema = {\r",
