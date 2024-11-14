@@ -807,17 +807,10 @@
 											"commonTests.checkResponseBodyAsJson();\r",
 											"\r",
 											"    \r",
-											"} else if (scenario === \"get batch by invalid batchId\") {\r",
+											"} else{\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-											"    commonTests.checkResponseTime();\r",
-											"    commonTests.checkResponseHeader();   \r",
-											"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);\r",
-											"}\r",
-											"\r",
-											"else {\r",
-											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-											"    commonTests.checkResponseTime();    \r",
-											"}"
+											"    commonTests.checkResponseTime();  \r",
+											"    }"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -959,17 +952,10 @@
 											"commonTests.checkResponseBodyAsJson();\r",
 											"\r",
 											"    \r",
-											"} else if (scenario === \"get batch by invalid batchName\") {\r",
+											"} else{\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-											"    commonTests.checkResponseTime();\r",
-											"    commonTests.checkResponseHeader();   \r",
-											"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);\r",
-											"}\r",
-											"\r",
-											"else {\r",
-											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-											"    commonTests.checkResponseTime();    \r",
-											"}"
+											"    commonTests.checkResponseTime();  \r",
+											"    }"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -5979,7 +5965,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9636ecbd-58e3-4dc2-8c43-c6e6f03da970",
+				"id": "84ba3892-c036-47a4-8e2e-fcf6a9f26b95",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6045,7 +6031,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "8f2376be-cdcd-45d2-8832-21ee76d60e03",
+				"id": "ec238c16-5ce8-49e5-b97a-110c6aa70948",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
