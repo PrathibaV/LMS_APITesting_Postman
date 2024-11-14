@@ -467,7 +467,8 @@
 											"    commonTests.checkResponseHasBody(); \r",
 											"    commonTests.BatchDataValidation();    \r",
 											"    commonTests.BatchfieldValidation(); \r",
-											"    commonTests.batchPostPutSchemaValidation(); }\r",
+											"    commonTests.batchPostPutSchemaValidation();\r",
+											"     }\r",
 											"    else if((scenario ===\"create batch with mandatory fields\")){\r",
 											"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
@@ -5901,7 +5902,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "07f62d0b-c403-4a45-a8fb-97835d558348",
+				"id": "894fb59f-1b64-404e-be55-1a111b042895",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5967,7 +5968,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "7ac3359d-274f-48cb-8b79-5b5a0eb39abd",
+				"id": "0e68c81b-4538-4d46-9856-e25f25df1308",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6011,7 +6012,7 @@
 					"        });\r",
 					"    },\r",
 					"    BatchDataValidation: function () {\r",
-					"        pm.test(\"Datatype validation\", () => {   \r",
+					"    pm.test(\"Datatype validation\", () => {   \r",
 					"    pm.expect(Jsondata.batchId).is.not.null; \r",
 					"    pm.expect(Jsondata.batchName).to.be.a(\"string\");\r",
 					"    pm.expect(Jsondata.batchDescription).to.be.a(\"string\");\r",
@@ -6023,7 +6024,7 @@
 					"        \r",
 					"},\r",
 					"    BatchfieldValidation: function () {\r",
-					"        var requestBody = JSON.parse(pm.request.body.raw);\r",
+					"    var requestBody = JSON.parse(pm.request.body.raw);\r",
 					"    pm.test(\"value of fields in response\", () => {    \r",
 					"    pm.expect(Jsondata .batchName).to.eql(requestBody.batchName);\r",
 					"    pm.expect(Jsondata.batchDescription).to.eql(requestBody.batchDescription);\r",
