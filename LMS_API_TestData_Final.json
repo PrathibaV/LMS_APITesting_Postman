@@ -638,6 +638,8 @@
              "programName": "{{ProgramName2}}",
              "expectedStatusCode": 404,
              "expectedStatusMessage": "Not Found",
+             "expectedResponseCode": 404,
+             "expectedResponseMessage": "Not Found",
              "endpoint": "batches",
              "includeAuth": "true"
            },
@@ -651,6 +653,8 @@
              "programName": "{{ProgramName2}}",
              "expectedStatusCode": 404,
              "expectedStatusMessage": "Not Found",
+             "expectedResponseCode": 404,
+             "expectedResponseMessage": "Not Found",
              "endpoint": "batchestest",
              "includeAuth": "true"
            },
@@ -720,10 +724,10 @@
            },
            {
              "scenario": "get batch by invalid batchId",
-             "expectedStatusCode": 400,
-             "expectedStatusMessage": "Bad Request",
-             "expectedResponseCode": 400,
-             "expectedResponseMessage": "Bad Request",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseCode": 404,
+             "expectedResponseMessage": "Not Found",
              "endpoint": "batches/batchId/${{batchID2}}",
              "includeAuth": "true"
            },
@@ -750,10 +754,10 @@
            },
            {
              "scenario": "get batch by invalid batchName",
-             "expectedStatusCode": 400,
-             "expectedStatusMessage": "Bad Request",
-             "expectedResponseCode": 400,
-             "expectedResponseMessage": "Bad Request",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseCode": 404,
+             "expectedResponseMessage": "Not Found",
              "endpoint": "batches/batchName/${{batchName2}}",
              "includeAuth": "true"
            },
@@ -780,10 +784,10 @@
            },
            {
              "scenario": "get batch by invalid programId",
-             "expectedStatusCode": 400,
-             "expectedStatusMessage": "Bad Request",
-             "expectedResponseCode": 400,
-             "expectedResponseMessage": "Bad Request",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseCode": 404,
+             "expectedResponseMessage": "Not Found",
              "endpoint": "batches/program/@{{ProgramId2}}",
              "includeAuth": "true"
            },
@@ -822,10 +826,10 @@
              "batchNoOfClasses": 10,
              "programId": "{{ProgramId2}}",
              "programName": "{{ProgramName2}}",
-             "expectedStatusCode": 400,
-             "expectedStatusMessage": "Bad Request",
-             "expectedResponseCode": 400,
-             "expectedResponseMessage": "Bad Request",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseCode": 404,
+             "expectedResponseMessage": "Not Found",
              "endpoint": "batches/@{{batchID2}}",
              "includeAuth": "true"
            },
@@ -897,10 +901,10 @@
            {
              "scenario": "delete batch with invalid batchId",
              "endpoint": "batches/@{{batchID2}}",
-             "expectedStatusCode": 400,
-             "expectedStatusMessage": "Bad Request",
-             "expectedResponseCode": 400,
-             "expectedResponseMessage": "Bad Request",
+             "expectedStatusCode": 404,
+             "expectedStatusMessage": "Not Found",
+             "expectedResponseCode": 404,
+             "expectedResponseMessage": "Not Found",
              "includeAuth": "true"
            },
            {
