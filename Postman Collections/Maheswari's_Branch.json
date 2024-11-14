@@ -5902,7 +5902,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8d65b35a-d992-4da0-8cc6-401fa47881ad",
+				"id": "accaf41e-4746-4eda-bbf2-cd9970f33ec4",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5968,7 +5968,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a90ef065-4287-42c0-8184-b4df68159fa5",
+				"id": "816acdf0-3892-41d8-b5a0-2a312d136b23",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6013,7 +6013,7 @@
 					"    },\r",
 					"    BatchDataValidation: function (batchName,batchDescription,batchNoOfClasses,batchStatus,programId,programName) {    \r",
 					"    pm.test(\"value of fields in response\", () => { \r",
-					"        pm.expect(pm.response.json().batchId).is.not.null;   \r",
+					"    pm.expect(pm.response.json().batchId).is.not.null;   \r",
 					"    pm.expect(pm.response.json() .batchName).to.be.equal(batchName);\r",
 					"    pm.expect(pm.response.json().batchDescription).to.equal(batchDescription);\r",
 					"    pm.expect(pm.response.json().batchNoOfClasses).to.equal(batchNoOfClasses);\r",
@@ -6148,6 +6148,10 @@
 		},
 		{
 			"key": "programNames",
+			"value": ""
+		},
+		{
+			"key": "batchIDs",
 			"value": ""
 		}
 	]
