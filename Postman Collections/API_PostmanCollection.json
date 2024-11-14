@@ -191,10 +191,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": ""
-							}
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [],
@@ -263,10 +260,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": ""
-							}
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [],
@@ -326,10 +320,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": ""
-							}
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -377,10 +368,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": ""
-							}
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -436,10 +424,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": ""
-							}
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -469,7 +454,7 @@
 									"    bodyData = pm.response.json();\r",
 									"    dPgrmName = bodyData.programName,\r",
 									"    console.log(\"pgrmName1: \" + dPgrmName)\r",
-									"    pm.environment.set(\"pgrmName1\", dPgrmName);\r",
+									"    pm.collectionVariables.set(\"pgrmName1\", dPgrmName);\r",
 									"\r",
 									"    commonTests.checkStatusLine(expectedStatusCode,expectedStatusMessage);\r",
 									"    commonTests.checkResponseTime();\r",
@@ -501,10 +486,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": ""
-							}
+							"type": "noauth"
 						},
 						"method": "PUT",
 						"header": [],
@@ -579,10 +561,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": ""
-							}
+							"type": "noauth"
 						},
 						"method": "PUT",
 						"header": [],
@@ -2888,7 +2867,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "ee42ad9d-f752-4646-bee6-3ebcbf4346f3",
+				"id": "2c928510-51e2-414a-b055-ac25bd49a4fc",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2952,7 +2931,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "92f385a1-ec1b-43e1-9811-3c1ddba1b2ce",
+				"id": "9a281202-d8fb-4ce9-b4bb-c57a593cfa1d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -3346,6 +3325,11 @@
 		{
 			"key": "batchNames",
 			"value": ""
+		},
+		{
+			"key": "pgrmName1",
+			"value": "",
+			"type": "string"
 		}
 	]
 }
