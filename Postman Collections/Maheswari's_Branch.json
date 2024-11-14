@@ -5901,7 +5901,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "f2fc5a13-edef-4080-9344-a33865516e5b",
+				"id": "27afb4ff-cad0-4acd-876e-1e11eb28f1a7",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5967,7 +5967,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "afb8feb6-ad70-40de-a0cf-e2d6adb0125d",
+				"id": "ec5ee2f4-f9c4-4b37-adc4-6e25696c7c73",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6034,8 +6034,7 @@
 					"\r",
 					"    batchPostPutSchemaValidation: function() {\r",
 					"    pm.test(\"Response schema is valid\", function () {\r",
-					"    const schema = {\r",
-					"    \"$schema\": \"http://json-schema.org/draft-04/schema#\",\r",
+					"    const schema = {   \r",
 					"    \"type\": \"object\",\r",
 					"    \"properties\": {\r",
 					"    \"batchId\": {\r",
