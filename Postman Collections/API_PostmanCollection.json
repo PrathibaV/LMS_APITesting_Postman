@@ -3307,6 +3307,62 @@
 			"key": "userId",
 			"value": "U57",
 			"type": "string"
+		},
+		{
+			"key": "programIDs",
+			"value": ""
+		},
+		{
+			"key": "programNames",
+			"value": ""
+		},
+		{
+			"key": "ProgramId1",
+			"value": ""
+		},
+		{
+			"key": "ProgramName1",
+			"value": ""
+		},
+		{
+			"key": "ProgramId2",
+			"value": ""
+		},
+		{
+			"key": "ProgramName2",
+			"value": ""
+		},
+		{
+			"key": "batchID1",
+			"value": ""
+		},
+		{
+			"key": "batchName1",
+			"value": ""
+		},
+		{
+			"key": "batchIDs",
+			"value": ""
+		},
+		{
+			"key": "batchNames",
+			"value": ""
+		},
+		{
+			"key": "batchID2",
+			"value": ""
+		},
+		{
+			"key": "batchName2",
+			"value": ""
+		},
+		{
+			"key": "classID1",
+			"value": ""
+		},
+		{
+			"key": "classTopic1",
+			"value": ""
 		}
 	]
 }
