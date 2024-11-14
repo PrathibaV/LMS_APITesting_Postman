@@ -451,34 +451,6 @@
 					"response": []
 				},
 				{
-					"name": "Program By ProgramId Copy",
-					"id": "f340cbab-4e09-425e-a935-c5dbbee851b0",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{token}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseURL}}programs/18534"
-					},
-					"response": []
-				},
-				{
 					"name": "Update Program By Program Name",
 					"event": [
 						{
@@ -549,47 +521,6 @@
 							}
 						},
 						"url": ""
-					},
-					"response": []
-				},
-				{
-					"name": "Update Program By Program Name Copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "595b59ad-97da-4a76-bb6f-7cddcbfc081c",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "419a7246-a9d4-4cc9-b20f-b7cc8fad30ce",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{token}}"
-							}
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"programDescription\": \"APITestingWithPostman\",\r\n    \"programName\": \"TeamTwoCommandos\",\r\n    \"programStatus\": \"active\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseURL}}program/TeamTwoCommandos"
 					},
 					"response": []
 				},
@@ -668,34 +599,6 @@
 							}
 						},
 						"url": ""
-					},
-					"response": []
-				},
-				{
-					"name": "Update Program by Program Id Copy",
-					"id": "29c3594f-8cd2-4271-a1f5-3f0082d9e08a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{token}}"
-							}
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"programDescription\": \"APINov1990\",\r\n    \"programName\": \"TNApiHackathonJaFeburary\",\r\n    \"programStatus\": \"Active\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseURL}}putprogram/18534"
 					},
 					"response": []
 				}
@@ -879,25 +782,6 @@
 					"response": []
 				},
 				{
-					"name": "Program By ProgramID Copy",
-					"id": "0b8bdc99-6475-4321-9ebd-50396dd63091",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{token}}"
-							}
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": "{{baseURL}}deletebyprogid/17047"
-					},
-					"response": []
-				},
-				{
 					"name": "Delete Program By Program Name",
 					"event": [
 						{
@@ -941,25 +825,6 @@
 						"method": "DELETE",
 						"header": [],
 						"url": ""
-					},
-					"response": []
-				},
-				{
-					"name": "Program By ProgramName Copy",
-					"id": "28651e70-e2db-48d1-ad9c-f1726c3e6d0e",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{token}}"
-							}
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": "{{baseURL}}deletebyprognam/TestProgramForHackathon"
 					},
 					"response": []
 				}
