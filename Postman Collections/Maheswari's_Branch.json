@@ -465,7 +465,7 @@
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkResponseHeader();\r",
 											"    commonTests.checkResponseHasBody(); \r",
-											"    commonTests.BatchDataValidation();     \r",
+											"    commonTests.BatchDataValidation(batchName,batchDescription,batchNoOfClasses,batchStatus,programId,programName);     \r",
 											"    commonTests.batchPostPutSchemaValidation();\r",
 											"     }\r",
 											"    else if((scenario ===\"create batch with mandatory fields\")){\r",
@@ -1268,8 +1268,8 @@
 											"    commonTests.checkResponseTime();\r",
 											"    commonTests.checkResponseHeader();\r",
 											"    commonTests.checkResponseHasBody(); \r",
-											"    commonTests.ProgramDataValidation(programName, programDescription, programStatus);\r",
-											"    commonTests.programPostPutSchemaValidation();\r",
+											"    commonTests.BatchDataValidation(batchName,batchDescription,batchNoOfClasses,batchStatus,programId,programName);\r",
+											"    commonTests.batchPostPutSchemaValidation();\r",
 											"}else if(scenario === \"update batch with invalid batchId\"){\r",
 											"    commonTests.checkStatusLine(expectedStatusCode,expectedStatusMessage);\r",
 											"    commonTests.checkResponseTime();\r",
@@ -5982,7 +5982,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b819f661-9ef0-4183-ac45-b937f8b82415",
+				"id": "9636ecbd-58e3-4dc2-8c43-c6e6f03da970",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6048,7 +6048,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d87adf01-5cb5-465e-8fd2-6d6a832428a5",
+				"id": "8f2376be-cdcd-45d2-8832-21ee76d60e03",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
