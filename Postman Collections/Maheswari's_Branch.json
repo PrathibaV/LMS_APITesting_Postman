@@ -5986,7 +5986,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "063f87b7-6c2b-45eb-bdce-a6c31f2782ee",
+				"id": "37699076-a79a-43cb-ba30-0d981394e629",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6052,7 +6052,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "55247023-0d40-444b-93a7-7c5ceeb37a9b",
+				"id": "0e4fee4b-e851-40cc-8cf9-69615ee9014c",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6233,6 +6233,10 @@
 		},
 		{
 			"key": "programNames",
+			"value": ""
+		},
+		{
+			"key": "batchIDs",
 			"value": ""
 		}
 	]
