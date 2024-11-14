@@ -315,47 +315,6 @@
 				}
 			],
 			"id": "8822e6ff-74cb-4e08-8a61-f8ac5c9bbf24"
-		},
-		{
-			"name": "Negative Scenarios",
-			"item": [
-				{
-					"name": "UserLogin",
-					"item": [],
-					"id": "cfc1225a-fffe-47e7-a0b4-881b815405a1"
-				},
-				{
-					"name": "Program",
-					"item": [],
-					"id": "955ef250-b5c6-4baa-b4fa-e66b944cc648"
-				},
-				{
-					"name": "ProgramBatch",
-					"item": [],
-					"id": "b8af10e9-e83b-4678-83bd-5dc313f7db18"
-				},
-				{
-					"name": "Class",
-					"item": [],
-					"id": "74b0c171-1c00-4114-ae3e-4a15b76e3f72"
-				},
-				{
-					"name": "ProgramBatchMapController",
-					"item": [],
-					"id": "27ad7ec0-aa47-438c-852e-c32d655c8c85"
-				},
-				{
-					"name": "Delete",
-					"item": [],
-					"id": "b95cd8b0-0a12-4748-8b51-0017053959e3"
-				}
-			],
-			"id": "dab93d17-a84e-4f27-a8c7-1aca0ab4cb49"
-		},
-		{
-			"name": "Logout",
-			"item": [],
-			"id": "3cf19496-c98d-443b-afd0-29c1cd547b3b"
 		}
 	],
 	"event": [
