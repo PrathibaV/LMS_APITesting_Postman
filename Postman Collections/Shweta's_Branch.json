@@ -319,14 +319,14 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"programDescription\": \"APINov1990\",\r\n    \"programName\": \"TNApiHackathonJaFebn\",\r\n    \"programStatus\": \"Active\"\r\n}",
+									"raw": "{\r\n    \"programName\": \"TNApiHackathonJaFebn\",\r\n    \"programDescription\": \"APINov1990\",\r\n    \"programStatus\": \"Active\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "{{baseURL}}saveprograme"
+								"url": "{{baseURL}}saveprogram"
 							},
 							"response": []
 						},
