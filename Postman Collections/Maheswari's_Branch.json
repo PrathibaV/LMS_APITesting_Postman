@@ -1255,7 +1255,7 @@
 											"const batchIDArray = JSON.parse(batchIDs);\r",
 											"\r",
 											"console.log(\"batchIDs: \"+batchIDs );\r",
-											"const batchID = classIDArray.shift();\r",
+											"const batchID = batchIDArray.shift();\r",
 											"\r",
 											"const token = pm.globals.get('token');  \r",
 											"pm.request.headers.add({ key: 'Authorization', value: `Bearer ${token}` });\r",
