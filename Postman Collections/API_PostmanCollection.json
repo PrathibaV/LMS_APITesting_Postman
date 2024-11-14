@@ -2653,7 +2653,7 @@
 									"    pm.execution.setNextRequest(pm.info.requestName);\r",
 									"} else {\r",
 									"    pm.collectionVariables.unset(\"classIDs\");\r",
-									"    pm.execution.setNextRequest(\"DeleteBatchbybatchId positive\"); \r",
+									"    pm.execution.setNextRequest(\"Delete Program By Program ID\"); \r",
 									"}"
 								],
 								"type": "text/javascript",
@@ -2672,126 +2672,6 @@
 						"method": "DELETE",
 						"header": [],
 						"url": ""
-					},
-					"response": []
-				},
-				{
-					"name": "DeleteBatchbybatchId positive",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "4d6e4f6f-8614-45df-996a-7a03eed470bc",
-								"exec": [
-									"const baseURL = pm.environment.get(\"baseURL\");\r",
-									"const endpoint = \"batches/\";\r",
-									"\r",
-									"const batchIDs = pm.collectionVariables.get(\"batchIDs\");\r",
-									"const batchIDArray = JSON.parse(batchIDs);\r",
-									"\r",
-									"console.log(\"batchIDs: \"+batchIDs );\r",
-									"const batchID = batchIDArray.shift();\r",
-									"\r",
-									"const token = pm.globals.get('token');  \r",
-									"pm.request.headers.add({ key: 'Authorization', value: `Bearer ${token}` });\r",
-									"\r",
-									"pm.request.url = baseURL + endpoint + batchID;\r",
-									"\r",
-									"pm.collectionVariables.set(\"batchIDs\", JSON.stringify(batchIDArray));"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "6e5dc040-72da-49d0-9326-8a57e41b3baa",
-								"exec": [
-									"const batchIDs = pm.collectionVariables.get(\"batchIDs\");\r",
-									"const batchIDArray = JSON.parse(batchIDs);\r",
-									"\r",
-									"console.log(\"batchIDs: \"+batchIDs);\r",
-									"\r",
-									"commonTests.checkStatusLine(200, \"OK\");\r",
-									"commonTests.checkResponseTime();\r",
-									"\r",
-									"\r",
-									"if (batchIDArray.length > 0) {\r",
-									"    pm.execution.setNextRequest(pm.info.requestName);\r",
-									"} else {\r",
-									"    pm.collectionVariables.unset(\"batchIDs\");\r",
-									"    pm.execution.setNextRequest(\"DeleteBatchbybatchId Negative\"); \r",
-									"}"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "fcac45b6-88b4-446e-832a-d9bd05c66b83",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": ""
-							}
-						},
-						"method": "DELETE",
-						"header": []
-					},
-					"response": []
-				},
-				{
-					"name": "DeleteBatchbybatchId Negative",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "e40bcd9b-8c88-4de0-a3a7-4e11ce52a039",
-								"exec": [
-									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
-									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
-									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
-									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
-									"const batchID = pm.collectionVariables.get(\"batchID2\");\r",
-									"const scenario = pm.variables.get(\"scenario\");\r",
-									"\r",
-									"console.log(\"Scenario: \"+ scenario);\r",
-									"\r",
-									"if (scenario === \"delete batch by batchId\") {\r",
-									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-									"    commonTests.checkResponseTime();\r",
-									"    commonTests.checkResponseHeader();\r",
-									"    commonTests.checkResponseHasBody();\r",
-									"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);\r",
-									" \r",
-									"} else {\r",
-									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
-									"    commonTests.checkResponseTime();        \r",
-									"} "
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "987e9023-4e7a-472a-9313-d74ab31a3e94",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": ""
-							}
-						},
-						"method": "DELETE",
-						"header": []
 					},
 					"response": []
 				},
@@ -2886,6 +2766,127 @@
 						"method": "DELETE",
 						"header": [],
 						"url": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteBatchbybatchId Negative",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e40bcd9b-8c88-4de0-a3a7-4e11ce52a039",
+								"exec": [
+									"const expectedStatusCode = pm.variables.get(\"expectedStatusCode\");\r",
+									"const expectedStatusMessage = pm.variables.get(\"expectedStatusMessage\");\r",
+									"const expectedResponseMessage = pm.variables.get(\"expectedResponseMessage\");\r",
+									"const expectedResponseStatus = pm.variables.get(\"expectedResponseStatus\");\r",
+									"const batchID = pm.collectionVariables.get(\"batchID2\");\r",
+									"const scenario = pm.variables.get(\"scenario\");\r",
+									"\r",
+									"console.log(\"Scenario: \"+ scenario);\r",
+									"\r",
+									"if (scenario === \"delete batch by batchId\") {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();\r",
+									"    commonTests.checkResponseHeader();\r",
+									"    commonTests.checkResponseHasBody();\r",
+									"    commonTests.checkErrorMessage(expectedResponseMessage, expectedResponseStatus);\r",
+									" \r",
+									"} else {\r",
+									"    commonTests.checkStatusLine(expectedStatusCode, expectedStatusMessage);\r",
+									"    commonTests.checkResponseTime();        \r",
+									"} "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "987e9023-4e7a-472a-9313-d74ab31a3e94",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteBatchbybatchId positive",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4d6e4f6f-8614-45df-996a-7a03eed470bc",
+								"exec": [
+									"const baseURL = pm.environment.get(\"baseURL\");\r",
+									"const endpoint = \"batches/\";\r",
+									"\r",
+									"const batchIDs = pm.collectionVariables.get(\"batchIDs\");\r",
+									"const batchIDArray = JSON.parse(batchIDs);\r",
+									"\r",
+									"console.log(\"batchIDs: \"+batchIDs );\r",
+									"const batchID = batchIDArray.shift();\r",
+									"\r",
+									"const token = pm.globals.get('token');  \r",
+									"pm.request.headers.add({ key: 'Authorization', value: `Bearer ${token}` });\r",
+									"\r",
+									"pm.request.url = baseURL + endpoint + batchID;\r",
+									"\r",
+									"pm.collectionVariables.set(\"batchIDs\", JSON.stringify(batchIDArray));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "6e5dc040-72da-49d0-9326-8a57e41b3baa",
+								"exec": [
+									"const batchIDs = pm.collectionVariables.get(\"batchIDs\");\r",
+									"const batchIDArray = JSON.parse(batchIDs);\r",
+									"\r",
+									"console.log(\"batchIDs: \"+batchIDs);\r",
+									"\r",
+									"commonTests.checkStatusLine(200, \"OK\");\r",
+									"commonTests.checkResponseTime();\r",
+									"\r",
+									"\r",
+									"if (batchIDArray.length > 0) {\r",
+									"    pm.execution.setNextRequest(pm.info.requestName);\r",
+									"} else {\r",
+									"    pm.collectionVariables.unset(\"batchIDs\");\r",
+									"    pm.collectionVariables.unset(\"programIDs\");\r",
+									"    pm.execution.setNextRequest(null); \r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "fcac45b6-88b4-446e-832a-d9bd05c66b83",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "DELETE",
+						"header": []
 					},
 					"response": []
 				}
